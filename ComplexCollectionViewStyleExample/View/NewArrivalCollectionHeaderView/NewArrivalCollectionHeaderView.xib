@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="NewArrivalCollectionHeaderView" customModule="ComplexCollectionViewStyleExample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLB-p5-IlP">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQn-ni-duR">
+                            <rect key="frame" x="12" y="12" width="296" height="19.5"/>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wf3-15-zzw">
+                            <rect key="frame" x="12" y="37.5" width="296" height="15.5"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="aQn-ni-duR" firstAttribute="top" secondItem="jLB-p5-IlP" secondAttribute="top" constant="12" id="7Y1-tL-5tO"/>
+                        <constraint firstItem="wf3-15-zzw" firstAttribute="leading" secondItem="jLB-p5-IlP" secondAttribute="leading" constant="12" id="HZz-3i-edW"/>
+                        <constraint firstItem="aQn-ni-duR" firstAttribute="leading" secondItem="jLB-p5-IlP" secondAttribute="leading" constant="12" id="IKQ-Ms-Uji"/>
+                        <constraint firstAttribute="trailing" secondItem="wf3-15-zzw" secondAttribute="trailing" constant="12" id="KVO-FH-yNH"/>
+                        <constraint firstAttribute="trailing" secondItem="aQn-ni-duR" secondAttribute="trailing" constant="12" id="Ofj-ch-RTq"/>
+                        <constraint firstAttribute="bottom" secondItem="wf3-15-zzw" secondAttribute="bottom" constant="12" id="VbN-AK-EVb"/>
+                        <constraint firstItem="wf3-15-zzw" firstAttribute="top" secondItem="aQn-ni-duR" secondAttribute="bottom" constant="6" id="jGS-5D-HDz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="jLB-p5-IlP" secondAttribute="bottom" id="3Rs-an-mR8"/>
+                <constraint firstItem="jLB-p5-IlP" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Jp2-3X-RBY"/>
+                <constraint firstAttribute="trailing" secondItem="jLB-p5-IlP" secondAttribute="trailing" id="Xqd-PL-IRi"/>
+                <constraint firstItem="jLB-p5-IlP" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="pN5-qp-Z92"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="wf3-15-zzw" id="BFo-IH-P6K"/>
+                <outlet property="titleLabel" destination="aQn-ni-duR" id="xVn-cQ-BXI"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="148.99553571428569"/>
+        </collectionReusableView>
+    </objects>
+</document>

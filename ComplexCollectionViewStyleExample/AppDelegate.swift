@@ -9,9 +9,17 @@
 import UIKit
 
 @UIApplicationMain
+
+// MEMO: DarkModeのキャンセル対応
+// → Info.plist内で「User Interface Style」を暫定的に「Light」に設定しています。
+// (参考) https://stackoverflow.com/questions/56537855/is-it-possible-to-opt-out-of-dark-mode-on-ios-13
+
+// MEMO: Catalinaにすると`pod init`が実行できなかったので下記の記事を参考に対応しました。
+// ↓ エラーはこんな感じ。
+// -bash: /usr/local/bin/pod: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: bad interpreter: No such file or directory
+// (参考) http://okogecreate.hatenablog.com/entry/2018/02/04/141644
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

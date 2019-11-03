@@ -1,30 +1,20 @@
 PODS:
-  - BetterSegmentedControl (1.2.1)
-  - RxCocoa (5.0.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.0.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - FontAwesome.swift (1.8.2)
+  - Nuke (8.3.1)
 
 DEPENDENCIES:
-  - BetterSegmentedControl
-  - RxCocoa
-  - RxSwift
+  - FontAwesome.swift
+  - Nuke
 
 SPEC REPOS:
   trunk:
-    - BetterSegmentedControl
-    - RxCocoa
-    - RxRelay
-    - RxSwift
+    - FontAwesome.swift
+    - Nuke
 
 SPEC CHECKSUMS:
-  BetterSegmentedControl: b27bddbdff29b6cae988678d6cd106858986cd03
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  FontAwesome.swift: 7938d6a03113ff3f39001bde7f50be8a0903d605
+  Nuke: 85fb80f8df0cb26c28d2f4e0cb7fb93bcd6548d3
 
-PODFILE CHECKSUM: ccf52ee51c62ea411c23c5d71f38d1f7dbec801c
+PODFILE CHECKSUM: 72a65b3d208b9f886a9dabda2fbee9178daed5df
 
 COCOAPODS: 1.8.4

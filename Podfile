@@ -6,7 +6,6 @@ target 'ComplexCollectionViewStyleExample' do
   use_frameworks!
 
   # Pods for ComplexCollectionViewStyleExample
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'BetterSegmentedControl'
+  pod 'Nuke'
+  pod 'FontAwesome.swift'
 end
