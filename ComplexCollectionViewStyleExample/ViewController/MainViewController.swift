@@ -44,12 +44,8 @@ enum MainSection: CaseIterable {
     case FeaturedArticles
     case RecentKeywords
     case NewArrivalArticles
-    /*
-    case PhotoContents
-    case popularComments
     case RegularArticles
-    */
-    
+
     func getSectionValue() -> Int {
         switch self {
         case .FeaturedArticles:
@@ -58,6 +54,8 @@ enum MainSection: CaseIterable {
             return 1
         case .NewArrivalArticles:
             return 2
+        case .RegularArticles:
+            return 3
         }
     }
 }
@@ -83,6 +81,8 @@ final class MainViewController: UIViewController {
                 return self?.createRecentKeywordsLayout()
             case MainSection.NewArrivalArticles.getSectionValue():
                 return self?.createNewArrivalArticles()
+            case MainSection.RegularArticles.getSectionValue():
+                return self?.createRegularArticles()
             default:
                 fatalError()
             }
@@ -112,8 +112,10 @@ final class MainViewController: UIViewController {
         collectionView.registerCustomReusableFooterView(KeywordCollectionFooterView.self)
         collectionView.registerCustomCell(FeaturedCollectionViewCell.self)
         collectionView.registerCustomCell(NewArrivalCollectionViewCell.self)
-        collectionView.registerCustomCell(PhotoCollectionViewCell.self)
         collectionView.registerCustomReusableHeaderView(NewArrivalCollectionHeaderView.self)
+        collectionView.registerCustomCell(PhotoCollectionViewCell.self)
+        collectionView.registerCustomCell(ArticleCollectionViewCell.self)
+        collectionView.registerCustomReusableHeaderView(ArticleCollectionHeaderView.self)
 
         // MEMO: UICollectionViewDelegateについては従来通り
         collectionView.delegate = self
@@ -144,6 +146,9 @@ final class MainViewController: UIViewController {
                     cell.indexLabel.text = String(model.id)
                     return cell
                 }
+            case let model as Article:
+                let cell = collectionView.dequeueReusableCustomCell(with: ArticleCollectionViewCell.self, indexPath: indexPath)
+                return cell
             default:
                 return nil
             }
@@ -169,6 +174,13 @@ final class MainViewController: UIViewController {
                     let header = collectionView.dequeueReusableCustomHeaderView(with: NewArrivalCollectionHeaderView.self, indexPath: indexPath)
                     header.titleLabel.text = "新着メニューの紹介"
                     header.descriptionLabel.text = "アプリでご紹介しているお店の新着メニューを紹介しています。新しいお店の発掘やさらなる行きつけのお店の魅力を見つけられるかもしれません。"
+                    return header
+                }
+            case MainSection.RegularArticles.getSectionValue():
+                if kind == UICollectionView.elementKindSectionHeader {
+                    let header = collectionView.dequeueReusableCustomHeaderView(with: ArticleCollectionHeaderView.self, indexPath: indexPath)
+                    header.titleLabel.text = "おすすめ記事一覧"
+                    header.descriptionLabel.text = "よく行くお店からこちらで厳選してみました。というつもりです...。でも結構美味しそうなのではないかと思いますよので是非ともご堪能してみてはいかがでしょうか？"
                     return header
                 }
             default:
@@ -198,6 +210,12 @@ final class MainViewController: UIViewController {
         }
         snapshot.appendItems(newArrival, toSection: .NewArrivalArticles)
 
+        let article: [Article] = (0..<20).map {
+            let id = $0 + 1
+            return Article(id: id)
+        }
+        snapshot.appendItems(article, toSection: .RegularArticles)
+
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 
@@ -219,7 +237,7 @@ final class MainViewController: UIViewController {
 
         // 3. Sectionのサイズ設定
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
         // MEMO: スクロール終了時に水平方向のスクロールが可能で中心位置で止まる
         section.orthogonalScrollingBehavior = .groupPagingCentered
         return section
@@ -240,12 +258,12 @@ final class MainViewController: UIViewController {
         // 3. Sectionのサイズ設定
         let section = NSCollectionLayoutSection(group: group)
         // MEMO: HeaderとFooterのレイアウトを決定する
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(65.0))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-        let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(28))
+        let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(15.0))
         let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
         section.boundarySupplementaryItems = [header, footer]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 12, trailing: 6)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 16, trailing: 6)
         // MEMO: スクロール終了時に水平方向のスクロールが可能で速度が0になった位置で止まる
         section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
 
@@ -274,8 +292,29 @@ final class MainViewController: UIViewController {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         section.boundarySupplementaryItems = [header]
-        section.contentInsets = NSDirectionalEdgeInsets.zero
- 
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
+
+        return section
+    }
+
+    private func createRegularArticles() -> NSCollectionLayoutSection {
+
+        // 1. Itemのサイズ設定
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0.5, leading: 0.5, bottom: 0.5, trailing: 0.5)
+
+        // 2. Groupのサイズ設定
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(UIScreen.main.bounds.width / 2 + 80.0))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+
+        // 3. Sectionのサイズ設定
+        let section = NSCollectionLayoutSection(group: group)
+        // MEMO: HeaderとFooterのレイアウトを決定する
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(65.0))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        section.boundarySupplementaryItems = [header]
+
         return section
     }
 }

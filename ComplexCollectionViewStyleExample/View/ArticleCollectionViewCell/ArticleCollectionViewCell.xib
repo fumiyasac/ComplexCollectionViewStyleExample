@@ -10,15 +10,72 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ArticleCollectionViewCell" customModule="ComplexCollectionViewStyleExample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="240" height="320"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="240" height="320"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPE-Uv-YSs">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="320"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-N5-kAz">
+                                <rect key="frame" x="0.0" y="240" width="240" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キャッチコピーが入ります。キャッチコピーが入ります。キャッチコピーが入ります。キャッチコピーが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtI-Gj-WXK">
+                                        <rect key="frame" x="10" y="46" width="220" height="22"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="11"/>
+                                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6q-CY-eVp">
+                                        <rect key="frame" x="10" y="12" width="220" height="24"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="V6q-CY-eVp" secondAttribute="trailing" constant="10" id="8hH-7v-gZ9"/>
+                                    <constraint firstItem="JtI-Gj-WXK" firstAttribute="top" secondItem="V6q-CY-eVp" secondAttribute="bottom" constant="10" id="BYh-45-SbO"/>
+                                    <constraint firstAttribute="height" constant="80" id="QEF-54-OUB"/>
+                                    <constraint firstItem="V6q-CY-eVp" firstAttribute="leading" secondItem="5Ux-N5-kAz" secondAttribute="leading" constant="10" id="Sed-N8-9uS"/>
+                                    <constraint firstAttribute="bottom" secondItem="JtI-Gj-WXK" secondAttribute="bottom" constant="12" id="b7L-Wd-VOI"/>
+                                    <constraint firstItem="V6q-CY-eVp" firstAttribute="top" secondItem="5Ux-N5-kAz" secondAttribute="top" constant="12" id="dFb-v7-RAW"/>
+                                    <constraint firstItem="JtI-Gj-WXK" firstAttribute="leading" secondItem="5Ux-N5-kAz" secondAttribute="leading" constant="10" id="gHD-AX-T6K"/>
+                                    <constraint firstAttribute="trailing" secondItem="JtI-Gj-WXK" secondAttribute="trailing" constant="10" id="yVi-Z8-iLY"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xvh-9J-0ju">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xvh-9J-0ju" secondAttribute="height" multiplier="1:1" id="xRU-6B-Fq1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xvh-9J-0ju" firstAttribute="leading" secondItem="DPE-Uv-YSs" secondAttribute="leading" id="69K-Sh-xj5"/>
+                            <constraint firstAttribute="trailing" secondItem="Xvh-9J-0ju" secondAttribute="trailing" id="CjC-HD-LPT"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ux-N5-kAz" secondAttribute="trailing" id="KTx-l2-jnu"/>
+                            <constraint firstItem="5Ux-N5-kAz" firstAttribute="top" secondItem="Xvh-9J-0ju" secondAttribute="bottom" id="QKS-fP-Upr"/>
+                            <constraint firstItem="5Ux-N5-kAz" firstAttribute="leading" secondItem="DPE-Uv-YSs" secondAttribute="leading" id="QqB-Pr-Ie7"/>
+                            <constraint firstItem="Xvh-9J-0ju" firstAttribute="top" secondItem="DPE-Uv-YSs" secondAttribute="top" id="toE-cS-CoJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
-            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="DPE-Uv-YSs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5q8-7C-HXT"/>
+                <constraint firstItem="DPE-Uv-YSs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MFh-Hp-ELx"/>
+                <constraint firstAttribute="bottom" secondItem="DPE-Uv-YSs" secondAttribute="bottom" id="QjD-uo-h7I"/>
+                <constraint firstAttribute="trailing" secondItem="DPE-Uv-YSs" secondAttribute="trailing" id="mau-9r-Roc"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="132" y="133"/>
+            <point key="canvasLocation" x="131.8840579710145" y="132.58928571428572"/>
         </collectionViewCell>
     </objects>
 </document>
