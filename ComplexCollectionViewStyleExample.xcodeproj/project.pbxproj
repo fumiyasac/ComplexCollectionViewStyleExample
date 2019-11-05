@@ -10,7 +10,8 @@
 		DE2EB904236D4D0000F8AD83 /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2EB903236D4D0000F8AD83 /* CustomViewBase.swift */; };
 		DE5099392370573A00CDAE25 /* ArticleCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5099372370573A00CDAE25 /* ArticleCollectionHeaderView.swift */; };
 		DE50993A2370573A00CDAE25 /* ArticleCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5099382370573A00CDAE25 /* ArticleCollectionHeaderView.xib */; };
-		DE50993C23705CD000CDAE25 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50993B23705CD000CDAE25 /* Article.swift */; };
+		DE50993C23705CD000CDAE25 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50993B23705CD000CDAE25 /* Articles.swift */; };
+		DE50993E2370675E00CDAE25 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50993D2370675E00CDAE25 /* APIRequestManager.swift */; };
 		DE7F4646236E1BCF001203DB /* FeaturedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F4644236E1BCF001203DB /* FeaturedCollectionViewCell.swift */; };
 		DE7F4647236E1BCF001203DB /* FeaturedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7F4645236E1BCF001203DB /* FeaturedCollectionViewCell.xib */; };
 		DE7F464A236E23BA001203DB /* FeaturedBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F4649236E23BA001203DB /* FeaturedBanner.swift */; };
@@ -65,7 +66,8 @@
 		DE2EB903236D4D0000F8AD83 /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
 		DE5099372370573A00CDAE25 /* ArticleCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionHeaderView.swift; sourceTree = "<group>"; };
 		DE5099382370573A00CDAE25 /* ArticleCollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionHeaderView.xib; sourceTree = "<group>"; };
-		DE50993B23705CD000CDAE25 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		DE50993B23705CD000CDAE25 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		DE50993D2370675E00CDAE25 /* APIRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		DE7F4644236E1BCF001203DB /* FeaturedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE7F4645236E1BCF001203DB /* FeaturedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE7F4649236E23BA001203DB /* FeaturedBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedBanner.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		DE2EB902236D4C7A00F8AD83 /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				DE50993D2370675E00CDAE25 /* APIRequestManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -205,7 +208,7 @@
 				DE7F4649236E23BA001203DB /* FeaturedBanner.swift */,
 				DE7F465B236E3A35001203DB /* Keyword.swift */,
 				DE7F466E236EB29A001203DB /* NewArrival.swift */,
-				DE50993B23705CD000CDAE25 /* Article.swift */,
+				DE50993B23705CD000CDAE25 /* Articles.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,8 +556,9 @@
 				DE5099392370573A00CDAE25 /* ArticleCollectionHeaderView.swift in Sources */,
 				DED5ADC7236B09780092108B /* MainViewController.swift in Sources */,
 				DE7F465C236E3A35001203DB /* Keyword.swift in Sources */,
+				DE50993E2370675E00CDAE25 /* APIRequestManager.swift in Sources */,
 				DED5ADC3236B09780092108B /* AppDelegate.swift in Sources */,
-				DE50993C23705CD000CDAE25 /* Article.swift in Sources */,
+				DE50993C23705CD000CDAE25 /* Articles.swift in Sources */,
 				DE7F4673236EB814001203DB /* NewArrivalCollectionHeaderView.swift in Sources */,
 				DE7F464C236E2CEC001203DB /* MainViewModel.swift in Sources */,
 				DE7F4646236E1BCF001203DB /* FeaturedCollectionViewCell.swift in Sources */,

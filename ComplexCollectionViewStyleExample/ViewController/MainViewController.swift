@@ -67,6 +67,9 @@ final class MainViewController: UIViewController {
     // MEMO: API経由の非同期通信からデータを取得するためのViewModel
     private let viewModel: MainViewModel = MainViewModel()
 
+    // MEMO: UICollectionViewを差分更新するためのNSDiffableDataSourceSnapshot（※悩ましい: AnyHashableの部分を型で縛りたい）
+    private var snapshot: NSDiffableDataSourceSnapshot<MainSection, AnyHashable>!
+
     // MEMO: UICollectionViewを組み立てるためのDataSource（※悩ましい: AnyHashableの部分を型で縛りたい）
     private var dataSource: UICollectionViewDiffableDataSource<MainSection, AnyHashable>! = nil
 
@@ -189,7 +192,7 @@ final class MainViewController: UIViewController {
             return nil
         }
 
-        var snapshot = NSDiffableDataSourceSnapshot<MainSection, AnyHashable>()
+        snapshot = NSDiffableDataSourceSnapshot<MainSection, AnyHashable>()
         snapshot.appendSections(MainSection.allCases)
 
         let featuredBanners: [FeaturedBanner] = (0..<6).map {
@@ -209,14 +212,19 @@ final class MainViewController: UIViewController {
             return NewArrival(id: id)
         }
         snapshot.appendItems(newArrival, toSection: .NewArrivalArticles)
-
-        let article: [Article] = (0..<20).map {
-            let id = $0 + 1
-            return Article(id: id)
-        }
-        snapshot.appendItems(article, toSection: .RegularArticles)
-
+        snapshot.appendItems([], toSection: .RegularArticles)
         dataSource.apply(snapshot, animatingDifferences: false)
+
+        let _ = viewModel.fetchArticles()
+        let _ = viewModel.$articles
+        .subscribe(on: RunLoop.main)
+        .sink(
+            receiveValue: { [weak self] articles in
+                guard let self = self else { return }
+                self.snapshot.appendItems(articles, toSection: .RegularArticles)
+                self.dataSource.apply(self.snapshot, animatingDifferences: false)
+            }
+        )
     }
 
     // MARK: - Private Function (for UICollectionViewCompositionalLayout Setup)

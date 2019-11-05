@@ -1,0 +1,17 @@
+{
+  "name": "json-mock-server",
+  "version": "1.0.0",
+  "description": "MockServer for ComplexCollectionViewStyleExample project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.14"
+  },
+  "author": "fumiyasac(Fumiya Sakai)",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.14.2"
+  }
+}
