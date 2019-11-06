@@ -13,8 +13,6 @@ struct Keyword: Hashable, Decodable {
     let id: Int
     let keyword: String
 
-    private let identifier = UUID()
-
     // MARK: - Enum
 
     /*
@@ -47,10 +45,10 @@ struct Keyword: Hashable, Decodable {
 
     // MEMO: Hashableプロトコルに適合させるための処理
     func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
+        hasher.combine(id)
     }
 
     static func == (lhs: Keyword, rhs: Keyword) -> Bool {
-        return lhs.identifier == rhs.identifier
+        return lhs.id == rhs.id
     }
 }

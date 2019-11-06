@@ -12,8 +12,6 @@ struct NewArrival: Hashable, Decodable {
 
     let id: Int
 
-    private let identifier = UUID()
-
     // MARK: - Enum
 
     /*
@@ -43,10 +41,10 @@ struct NewArrival: Hashable, Decodable {
 
     // MEMO: Hashableプロトコルに適合させるための処理
     func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
+        hasher.combine(id)
     }
 
     static func == (lhs: NewArrival, rhs: NewArrival) -> Bool {
-        return lhs.identifier == rhs.identifier
+        return lhs.id == rhs.id
     }
 }

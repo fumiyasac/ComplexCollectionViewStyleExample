@@ -9,45 +9,58 @@
 import Foundation
 import Combine
 
-enum ArticlesRequestState {
-    case loading
-    case finishedLoading
-    case error(Error)
-}
-
 final class MainViewModel {
 
+    private let api: APIRequestManagerProtocol
+    
     private var featuredBannersCancellable: AnyCancellable?
     private var keywordsCancellable: AnyCancellable?
     private var newArrivalsCancellable: AnyCancellable?
     private var articlesCancellable: AnyCancellable?
 
     // MARK: - @Published
+    
+    // MEMO: このコードではNSDiffableDataSourceSnapshotの差分更新部分で利用する
 
     @Published private(set) var featuredBanners: [FeaturedBanner] = []
     @Published private(set) var keywords: [Keyword] = []
     @Published private(set) var newArrivals: [NewArrival] = []
-
     @Published private(set) var articles: [Article] = []
-    @Published private(set) var state: ArticlesRequestState = .loading
+
+    // MARK: - Initializer
+
+    init(api: APIRequestManagerProtocol) {
+        self.api = api
+    }
+
+    // MARK: - deinit
+
+    deinit {
+        articlesCancellable?.cancel()
+    }
+
+    // MARK: - Function
 
     func fetchArticles() {
-        articlesCancellable = APIRequestManager.shared.getArticles()
+
+        articlesCancellable = api.getArticles()
             .receive(on: RunLoop.main)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
-                    // MEMO: 本当はエラーハンドリングを真面目にする...
+
+                    // MEMO: 値取得成功時（※本当は厳密にエラーハンドリングする必要がある）
                     case .finished:
                         print("finished: \(completion)")
+
+                    // MEMO: エラー時（※本当は厳密にエラーハンドリングする必要がある）
                     case .failure(let error):
                         print("error: \(error.localizedDescription)")
                     }
                 },
-                receiveValue: { [weak self] result in
-                    if let articles = result.first.map({ $0.articles }) {
-                        self?.articles = articles
-                    }
+                receiveValue: { [unowned self] hashableObjects in
+                    print(hashableObjects)
+                    self.articles = hashableObjects
                 }
             )
     }

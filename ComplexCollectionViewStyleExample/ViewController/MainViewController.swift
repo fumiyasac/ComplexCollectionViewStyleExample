@@ -32,7 +32,7 @@ Step1. 全体のLayoutの中にSectionが配置され、さらにその中に複
 Step2. NSCollectionLayoutSizeの基本
 (1) .fractionalWidth(割合) & .fractionalHeight(割合) → Groupからの割合から算出した値
 (2) .absolute(値) → 決め打ちの値
-(3) .estimate(値) → 最初は値のままだが可変する（※実際に動かしてみたが怪しい...???）
+(3) .estimate(値) → 最初は値のままだが設定した値より大きい場合には可変する
 
  
 
@@ -65,9 +65,9 @@ final class MainViewController: UIViewController {
     // MARK: - Variables
 
     // MEMO: API経由の非同期通信からデータを取得するためのViewModel
-    private let viewModel: MainViewModel = MainViewModel()
+    private let viewModel: MainViewModel = MainViewModel(api: APIRequestManager.shared)
 
-    // MEMO: UICollectionViewを差分更新するためのNSDiffableDataSourceSnapshot（※悩ましい: AnyHashableの部分を型で縛りたい）
+    // MEMO: UICollectionViewを差分更新するためのNSDiffableDataSourceSnapshot（※悩ましい: AnyHashableではなくもっと厳密に制限したい）
     private var snapshot: NSDiffableDataSourceSnapshot<MainSection, AnyHashable>!
 
     // MEMO: UICollectionViewを組み立てるためのDataSource（※悩ましい: AnyHashableの部分を型で縛りたい）
@@ -217,14 +217,14 @@ final class MainViewController: UIViewController {
 
         let _ = viewModel.fetchArticles()
         let _ = viewModel.$articles
-        .subscribe(on: RunLoop.main)
-        .sink(
-            receiveValue: { [weak self] articles in
-                guard let self = self else { return }
-                self.snapshot.appendItems(articles, toSection: .RegularArticles)
-                self.dataSource.apply(self.snapshot, animatingDifferences: false)
-            }
-        )
+            .subscribe(on: RunLoop.main)
+            .sink(
+                receiveValue: { [weak self] articles in
+                    guard let self = self else { return }
+                    self.snapshot.appendItems(articles, toSection: .RegularArticles)
+                    self.dataSource.apply(self.snapshot, animatingDifferences: false)
+                }
+            )
     }
 
     // MARK: - Private Function (for UICollectionViewCompositionalLayout Setup)
@@ -235,7 +235,7 @@ final class MainViewController: UIViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-        
+
         // 2. Groupのサイズ設定
         // MEMO: 1列に表示するカラム数を1として設定し、itemのサイズがgroupのサイズで決定する形にしている
         let groupHeight = UIScreen.main.bounds.width * (3 / 8)
@@ -333,4 +333,8 @@ extension MainViewController: UICollectionViewDelegate {}
 
 // MARK: - UIScrollViewDelegate
 
-extension MainViewController: UIScrollViewDelegate {}
+extension MainViewController: UIScrollViewDelegate {
+
+    // MEMO: NSCollectionLayoutSectionのScrollではUIScrollViewDelegateは呼ばれない
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {}
+}
