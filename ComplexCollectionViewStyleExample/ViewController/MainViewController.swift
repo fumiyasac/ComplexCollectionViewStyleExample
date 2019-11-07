@@ -33,9 +33,6 @@ Step2. NSCollectionLayoutSizeの基本
 (1) .fractionalWidth(割合) & .fractionalHeight(割合) → Groupからの割合から算出した値
 (2) .absolute(値) → 決め打ちの値
 (3) .estimate(値) → 最初は値のままだが設定した値より大きい場合には可変する
-
- 
-
 */
 
 // MARK: - Enum
@@ -137,9 +134,10 @@ final class MainViewController: UIViewController {
                 return cell
             case let model as Keyword:
                 let cell = collectionView.dequeueReusableCustomCell(with: KeywordCollectionViewCell.self, indexPath: indexPath)
-                cell.titleLabel.text = model.keyword
+                cell.setCell(model)
                 return cell
             case let model as NewArrival:
+                // MEMO: 3で割って1余るインデックス値の場合だけ
                 if model.id % 3 == 1 {
                     let cell = collectionView.dequeueReusableCustomCell(with: NewArrivalCollectionViewCell.self, indexPath: indexPath)
                     cell.indexLabel.text = String(model.id)
@@ -151,6 +149,7 @@ final class MainViewController: UIViewController {
                 }
             case let model as Article:
                 let cell = collectionView.dequeueReusableCustomCell(with: ArticleCollectionViewCell.self, indexPath: indexPath)
+                cell.setCell(model)
                 return cell
             default:
                 return nil
@@ -164,8 +163,10 @@ final class MainViewController: UIViewController {
             case MainSection.RecentKeywords.getSectionValue():
                 if kind == UICollectionView.elementKindSectionHeader {
                     let header = collectionView.dequeueReusableCustomHeaderView(with: KeywordCollectionHeaderView.self, indexPath: indexPath)
-                    header.titleLabel.text = "最近の「キーワード」をチェック"
-                    header.descriptionLabel.text = "テレビ番組で人気のお店や特別な日に使える情報をたくさん掲載しております。気になるキーワードはあるけれども「あのお店なんだっけ？」というのが具体的に思い出せない場面が結構あると思います。最新情報に早めにキャッチアップしたい方におすすめです！"
+                    header.setHeader(
+                        title: "最近の「キーワード」をチェック",
+                        description: "テレビ番組で人気のお店や特別な日に使える情報をたくさん掲載しております。気になるキーワードはあるけれども「あのお店なんだっけ？」というのが具体的に思い出せない場面が結構あると思います。最新情報に早めにキャッチアップしたい方におすすめです！"
+                    )
                     return header
                 }
                 if kind == UICollectionView.elementKindSectionFooter {
@@ -175,15 +176,23 @@ final class MainViewController: UIViewController {
             case MainSection.NewArrivalArticles.getSectionValue():
                 if kind == UICollectionView.elementKindSectionHeader {
                     let header = collectionView.dequeueReusableCustomHeaderView(with: NewArrivalCollectionHeaderView.self, indexPath: indexPath)
-                    header.titleLabel.text = "新着メニューの紹介"
-                    header.descriptionLabel.text = "アプリでご紹介しているお店の新着メニューを紹介しています。新しいお店の発掘やさらなる行きつけのお店の魅力を見つけられるかもしれません。"
+                    let _ = self.viewModel.$articles
+                        .subscribe(on: RunLoop.main)
+                        .sink
+                    
+                    header.setHeader(
+                        title: "新着メニューの紹介",
+                        description: "アプリでご紹介しているお店の新着メニューを紹介しています。新しいお店の発掘やさらなる行きつけのお店の魅力を見つけられるかもしれません。"
+                    )
                     return header
                 }
             case MainSection.RegularArticles.getSectionValue():
                 if kind == UICollectionView.elementKindSectionHeader {
                     let header = collectionView.dequeueReusableCustomHeaderView(with: ArticleCollectionHeaderView.self, indexPath: indexPath)
-                    header.titleLabel.text = "おすすめ記事一覧"
-                    header.descriptionLabel.text = "よく行くお店からこちらで厳選してみました。というつもりです...。でも結構美味しそうなのではないかと思いますよので是非ともご堪能してみてはいかがでしょうか？"
+                    header.setHeader(
+                        title: "おすすめ記事一覧",
+                        description: "よく行くお店からこちらで厳選してみました。というつもりです…。でも結構美味しそうなのではないかと思いますよので是非ともご堪能してみてはいかがでしょうか？"
+                    )
                     return header
                 }
             default:
@@ -201,20 +210,28 @@ final class MainViewController: UIViewController {
         }
         snapshot.appendItems(featuredBanners, toSection: .FeaturedArticles)
 
-        let keywords: [Keyword] = (0..<20).map {
-            let id = $0 + 1
-            return Keyword(id: id, keyword: "Keyword Sample \(id)")
-        }
-        snapshot.appendItems(keywords, toSection: .RecentKeywords)
-
-        let newArrival: [NewArrival] = (0..<12).map {
+        let newArrival: [NewArrival] = (0..<6).map {
             let id = $0 + 1
             return NewArrival(id: id)
         }
         snapshot.appendItems(newArrival, toSection: .NewArrivalArticles)
+
+        snapshot.appendItems([], toSection: .RecentKeywords)
         snapshot.appendItems([], toSection: .RegularArticles)
         dataSource.apply(snapshot, animatingDifferences: false)
 
+        // 2. キーワードデータの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+        let _ = viewModel.fetchKeywords()
+        let _ = viewModel.$keywords
+            .subscribe(on: RunLoop.main)
+            .sink(
+                receiveValue: { [weak self] keywords in
+                    guard let self = self else { return }
+                    self.snapshot.appendItems(keywords, toSection: .RecentKeywords)
+                    self.dataSource.apply(self.snapshot, animatingDifferences: false)
+                }
+            )
+        // 4. 記事データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
         let _ = viewModel.fetchArticles()
         let _ = viewModel.$articles
             .subscribe(on: RunLoop.main)
@@ -268,7 +285,7 @@ final class MainViewController: UIViewController {
         // MEMO: HeaderとFooterのレイアウトを決定する
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(65.0))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-        let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(15.0))
+        let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(28.0))
         let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
         section.boundarySupplementaryItems = [header, footer]
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 16, trailing: 6)
@@ -335,6 +352,6 @@ extension MainViewController: UICollectionViewDelegate {}
 
 extension MainViewController: UIScrollViewDelegate {
 
-    // MEMO: NSCollectionLayoutSectionのScrollではUIScrollViewDelegateは呼ばれない
+    // MEMO: NSCollectionLayoutSectionのScroll(section.orthogonalScrollingBehavior)ではUIScrollViewDelegateは呼ばれない
     func scrollViewDidScroll(_ scrollView: UIScrollView) {}
 }

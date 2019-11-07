@@ -23,13 +23,13 @@
                                 <rect key="frame" x="0.0" y="240" width="240" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キャッチコピーが入ります。キャッチコピーが入ります。キャッチコピーが入ります。キャッチコピーが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtI-Gj-WXK">
-                                        <rect key="frame" x="10" y="46" width="220" height="22"/>
+                                        <rect key="frame" x="10" y="40" width="220" height="22"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="11"/>
                                         <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6q-CY-eVp">
-                                        <rect key="frame" x="10" y="12" width="220" height="24"/>
+                                        <rect key="frame" x="10" y="8" width="220" height="24"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -38,11 +38,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="V6q-CY-eVp" secondAttribute="trailing" constant="10" id="8hH-7v-gZ9"/>
-                                    <constraint firstItem="JtI-Gj-WXK" firstAttribute="top" secondItem="V6q-CY-eVp" secondAttribute="bottom" constant="10" id="BYh-45-SbO"/>
+                                    <constraint firstItem="JtI-Gj-WXK" firstAttribute="top" secondItem="V6q-CY-eVp" secondAttribute="bottom" constant="8" id="BYh-45-SbO"/>
                                     <constraint firstAttribute="height" constant="80" id="QEF-54-OUB"/>
                                     <constraint firstItem="V6q-CY-eVp" firstAttribute="leading" secondItem="5Ux-N5-kAz" secondAttribute="leading" constant="10" id="Sed-N8-9uS"/>
-                                    <constraint firstAttribute="bottom" secondItem="JtI-Gj-WXK" secondAttribute="bottom" constant="12" id="b7L-Wd-VOI"/>
-                                    <constraint firstItem="V6q-CY-eVp" firstAttribute="top" secondItem="5Ux-N5-kAz" secondAttribute="top" constant="12" id="dFb-v7-RAW"/>
+                                    <constraint firstItem="V6q-CY-eVp" firstAttribute="top" secondItem="5Ux-N5-kAz" secondAttribute="top" constant="8" id="dFb-v7-RAW"/>
                                     <constraint firstItem="JtI-Gj-WXK" firstAttribute="leading" secondItem="5Ux-N5-kAz" secondAttribute="leading" constant="10" id="gHD-AX-T6K"/>
                                     <constraint firstAttribute="trailing" secondItem="JtI-Gj-WXK" secondAttribute="trailing" constant="10" id="yVi-Z8-iLY"/>
                                 </constraints>
@@ -75,6 +74,11 @@
                 <constraint firstAttribute="trailing" secondItem="DPE-Uv-YSs" secondAttribute="trailing" id="mau-9r-Roc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="summaryLabel" destination="JtI-Gj-WXK" id="bzc-fW-RHc"/>
+                <outlet property="thumbnailImageView" destination="Xvh-9J-0ju" id="eYa-xQ-JjQ"/>
+                <outlet property="titleLabel" destination="V6q-CY-eVp" id="nFJ-Rb-hg8"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="132.58928571428572"/>
         </collectionViewCell>
     </objects>

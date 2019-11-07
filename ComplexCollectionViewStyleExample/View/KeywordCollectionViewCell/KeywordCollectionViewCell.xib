@@ -16,20 +16,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keyword Example" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llI-TP-xIH">
-                        <rect key="frame" x="36" y="12.5" width="88.5" height="15.5"/>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhI-aK-kzs">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keyword Example" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llI-TP-xIH">
+                                <rect key="frame" x="33.5" y="12.5" width="93.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="llI-TP-xIH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hhI-aK-kzs" secondAttribute="leading" constant="5" id="P3u-JQ-kHP"/>
+                            <constraint firstItem="llI-TP-xIH" firstAttribute="centerX" secondItem="hhI-aK-kzs" secondAttribute="centerX" id="aMJ-if-GYF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="llI-TP-xIH" secondAttribute="trailing" constant="5" id="cfZ-I5-Ynu"/>
+                            <constraint firstItem="llI-TP-xIH" firstAttribute="centerY" secondItem="hhI-aK-kzs" secondAttribute="centerY" id="f3H-q5-nHH"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="llI-TP-xIH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="5cI-eZ-s6P"/>
-                <constraint firstItem="llI-TP-xIH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="NAI-ea-HGj"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="llI-TP-xIH" secondAttribute="trailing" constant="5" id="YuD-f9-0GQ"/>
-                <constraint firstItem="llI-TP-xIH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="zxX-Fb-gtW"/>
+                <constraint firstAttribute="trailing" secondItem="hhI-aK-kzs" secondAttribute="trailing" id="OMq-MR-P8p"/>
+                <constraint firstAttribute="bottom" secondItem="hhI-aK-kzs" secondAttribute="bottom" id="PPS-f8-tiU"/>
+                <constraint firstItem="hhI-aK-kzs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bAG-Wd-8Cl"/>
+                <constraint firstItem="hhI-aK-kzs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="h8X-1t-xk0"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>

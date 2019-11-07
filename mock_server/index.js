@@ -11,8 +11,9 @@ const router = jsonServer.router('datasource/db.json');
 // 各種設定用
 const middlewares = jsonServer.defaults();
 const rewrite_rules = jsonServer.rewriter({
-    "/api/mock/v1/meals/articles/" : "/get_meal_list",
-    "/api/mock/v1/meals/recommend/" : "/get_recommend_list",
+    "/api/mock/v1/gourmet/articles" : "/get_articles",
+    "/api/mock/v1/gourmet/keywords" : "/get_keywords",
+    "/api/mock/v1/gourmet/recommend" : "/get_recommend_list",
 });
 
 // リクエストのルールを設定する

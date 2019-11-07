@@ -10,14 +10,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="KeywordCollectionFooterView" customModule="ComplexCollectionViewStyleExample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="14"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWN-MI-vhk">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="28"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="14"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 最近2週間で人気のある検索ワードを表示しています。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewf-z3-ncA">
-                            <rect key="frame" x="6" y="8" width="308" height="12.5"/>
+                            <rect key="frame" x="6" y="0.0" width="308" height="12.5"/>
                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="9"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -26,7 +26,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Ewf-z3-ncA" secondAttribute="trailing" constant="6" id="LJF-aR-5OA"/>
-                        <constraint firstItem="Ewf-z3-ncA" firstAttribute="centerY" secondItem="YWN-MI-vhk" secondAttribute="centerY" id="TG1-3F-el1"/>
+                        <constraint firstItem="Ewf-z3-ncA" firstAttribute="top" secondItem="YWN-MI-vhk" secondAttribute="top" id="eGJ-ld-Zz6"/>
                         <constraint firstItem="Ewf-z3-ncA" firstAttribute="leading" secondItem="YWN-MI-vhk" secondAttribute="leading" constant="6" id="lr2-We-6wo"/>
                     </constraints>
                 </view>

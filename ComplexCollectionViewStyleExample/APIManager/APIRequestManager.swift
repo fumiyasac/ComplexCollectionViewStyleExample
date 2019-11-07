@@ -16,14 +16,16 @@ enum APIError : Error {
 }
 
 protocol APIRequestManagerProtocol {
+    func getKeywords() -> Future<[Keyword], APIError>
     func getArticles() -> Future<[Article], APIError>
 }
 
 class APIRequestManager {
+
     // MEMO: MockサーバーへのURLに関する情報
     private static let host = "http://localhost:3000/api/mock"
     private static let version = "v1"
-    private static let path = "meals"
+    private static let path = "gourmet"
 
     private let session = URLSession.shared
 
@@ -37,9 +39,9 @@ class APIRequestManager {
 
     enum EndPoint: String {
 
-        case featureBanner = "feature_banner"
-        case keyword = "keyword"
-        case newArrival = "new_arrival"
+        case featureBanner = "feature_banners"
+        case keyword = "keywords"
+        case newArrival = "new_arrivals"
         case article = "articles"
 
         func getBaseUrl() -> String {
@@ -54,17 +56,22 @@ extension APIRequestManager: APIRequestManagerProtocol {
 
     // MARK: - Function
 
+    func getKeywords() -> Future<[Keyword], APIError> {
+        let keywordsAPIRequest = makeUrlForGetRequest(EndPoint.keyword.getBaseUrl())
+        return handleSessionTask(Keyword.self, request: keywordsAPIRequest)
+    }
+
     func getArticles() -> Future<[Article], APIError> {
-        let articleAPIRequest = self.makeUrlRequest(EndPoint.article.getBaseUrl())
-        return handleSessionTask(Article.self, request: articleAPIRequest)
+        let articlesAPIRequest = makeUrlForGetRequest(EndPoint.article.getBaseUrl())
+        return handleSessionTask(Article.self, request: articlesAPIRequest)
     }
 
     // MARK: - Private Function
 
     private func handleSessionTask<T: Decodable & Hashable>(_ dataType: T.Type, request: URLRequest) -> Future<[T], APIError> {
         return Future { promise in
-            let task = self.session.dataTask(with: request) { data, response, error in
 
+            let task = self.session.dataTask(with: request) { data, response, error in
                 // MEMO: レスポンス形式やステータスコードを元にしたエラーハンドリングをする
                 if let error = error {
                     promise(.failure(APIError.error(error.localizedDescription)))
@@ -78,8 +85,7 @@ extension APIRequestManager: APIRequestManagerProtocol {
                     promise(.failure(APIError.error("Error: missing response data")))
                     return
                 }
-
-                // MEMO: 取得できたレスポンスを引数で指定した型の配列で受け取る
+                // MEMO: 取得できたレスポンスを引数で指定した型の配列に変換して受け取る
                 do {
                     let hashableObjects = try JSONDecoder().decode([T].self, from: data)
                     promise(.success(hashableObjects))
@@ -91,7 +97,7 @@ extension APIRequestManager: APIRequestManagerProtocol {
         }
     }
 
-    private func makeUrlRequest(_ urlString: String) -> URLRequest {
+    private func makeUrlForGetRequest(_ urlString: String) -> URLRequest {
         guard let url = URL(string: urlString) else {
             fatalError()
         }

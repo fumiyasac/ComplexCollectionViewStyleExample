@@ -15,9 +15,10 @@ final class NewArrivalCollectionHeaderView: UICollectionReusableView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
-    // MARK: - Initializer
+    // MARK: - Function
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }    
+    func setHeader(title: String, description: String) {
+        titleLabel.text = title
+        descriptionLabel.text = description
+    }
 }

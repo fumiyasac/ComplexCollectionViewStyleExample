@@ -7,12 +7,41 @@
 //
 
 import UIKit
+import Nuke
 
 final class ArticleCollectionViewCell: UICollectionViewCell {
 
-    // MARK: - Initializer
+    @IBOutlet weak private var thumbnailImageView: UIImageView!
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var summaryLabel: UILabel!
+    
+    // MARK: - Function
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func setCell(_ article: Article) {
+        // MEMO: Nukeでの画像キャッシュと表示に関するオプション設定
+        let imageDisplayOptions = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
+        if let imageUrl = URL(string: article.imageUrl) {
+            Nuke.loadImage(with: imageUrl, options: imageDisplayOptions, into: thumbnailImageView)
+        }
+        titleLabel.attributedText = NSAttributedString(string: article.title, attributes: getLabelLineSpacingAttributes(5.0))
+        summaryLabel.attributedText = NSAttributedString(string: article.summary, attributes: getLabelLineSpacingAttributes(6.0))
+    }
+
+    // MARK: - Private Function
+
+    // 該当のUILabelに付与する属性を設定する
+    private func getLabelLineSpacingAttributes(_ lineSpacing: CGFloat) -> [NSAttributedString.Key : Any] {
+
+        // 行間に関する設定をする
+        // MEMO: lineBreakModeの指定しないとはみ出た場合の「...」が出なくなる
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.lineBreakMode = .byTruncatingTail
+
+        // 上記で定義した行間・フォント・色を属性値として設定する
+        var attributes: [NSAttributedString.Key : Any] = [:]
+        attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
+
+        return attributes
     }
 }

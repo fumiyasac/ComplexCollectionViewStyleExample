@@ -10,11 +10,29 @@ import UIKit
 
 final class KeywordCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak private var titleLabel: UILabel!
 
     // MARK: - Initializer
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        setupKeywordCollectionViewCell()
+    }
+
+    // MARK: - Initializer
+
+    func setCell(_ keyword: Keyword) {
+        titleLabel.text = keyword.keyword
+    }
+
+    // MARK: - Private Function
+
+    func setupKeywordCollectionViewCell() {
+        titleLabel.textColor = UIColor(code: "ff9900")
+        titleLabel.superview?.layer.masksToBounds = true
+        titleLabel.superview?.layer.cornerRadius = 10.0
+        titleLabel.superview?.layer.borderWidth = 2.5
+        titleLabel.superview?.layer.borderColor = UIColor(code: "ff9900").cgColor
     }
 }

@@ -1,20 +1,16 @@
 PODS:
-  - FontAwesome.swift (1.8.2)
   - Nuke (8.3.1)
 
 DEPENDENCIES:
-  - FontAwesome.swift
   - Nuke
 
 SPEC REPOS:
   trunk:
-    - FontAwesome.swift
     - Nuke
 
 SPEC CHECKSUMS:
-  FontAwesome.swift: 7938d6a03113ff3f39001bde7f50be8a0903d605
   Nuke: 85fb80f8df0cb26c28d2f4e0cb7fb93bcd6548d3
 
-PODFILE CHECKSUM: 72a65b3d208b9f886a9dabda2fbee9178daed5df
+PODFILE CHECKSUM: d6a679474ffde0628c13d1a4dd6ed9157934718f
 
 COCOAPODS: 1.8.4

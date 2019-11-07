@@ -8,11 +8,4 @@
 
 import UIKit
 
-final class KeywordCollectionFooterView: UICollectionReusableView {
-
-    // MARK: - Initializer
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }    
-}
+final class KeywordCollectionFooterView: UICollectionReusableView {}

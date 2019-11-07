@@ -28,6 +28,7 @@
 		DE7F4674236EB814001203DB /* NewArrivalCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7F4672236EB814001203DB /* NewArrivalCollectionHeaderView.xib */; };
 		DE7F4678236EB93B001203DB /* NewArrivalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F4676236EB93B001203DB /* NewArrivalCollectionViewCell.swift */; };
 		DE7F4679236EB93B001203DB /* NewArrivalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7F4677236EB93B001203DB /* NewArrivalCollectionViewCell.xib */; };
+		DE9C91022373F0C000E3A1BE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C91012373F0C000E3A1BE /* UIColorExtension.swift */; };
 		DEB73AC0236D608C00C9E3BB /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73ABE236D608C00C9E3BB /* ArticleCollectionViewCell.swift */; };
 		DEB73AC1236D608C00C9E3BB /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB73ABF236D608C00C9E3BB /* ArticleCollectionViewCell.xib */; };
 		DEB73AC3236D60FA00C9E3BB /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73AC2236D60FA00C9E3BB /* UICollectionViewExtension.swift */; };
@@ -84,6 +85,7 @@
 		DE7F4672236EB814001203DB /* NewArrivalCollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewArrivalCollectionHeaderView.xib; sourceTree = "<group>"; };
 		DE7F4676236EB93B001203DB /* NewArrivalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArrivalCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE7F4677236EB93B001203DB /* NewArrivalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewArrivalCollectionViewCell.xib; sourceTree = "<group>"; };
+		DE9C91012373F0C000E3A1BE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DEB73ABE236D608C00C9E3BB /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEB73ABF236D608C00C9E3BB /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEB73AC2236D60FA00C9E3BB /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				DEB73AC4236D612900C9E3BB /* NSObjectProtocolExtension.swift */,
 				DEB73AC2236D60FA00C9E3BB /* UICollectionViewExtension.swift */,
+				DE9C91012373F0C000E3A1BE /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				DE2EB904236D4D0000F8AD83 /* CustomViewBase.swift in Sources */,
 				DED5ADC5236B09780092108B /* SceneDelegate.swift in Sources */,
 				DED04A4C236D6A0000F6536F /* PhotoCollectionViewCell.swift in Sources */,
+				DE9C91022373F0C000E3A1BE /* UIColorExtension.swift in Sources */,
 				DEB73AC5236D612900C9E3BB /* NSObjectProtocolExtension.swift in Sources */,
 				DE7F4662236E4821001203DB /* KeywordCollectionHeaderView.swift in Sources */,
 			);

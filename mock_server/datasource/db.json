@@ -1,127 +1,109 @@
 {
-    "get_meal_list": [
+    "get_articles": [
         {
             "id": 1,
-            "category_number": 1,
             "title": "朝食にゆっくりと味わって食べたいサンドイッチ",
             "summary": "気持ち良い朝の目覚めにぴったり。ルノアールのサンドイッチが食べたいなぁ。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample1.jpg"
         },
         {
             "id": 2,
-            "category_number": 1,
             "title": "A5ランクの国産牛を使った最強のビーフステーキ",
             "summary": "これこそまさに最高の贅沢。いいことがあったから今夜は食べよう。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample2.jpg"
         },
         {
             "id": 3,
-            "category_number": 1,
             "title": "紹興酒との最高のおともになる中華料理の前菜",
             "summary": "中華料理はいつも僕のテンションを上げてくれる。前菜だけでも魅力的である。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample3.jpg"
         },
         {
             "id": 4,
-            "category_number": 1,
             "title": "サーモンとクリームチーズのクラッカー",
             "summary": "生のチースは僕はとっても苦手ですが、サーモンとクリームチーズの組み合わせは好きです。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample4.jpg"
         },
         {
             "id": 5,
-            "category_number": 1,
             "title": "エビとカニをたくさん使った豪華なピザ",
             "summary": "みんなで食べるピザも美味しいですね。勉強会などでもよく出てくるのでどんなものに出会えるか楽しみです。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample5.jpg"
         },
         {
             "id": 6,
-            "category_number": 1,
             "title": "オマール海老のビスク的な何かのスープ",
             "summary": "前菜として出てきても、バケットを浸けて食べても美味しい。スープが美味しいと次もなぜか期待してしまう。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample6.jpg"
         },
         {
             "id": 7,
-            "category_number": 1,
             "title": "東欧周辺でよく食べられているであろうジャガイモ料理",
             "summary": "寒い地方ではごくごく当たり前なジャガイモ料理ではありますが向こうでは主食になるんですね。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample7.jpg"
         },
         {
             "id": 8,
-            "category_number": 2,
             "title": "ボリュームがめっちゃ多いヨーグルトドリンク",
             "summary": "めっちゃ美味しそうではあるんですが、おやつには多すぎるし朝食でも多すぎる。でもグイッと飲みたい。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample8.jpg"
         },
         {
             "id": 9,
-            "category_number": 2,
             "title": "なぜか美味しそうでついつい買って食べてしまうタコス",
             "summary": "軽食や朝食で食べたいと思うタコス。毎日ではないけど1つなら朝食にもちょうどいい量ですね。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample9.jpg"
         },
         {
             "id": 10,
-            "category_number": 2,
             "title": "ランチでいっぱい食べたい時にオススメな豚バラグリルの定食",
             "summary": "定食でよく見かける豚バラの焼肉だけども、こんな感じでランチで出てくればめっちゃ豪華なご馳走である。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample10.jpg"
         },
         {
             "id": 11,
-            "category_number": 2,
             "title": "マヨネーズと明太子の組み合わせが嬉しいどんぶりもの",
             "summary": "マヨネーズと明太子の組み合わせが相性抜群で手応えも食べ応えもバッチリな一品です。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample11.jpg"
         },
         {
             "id": 12,
-            "category_number": 2,
             "title": "風格あるバナナチョコレートを使ったデザート",
             "summary": "これこそまさに最高の贅沢。いいことがあったから今夜は食べよう。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample12.jpg"
         },
         {
             "id": 13,
-            "category_number": 2,
             "title": "中南米エリアの定番料理トルティーヤ",
             "summary": "誠に申し訳ございません。「タコス」と「トルティーヤ」の違いがイマイチよくわかっておりません...。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample13.jpg"
         },
         {
             "id": 14,
-            "category_number": 2,
             "title": "ワインにぴったりなおつまみの盛り合わせ",
             "summary": "生のチースは僕はとっても苦手ですが、サーモンとクリームチーズの組み合わせは好きです。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample14.jpg"
         },
         {
             "id": 15,
-            "category_number": 3,
             "title": "僕の大好物の1つでもある味噌ラーメン",
             "summary": "味噌ラーメンとはなんとも不思議だ。元々は違う文化から発展した食べ物であるにも関わらず、日本文化の色が根強く残っていると感じる。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample15.jpg"
         },
         {
             "id": 16,
-            "category_number": 3,
             "title": "小ぶりで可愛らしいけど美味しいエビフライ",
             "summary": "夕食のおかずに出てくると思わずテンションが上がるラインナップですね。子供も大人も嬉しくなるメニューです。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample16.jpg"
         },
         {
             "id": 17,
-            "category_number": 3,
             "title": "家庭的なおかずのような焼肉料理",
             "summary": "人類はいつからご馳走を焼肉とするようになってしまったのか...。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample17.jpg"
         },
         {
             "id": 18,
-            "category_number": 3,
             "title": "高級感としずる感が半端ではないステーキ",
             "summary": "ご馳走と呼ぶにふさわしいステーキですね。思わず誘惑にぼろ負けしそうである。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample18.jpg",
@@ -129,147 +111,126 @@
         },
         {
             "id": 19,
-            "category_number": 3,
             "title": "韓国料理の煮込み料理の定番スンドゥブチゲ",
             "summary": "冬の寒い季節には最高ですね。体も温まるし栄養もたっぷりなので助かります。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample19.jpg"
         },
         {
             "id": 20,
-            "category_number": 3,
             "title": "中華料理の定番メニューにも関わらす奥深い炒飯",
             "summary": "家で作って食べても、冷凍食品でも、お店で食べてもあまりハズレがない気がします。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample20.jpg"
         },
         {
             "id": 21,
-            "category_number": 3,
             "title": "シンプルに美味そうなエビのバター炒め",
             "summary": "ビールのおつまみにもご飯のおかずの一皿にもぴったりのシンプルな一皿ですね。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample21.jpg"
         },
         {
             "id": 22,
-            "category_number": 4,
             "title": "韓国の滋養たっぷりな薬膳メニュー参鶏湯",
             "summary": "薬膳要素もたっぷり含まれているので健康にも抜群な人気メニューですね。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample22.jpg"
         },
         {
             "id": 23,
-            "category_number": 4,
             "title": "豪華なメインディッシュにぴったりのラムチョップ",
             "summary": "丁寧に焼かれたラムのローストは本当に美味しいですよね。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample23.jpg"
         },
         {
             "id": 24,
-            "category_number": 4,
             "title": "シンプルだけど美味しいタコス1皿盛り合わせ",
             "summary": "メキシコ料理はお酒にもマッチするし、印象とは裏腹に辛さが本当に心地よいですね。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample24.jpg"
         },
         {
             "id": 25,
-            "category_number": 4,
             "title": "ベリーが乗った可愛いパンケーキ",
             "summary": "家のホットケーキミックスで作るものとは桁違いの美味しさとフワフワ感を感じてみよ。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample25.jpg"
         },
         {
             "id": 26,
-            "category_number": 4,
             "title": "豪華海鮮丼づくしのラインナップ",
             "summary": "彩り豊かで新鮮な海の幸をこれでもかと言わんばかりに盛り込んだものは宝石箱のごたる。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample26.jpg"
         },
         {
             "id": 27,
-            "category_number": 4,
             "title": "ひとくちサイズの可愛いハンバーガー",
             "summary": "1個の大きさは小さいけれども、味は本物なのは間違いない！",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample27.jpg"
         },
         {
             "id": 28,
-            "category_number": 4,
             "title": "あさりの美味しさがたっぷりのボンゴレパスタ",
             "summary": "濃厚な貝特有の美味しさをシンプルにかつダイレクトに味わえるメニューです。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample28.jpg"
         },
         {
             "id": 29,
-            "category_number": 5,
             "title": "みんな大好き間違いないポークジンジャー",
             "summary": "ご飯のおかずには最高なポークジンジャーですね。これこそ日本が作り出した最高のおかず！",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample29.jpg"
         },
         {
             "id": 30,
-            "category_number": 5,
             "title": "なかなか味わえない地アジの握り寿司",
             "summary": "そういえばなかなか刺身でアジを食べる機会は少ない。何気ないけど将来的には高級魚になってしまうのかな？",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample30.jpg"
         },
         {
             "id": 31,
-            "category_number": 5,
             "title": "おつまみの定番大盛りフライドポテト",
             "summary": "定番中の定番のファストメニューではあるけれど手元にあるとついつい取っちゃうヤツですね。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample31.jpg"
         },
         {
             "id": 32,
-            "category_number": 5,
             "title": "チーズと牡蠣の相性が良いグラタン",
             "summary": "牡蠣も本当に日本でもポピュラーで調理バリエーションが多いので本当に嬉しいです。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample32.jpg"
         },
         {
             "id": 33,
-            "category_number": 5,
             "title": "自分が一番好きなケーキでもあるティラミス",
             "summary": "甘さがきつくないマスカルポーネチーズの美味しさが際立つ優しいケーキだと思います。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample33.jpg"
         },
         {
             "id": 34,
-            "category_number": 5,
             "title": "おやつにテンションが上がるシュークリーム",
             "summary": "子供だった頃に憧れていたおやつは僕の場合はシュークリームでした。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample34.jpg"
         },
         {
             "id": 35,
-            "category_number": 5,
             "title": "甘くて心がおどりそうなチョコレートムース",
             "summary": "チョコレートの濃厚な甘さと滑らかな口当たりがポイント。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample35.jpg"
         },
         {
             "id": 36,
-            "category_number": 6,
             "title": "めっちゃ辛いけどその味が病みつきになるタイ風レッドカレー",
             "summary": "野菜もたっぷりで栄養満点のカレーに激辛スパイスが加わってご飯がとまらない美味しさです。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample36.jpg"
         },
         {
             "id": 37,
-            "category_number": 6,
             "title": "見た目からしても食べるのが勿体無いキノコのマリネ",
             "summary": "ヘルシーなとれたてのキノコに旨味を引き出すドレッシングを合わせればあら不思議！",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample37.jpg"
         },
         {
             "id": 38,
-            "category_number": 6,
             "title": "握り寿司と巻き寿司の盛り合わせ10種類",
             "summary": "ご馳走メニューにふさわしいラインナップを揃えた豪華バージョン。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample38.jpg"
         },
         {
             "id": 39,
-            "category_number": 6,
             "title": "朝食の一品にもあると嬉しい生サラミ",
             "summary": "ハムともソーセージとも違うパンにも相性が抜群な一品です。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample39.jpg"
@@ -280,6 +241,48 @@
             "title": "いちごのちょっと変わったショートケーキ",
             "summary": "子供の頃に誰もが憧れていたいちごのショートケーキ。",
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/stocks/sample40.jpg"
+        }
+    ],
+    "get_keywords": [
+        {
+            "id": 1,
+            "keyword": "タピオカ"
+        },
+        {
+            "id": 2,
+            "keyword": "バスク風チーズケーキ"
+        },
+        {
+            "id": 3,
+            "keyword": "チーズタッカルビ"
+        },
+        {
+            "id": 4,
+            "keyword": "高級食パン"
+        },
+        {
+            "id": 5,
+            "keyword": "サバ缶"
+        },
+        {
+            "id": 6,
+            "keyword": "パネチキン"
+        },
+        {
+            "id": 7,
+            "keyword": "バナナジュース"
+        },
+        {
+            "id": 8,
+            "keyword": "お茶ラテ"
+        },
+        {
+            "id": 9,
+            "keyword": "ハリッサ"
+        },
+        {
+            "id": 10,
+            "keyword": "ラタトゥイユ"
         }
     ],
     "get_recommend_list": [

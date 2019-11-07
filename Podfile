@@ -7,5 +7,4 @@ target 'ComplexCollectionViewStyleExample' do
 
   # Pods for ComplexCollectionViewStyleExample
   pod 'Nuke'
-  pod 'FontAwesome.swift'
 end

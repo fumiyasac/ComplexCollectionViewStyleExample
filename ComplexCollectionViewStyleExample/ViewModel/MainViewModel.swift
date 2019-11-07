@@ -21,7 +21,6 @@ final class MainViewModel {
     // MARK: - @Published
     
     // MEMO: このコードではNSDiffableDataSourceSnapshotの差分更新部分で利用する
-
     @Published private(set) var featuredBanners: [FeaturedBanner] = []
     @Published private(set) var keywords: [Keyword] = []
     @Published private(set) var newArrivals: [NewArrival] = []
@@ -37,30 +36,49 @@ final class MainViewModel {
 
     deinit {
         articlesCancellable?.cancel()
+        keywordsCancellable?.cancel()
     }
 
     // MARK: - Function
 
-    func fetchArticles() {
-
-        articlesCancellable = api.getArticles()
+    func fetchKeywords() {
+        keywordsCancellable = api.getKeywords()
             .receive(on: RunLoop.main)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
-
                     // MEMO: 値取得成功時（※本当は厳密にエラーハンドリングする必要がある）
                     case .finished:
                         print("finished: \(completion)")
-
                     // MEMO: エラー時（※本当は厳密にエラーハンドリングする必要がある）
                     case .failure(let error):
                         print("error: \(error.localizedDescription)")
                     }
                 },
-                receiveValue: { [unowned self] hashableObjects in
+                receiveValue: { [weak self] hashableObjects in
                     print(hashableObjects)
-                    self.articles = hashableObjects
+                    self?.keywords = hashableObjects
+                }
+            )
+    }
+
+    func fetchArticles() {
+        articlesCancellable = api.getArticles()
+            .receive(on: RunLoop.main)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    // MEMO: 値取得成功時（※本当は厳密にエラーハンドリングする必要がある）
+                    case .finished:
+                        print("finished: \(completion)")
+                    // MEMO: エラー時（※本当は厳密にエラーハンドリングする必要がある）
+                    case .failure(let error):
+                        print("error: \(error.localizedDescription)")
+                    }
+                },
+                receiveValue: { [weak self] hashableObjects in
+                    print(hashableObjects)
+                    self?.articles = hashableObjects
                 }
             )
     }

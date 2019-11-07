@@ -11,7 +11,6 @@ import Foundation
 struct Article: Hashable, Decodable {
 
     let id: Int
-    let categoryNumber: Int
     let title: String
     let summary: String
     let imageUrl: String
@@ -20,7 +19,6 @@ struct Article: Hashable, Decodable {
 
     private enum Keys: String, CodingKey {
         case id
-        case categoryNumber = "category_number"
         case title
         case summary
         case imageUrl = "image_url"
@@ -35,7 +33,6 @@ struct Article: Hashable, Decodable {
 
         // JSONの配列内の要素にある値をDecodeして初期化する
         self.id = try container.decode(Int.self, forKey: .id)
-        self.categoryNumber = try container.decode(Int.self, forKey: .categoryNumber)
         self.title = try container.decode(String.self, forKey: .title)
         self.summary = try container.decode(String.self, forKey: .summary)
         self.imageUrl = try container.decode(String.self, forKey: .imageUrl)
