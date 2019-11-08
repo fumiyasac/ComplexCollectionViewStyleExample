@@ -19,8 +19,10 @@ Step1. 「知識ベースとイメージで良いのでどんなものかを知�
 ＜基本を理解する上で参考にした資料集＞
 ● 時代の変化に応じて進化するCollectionView ~Compositional LayoutsとDiffable Data Sources~
 https://qiita.com/shiz/items/a6032543a237bf2e1d19
-●
 ＜実装を試していく過程で参考にした資料集＞
+● Move your cells left to right, up and down on iOS 13
+https://medium.com/shopback-engineering/move-your-cells-left-to-right-up-and-down-on-ios-13-part-1-1a5e010f48f9
+https://medium.com/shopback-engineering/move-your-cells-left-to-right-up-and-down-on-ios-13-part-2-fbc430802227
 
 ----------
 Point2: レイアウトの組み方を知る
@@ -61,6 +63,8 @@ final class MainViewController: UIViewController {
 
     // MARK: - Variables
 
+    private var cancellables: [AnyCancellable] = []
+
     // MEMO: API経由の非同期通信からデータを取得するためのViewModel
     private let viewModel: MainViewModel = MainViewModel(api: APIRequestManager.shared)
 
@@ -93,13 +97,29 @@ final class MainViewController: UIViewController {
     // MARK: - @IBOutlet
 
     @IBOutlet private weak var collectionView: UICollectionView!
-    
+
+    // MARK: - deinit
+
+    deinit {
+        cancellables.forEach { $0.cancel() }
+    }
+
     // MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCollectionView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // MEMO: ViewModelのInputsを経由したAPIでのデータ取得処理を実行する
+        viewModel.inputs.fetchFeaturedBannersTrigger.send()
+        viewModel.inputs.fetchKeywordsTrigger.send()
+        viewModel.inputs.fetchNewArrivalsTrigger.send()
+        viewModel.inputs.fetchArticlesTrigger.send()
     }
 
     // MARK: - Private Function (for UICollectionView Setup)
@@ -129,22 +149,21 @@ final class MainViewController: UIViewController {
             switch model {
             case let model as FeaturedBanner:
                 let cell = collectionView.dequeueReusableCustomCell(with: FeaturedCollectionViewCell.self, indexPath: indexPath)
-                cell.titleLabel.text = model.title
-                cell.dateStringLabel.text = model.dateString
+                cell.setCell(model)
                 return cell
             case let model as Keyword:
                 let cell = collectionView.dequeueReusableCustomCell(with: KeywordCollectionViewCell.self, indexPath: indexPath)
                 cell.setCell(model)
                 return cell
             case let model as NewArrival:
-                // MEMO: 3で割って1余るインデックス値の場合だけ
+                // MEMO: 3で割って1余るインデックス値の場合だけ大きな画像になる
                 if model.id % 3 == 1 {
                     let cell = collectionView.dequeueReusableCustomCell(with: NewArrivalCollectionViewCell.self, indexPath: indexPath)
-                    cell.indexLabel.text = String(model.id)
+                    cell.setCell(model, index: indexPath.row + 1)
                     return cell
                 } else {
                     let cell = collectionView.dequeueReusableCustomCell(with: PhotoCollectionViewCell.self, indexPath: indexPath)
-                    cell.indexLabel.text = String(model.id)
+                    cell.setCell(model, index: indexPath.row + 1)
                     return cell
                 }
             case let model as Article:
@@ -176,10 +195,6 @@ final class MainViewController: UIViewController {
             case MainSection.NewArrivalArticles.getSectionValue():
                 if kind == UICollectionView.elementKindSectionHeader {
                     let header = collectionView.dequeueReusableCustomHeaderView(with: NewArrivalCollectionHeaderView.self, indexPath: indexPath)
-                    let _ = self.viewModel.$articles
-                        .subscribe(on: RunLoop.main)
-                        .sink
-                    
                     header.setHeader(
                         title: "新着メニューの紹介",
                         description: "アプリでご紹介しているお店の新着メニューを紹介しています。新しいお店の発掘やさらなる行きつけのお店の魅力を見つけられるかもしれません。"
@@ -201,28 +216,27 @@ final class MainViewController: UIViewController {
             return nil
         }
 
+        // MEMO: NSDiffableDataSourceSnapshotの初期化
         snapshot = NSDiffableDataSourceSnapshot<MainSection, AnyHashable>()
         snapshot.appendSections(MainSection.allCases)
-
-        let featuredBanners: [FeaturedBanner] = (0..<6).map {
-            let id = $0 + 1
-            return FeaturedBanner(id: id, title: "Feature Banner No.\(id)", dateString: "2019.99.99")
+        for mainSection in MainSection.allCases {
+            snapshot.appendItems([], toSection: mainSection)
         }
-        snapshot.appendItems(featuredBanners, toSection: .FeaturedArticles)
-
-        let newArrival: [NewArrival] = (0..<6).map {
-            let id = $0 + 1
-            return NewArrival(id: id)
-        }
-        snapshot.appendItems(newArrival, toSection: .NewArrivalArticles)
-
-        snapshot.appendItems([], toSection: .RecentKeywords)
-        snapshot.appendItems([], toSection: .RegularArticles)
         dataSource.apply(snapshot, animatingDifferences: false)
 
-        // 2. キーワードデータの取得とNSDiffableDataSourceSnapshotの入れ替え処理
-        let _ = viewModel.fetchKeywords()
-        let _ = viewModel.$keywords
+        // 1. ViewModelのOutputsを経由した特集データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+        viewModel.outputs.featuredBanners
+            .subscribe(on: RunLoop.main)
+            .sink(
+                receiveValue: { [weak self] featuredBanners in
+                    guard let self = self else { return }
+                    self.snapshot.appendItems(featuredBanners, toSection: .FeaturedArticles)
+                    self.dataSource.apply(self.snapshot, animatingDifferences: false)
+                }
+            )
+            .store(in: &cancellables)
+        // 2. ViewModelのOutputsを経由したキーワードデータの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+        viewModel.outputs.keywords
             .subscribe(on: RunLoop.main)
             .sink(
                 receiveValue: { [weak self] keywords in
@@ -231,9 +245,20 @@ final class MainViewController: UIViewController {
                     self.dataSource.apply(self.snapshot, animatingDifferences: false)
                 }
             )
-        // 4. 記事データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
-        let _ = viewModel.fetchArticles()
-        let _ = viewModel.$articles
+            .store(in: &cancellables)
+        // 3. ViewModelのOutputsを経由した新着データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+        viewModel.outputs.newArrivals
+            .subscribe(on: RunLoop.main)
+            .sink(
+                receiveValue: { [weak self] newArrivals in
+                    guard let self = self else { return }
+                    self.snapshot.appendItems(newArrivals, toSection: .NewArrivalArticles)
+                    self.dataSource.apply(self.snapshot, animatingDifferences: false)
+                }
+            )
+            .store(in: &cancellables)
+        // 4. ViewModelのOutputsを経由した記事データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+        viewModel.outputs.articles
             .subscribe(on: RunLoop.main)
             .sink(
                 receiveValue: { [weak self] articles in
@@ -242,6 +267,7 @@ final class MainViewController: UIViewController {
                     self.dataSource.apply(self.snapshot, animatingDifferences: false)
                 }
             )
+            .store(in: &cancellables)
     }
 
     // MARK: - Private Function (for UICollectionViewCompositionalLayout Setup)

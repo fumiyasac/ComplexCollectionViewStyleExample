@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0aT-fH-oxR">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0aT-fH-oxR">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
@@ -58,6 +58,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="indexLabel" destination="d6a-ZJ-EiD" id="pfd-ui-Bbq"/>
+                <outlet property="thumbnailImageView" destination="0aT-fH-oxR" id="vcy-AI-re4"/>
+                <outlet property="titleLabel" destination="iGJ-xw-0va" id="dAZ-tD-ayE"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="132.58928571428572"/>
         </collectionViewCell>

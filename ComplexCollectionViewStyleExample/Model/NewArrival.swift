@@ -11,22 +11,19 @@ import Foundation
 struct NewArrival: Hashable, Decodable {
 
     let id: Int
+    let title: String
+    let imageUrl: String
 
     // MARK: - Enum
 
-    /*
     private enum Keys: String, CodingKey {
         case id
+        case title
+        case imageUrl = "image_url"
     }
-    */
 
     // MARK: - Initializer
 
-    init(id: Int) {
-        self.id = id
-    }
-
-    /*
     init(from decoder: Decoder) throws {
 
         // JSONの配列内の要素を取得する
@@ -34,8 +31,9 @@ struct NewArrival: Hashable, Decodable {
 
         // JSONの配列内の要素にある値をDecodeして初期化する
         self.id = try container.decode(Int.self, forKey: .id)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.imageUrl = try container.decode(String.self, forKey: .imageUrl)
     }
-    */
 
     // MARK: - Hashable
 

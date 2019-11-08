@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ags-Tj-w9t">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ags-Tj-w9t">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
@@ -59,6 +59,8 @@
             <size key="customSize" width="180" height="236"/>
             <connections>
                 <outlet property="indexLabel" destination="dNb-dg-iCK" id="LAy-Hq-qhX"/>
+                <outlet property="thumbnailImageView" destination="ags-Tj-w9t" id="C4r-3S-NRb"/>
+                <outlet property="titleLabel" destination="iHm-7K-CoS" id="nb8-MX-kXD"/>
             </connections>
             <point key="canvasLocation" x="226.08695652173915" y="86.383928571428569"/>
         </collectionViewCell>

@@ -13,7 +13,8 @@ const middlewares = jsonServer.defaults();
 const rewrite_rules = jsonServer.rewriter({
     "/api/mock/v1/gourmet/articles" : "/get_articles",
     "/api/mock/v1/gourmet/keywords" : "/get_keywords",
-    "/api/mock/v1/gourmet/recommend" : "/get_recommend_list",
+    "/api/mock/v1/gourmet/new_arrivals" : "/get_new_arrivals",
+    "/api/mock/v1/gourmet/featured_banners" : "/get_featured_banners",
 });
 
 // リクエストのルールを設定する

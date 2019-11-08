@@ -56,6 +56,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="dateStringLabel" destination="41G-Xy-X3k" id="MNM-Io-yvS"/>
+                <outlet property="thumbnailImageView" destination="ZyA-hb-hgy" id="QOS-Tq-LTa"/>
                 <outlet property="titleLabel" destination="tTg-XU-qdB" id="IFm-YY-P8d"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="75"/>

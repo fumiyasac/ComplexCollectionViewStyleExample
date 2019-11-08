@@ -12,6 +12,7 @@ struct FeaturedBanner: Hashable, Decodable {
     
     let id: Int
     let title: String
+    let imageUrl: String
     let dateString: String
 
     // MARK: - Enum
@@ -19,15 +20,22 @@ struct FeaturedBanner: Hashable, Decodable {
     private enum Keys: String, CodingKey {
         case id
         case title
-        case dateString
+        case imageUrl = "image_url"
+        case dateString = "date_string"
     }
 
     // MARK: - Initializer
 
-    init(id: Int, title: String, dateString: String) {
-        self.id = id
-        self.title = title
-        self.dateString = dateString
+    init(from decoder: Decoder) throws {
+
+        // JSONの配列内の要素を取得する
+        let container = try decoder.container(keyedBy: Keys.self)
+
+        // JSONの配列内の要素にある値をDecodeして初期化する
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.imageUrl = try container.decode(String.self, forKey: .imageUrl)
+        self.dateString = try container.decode(String.self, forKey: .dateString)
     }
 
     // MARK: - Hashable
