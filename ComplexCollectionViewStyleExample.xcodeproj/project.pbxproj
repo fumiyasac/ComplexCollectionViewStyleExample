@@ -12,6 +12,8 @@
 		DE50993A2370573A00CDAE25 /* ArticleCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5099382370573A00CDAE25 /* ArticleCollectionHeaderView.xib */; };
 		DE50993C23705CD000CDAE25 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50993B23705CD000CDAE25 /* Article.swift */; };
 		DE50993E2370675E00CDAE25 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50993D2370675E00CDAE25 /* APIRequestManager.swift */; };
+		DE73DE6F237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE73DE6D237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.swift */; };
+		DE73DE70237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE73DE6E237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.xib */; };
 		DE7F4646236E1BCF001203DB /* FeaturedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F4644236E1BCF001203DB /* FeaturedCollectionViewCell.swift */; };
 		DE7F4647236E1BCF001203DB /* FeaturedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7F4645236E1BCF001203DB /* FeaturedCollectionViewCell.xib */; };
 		DE7F464A236E23BA001203DB /* FeaturedBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F4649236E23BA001203DB /* FeaturedBanner.swift */; };
@@ -43,6 +45,8 @@
 		DED5ADCF236B09830092108B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED5ADCD236B09830092108B /* LaunchScreen.storyboard */; };
 		DED5ADDA236B09830092108B /* ComplexCollectionViewStyleExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5ADD9236B09830092108B /* ComplexCollectionViewStyleExampleTests.swift */; };
 		DED5ADE5236B09830092108B /* ComplexCollectionViewStyleExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5ADE4236B09830092108B /* ComplexCollectionViewStyleExampleUITests.swift */; };
+		DEDECAC82377A4F7000F5C96 /* UILabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDECAC72377A4F7000F5C96 /* UILabelDecorator.swift */; };
+		DEDECACA2377A77C000F5C96 /* FeaturedInterview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDECAC92377A77C000F5C96 /* FeaturedInterview.swift */; };
 		E08D667821052A4D3162367D /* Pods_ComplexCollectionViewStyleExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F599BB1D5F3FBD62E958838C /* Pods_ComplexCollectionViewStyleExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,8 @@
 		DE5099382370573A00CDAE25 /* ArticleCollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionHeaderView.xib; sourceTree = "<group>"; };
 		DE50993B23705CD000CDAE25 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DE50993D2370675E00CDAE25 /* APIRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		DE73DE6D237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedInterviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE73DE6E237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedInterviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE7F4644236E1BCF001203DB /* FeaturedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE7F4645236E1BCF001203DB /* FeaturedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE7F4649236E23BA001203DB /* FeaturedBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedBanner.swift; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 		DED5ADE0236B09830092108B /* ComplexCollectionViewStyleExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComplexCollectionViewStyleExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED5ADE4236B09830092108B /* ComplexCollectionViewStyleExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexCollectionViewStyleExampleUITests.swift; sourceTree = "<group>"; };
 		DED5ADE6236B09830092108B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEDECAC72377A4F7000F5C96 /* UILabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDecorator.swift; sourceTree = "<group>"; };
+		DEDECAC92377A77C000F5C96 /* FeaturedInterview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedInterview.swift; sourceTree = "<group>"; };
 		E60B56508A68C41026B3431A /* Pods-ComplexCollectionViewStyleExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComplexCollectionViewStyleExample.debug.xcconfig"; path = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample.debug.xcconfig"; sourceTree = "<group>"; };
 		F599BB1D5F3FBD62E958838C /* Pods_ComplexCollectionViewStyleExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComplexCollectionViewStyleExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7714CB975A0CA7C94C44677 /* Pods-ComplexCollectionViewStyleExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComplexCollectionViewStyleExample.release.xcconfig"; path = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +186,7 @@
 				DE5099362370570E00CDAE25 /* ArticleCollectionHeaderView */,
 				DEB73ABD236D606D00C9E3BB /* ArticleCollectionViewCell */,
 				DE7F4643236E1BAE001203DB /* FeaturedCollectionViewCell */,
+				DE73DE6C2377655900A30A39 /* FeaturedInterviewCollectionViewCell */,
 				DE7F465F236E3C1E001203DB /* KeywordCollectionFooterView */,
 				DE7F465E236E3C0B001203DB /* KeywordCollectionHeaderView */,
 				DE7F4652236E3720001203DB /* KeywordCollectionViewCell */,
@@ -207,10 +216,11 @@
 		DE2EB906236D4FE400F8AD83 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE50993B23705CD000CDAE25 /* Article.swift */,
 				DE7F4649236E23BA001203DB /* FeaturedBanner.swift */,
+				DEDECAC92377A77C000F5C96 /* FeaturedInterview.swift */,
 				DE7F465B236E3A35001203DB /* Keyword.swift */,
 				DE7F466E236EB29A001203DB /* NewArrival.swift */,
-				DE50993B23705CD000CDAE25 /* Article.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +244,15 @@
 			path = ArticleCollectionHeaderView;
 			sourceTree = "<group>";
 		};
+		DE73DE6C2377655900A30A39 /* FeaturedInterviewCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE73DE6D237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.swift */,
+				DE73DE6E237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.xib */,
+			);
+			path = FeaturedInterviewCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		DE7F4643236E1BAE001203DB /* FeaturedCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,11 +271,12 @@
 			path = KeywordCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		DE7F465D236E3AAA001203DB /* JsonData */ = {
+		DE7F465D236E3AAA001203DB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DEDECAC72377A4F7000F5C96 /* UILabelDecorator.swift */,
 			);
-			path = JsonData;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		DE7F465E236E3C0B001203DB /* KeywordCollectionHeaderView */ = {
@@ -345,7 +365,7 @@
 				DED5ADCB236B09830092108B /* Assets.xcassets */,
 				DE2EB902236D4C7A00F8AD83 /* APIManager */,
 				DE2EB907236D4FEA00F8AD83 /* Extension */,
-				DE7F465D236E3AAA001203DB /* JsonData */,
+				DE7F465D236E3AAA001203DB /* Modules */,
 				DE2EB906236D4FE400F8AD83 /* Model */,
 				DE2EB8F5236D3AF200F8AD83 /* StoryBoard */,
 				DE2EB901236D4AA200F8AD83 /* View */,
@@ -494,6 +514,7 @@
 				DED5ADCF236B09830092108B /* LaunchScreen.storyboard in Resources */,
 				DED04A4D236D6A0000F6536F /* PhotoCollectionViewCell.xib in Resources */,
 				DE7F4667236E4950001203DB /* KeywordCollectionFooterView.xib in Resources */,
+				DE73DE70237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.xib in Resources */,
 				DE7F4663236E4821001203DB /* KeywordCollectionHeaderView.xib in Resources */,
 				DED5ADCC236B09830092108B /* Assets.xcassets in Resources */,
 				DE7F4674236EB814001203DB /* NewArrivalCollectionHeaderView.xib in Resources */,
@@ -570,8 +591,10 @@
 				DE50993E2370675E00CDAE25 /* APIRequestManager.swift in Sources */,
 				DED5ADC3236B09780092108B /* AppDelegate.swift in Sources */,
 				DE50993C23705CD000CDAE25 /* Article.swift in Sources */,
+				DE73DE6F237765BB00A30A39 /* FeaturedInterviewCollectionViewCell.swift in Sources */,
 				DE7F4673236EB814001203DB /* NewArrivalCollectionHeaderView.swift in Sources */,
 				DE7F464C236E2CEC001203DB /* MainViewModel.swift in Sources */,
+				DEDECACA2377A77C000F5C96 /* FeaturedInterview.swift in Sources */,
 				DE7F4646236E1BCF001203DB /* FeaturedCollectionViewCell.swift in Sources */,
 				DE7F464A236E23BA001203DB /* FeaturedBanner.swift in Sources */,
 				DE7F466F236EB29A001203DB /* NewArrival.swift in Sources */,
@@ -581,6 +604,7 @@
 				DE7F4678236EB93B001203DB /* NewArrivalCollectionViewCell.swift in Sources */,
 				DEB73AC0236D608C00C9E3BB /* ArticleCollectionViewCell.swift in Sources */,
 				DE2EB904236D4D0000F8AD83 /* CustomViewBase.swift in Sources */,
+				DEDECAC82377A4F7000F5C96 /* UILabelDecorator.swift in Sources */,
 				DED5ADC5236B09780092108B /* SceneDelegate.swift in Sources */,
 				DED04A4C236D6A0000F6536F /* PhotoCollectionViewCell.swift in Sources */,
 				DE9C91022373F0C000E3A1BE /* UIColorExtension.swift in Sources */,

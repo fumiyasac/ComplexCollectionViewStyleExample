@@ -15,6 +15,7 @@ const rewrite_rules = jsonServer.rewriter({
     "/api/mock/v1/gourmet/keywords" : "/get_keywords",
     "/api/mock/v1/gourmet/new_arrivals" : "/get_new_arrivals",
     "/api/mock/v1/gourmet/featured_banners" : "/get_featured_banners",
+    "/api/mock/v1/gourmet/featured_interviews" : "/get_featured_interviews",
 });
 
 // リクエストのルールを設定する

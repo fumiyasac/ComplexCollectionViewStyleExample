@@ -16,7 +16,8 @@ enum APIError : Error {
 }
 
 protocol APIRequestManagerProtocol {
-    func getFeatureBanners() -> Future<[FeaturedBanner], APIError>
+    func getFeaturedBanners() -> Future<[FeaturedBanner], APIError>
+    func getFeaturedInterviews() -> Future<[FeaturedInterview], APIError>
     func getKeywords() -> Future<[Keyword], APIError>
     func getNewArrivals() -> Future<[NewArrival], APIError>
     func getArticles() -> Future<[Article], APIError>
@@ -42,6 +43,7 @@ class APIRequestManager {
     private enum EndPoint: String {
 
         case featuredBanner = "featured_banners"
+        case featuredInterview = "featured_interviews"
         case keyword = "keywords"
         case newArrival = "new_arrivals"
         case article = "articles"
@@ -58,9 +60,14 @@ extension APIRequestManager: APIRequestManagerProtocol {
 
     // MARK: - Function
 
-    func getFeatureBanners() -> Future<[FeaturedBanner], APIError> {
+    func getFeaturedBanners() -> Future<[FeaturedBanner], APIError> {
         let featuresdBannersAPIRequest = makeUrlForGetRequest(EndPoint.featuredBanner.getBaseUrl())
         return handleSessionTask(FeaturedBanner.self, request: featuresdBannersAPIRequest)
+    }
+
+    func getFeaturedInterviews() -> Future<[FeaturedInterview], APIError> {
+        let featuredInterviewsAPIRequest = makeUrlForGetRequest(EndPoint.featuredInterview.getBaseUrl())
+        return handleSessionTask(FeaturedInterview.self, request: featuredInterviewsAPIRequest)
     }
 
     func getKeywords() -> Future<[Keyword], APIError> {

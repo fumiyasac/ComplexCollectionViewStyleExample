@@ -18,6 +18,7 @@ final class NewArrivalCollectionHeaderView: UICollectionReusableView {
     // MARK: - Function
 
     func setHeader(title: String, description: String) {
+
         titleLabel.text = title
         descriptionLabel.text = description
     }

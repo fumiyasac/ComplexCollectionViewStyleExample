@@ -39,24 +39,12 @@ Step2. NSCollectionLayoutSizeの基本
 
 // MARK: - Enum
 
-enum MainSection: CaseIterable {
-    case FeaturedArticles
+enum MainSection: Int, CaseIterable {
+    case FeaturedBanners
+    case FeaturedInterviews
     case RecentKeywords
     case NewArrivalArticles
     case RegularArticles
-
-    func getSectionValue() -> Int {
-        switch self {
-        case .FeaturedArticles:
-            return 0
-        case .RecentKeywords:
-            return 1
-        case .NewArrivalArticles:
-            return 2
-        case .RegularArticles:
-            return 3
-        }
-    }
 }
 
 final class MainViewController: UIViewController {
@@ -79,14 +67,27 @@ final class MainViewController: UIViewController {
         let layout = UICollectionViewCompositionalLayout { [weak self] (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
 
             switch sectionIndex {
-            case MainSection.FeaturedArticles.getSectionValue():
-                return self?.createFeaturedArticlesLayout()
-            case MainSection.RecentKeywords.getSectionValue():
+
+            // MainSection: 0 (FeaturedBanners)
+            case MainSection.FeaturedBanners.rawValue:
+                return self?.createFeaturedBannersLayout()
+
+            // MainSection: 1 (FeaturedInterviews)
+            case MainSection.FeaturedInterviews.rawValue:
+                return self?.createFeaturedInterviewsLayout()
+
+            // MainSection: 2 (RecentKeywords)
+            case MainSection.RecentKeywords.rawValue:
                 return self?.createRecentKeywordsLayout()
-            case MainSection.NewArrivalArticles.getSectionValue():
+
+            // MainSection: 3 (NewArrivalArticles)
+            case MainSection.NewArrivalArticles.rawValue:
                 return self?.createNewArrivalArticles()
-            case MainSection.RegularArticles.getSectionValue():
+
+            // MainSection: 4 (RegularArticles)
+            case MainSection.RegularArticles.rawValue:
                 return self?.createRegularArticles()
+
             default:
                 fatalError()
             }
@@ -110,6 +111,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
 
         setupCollectionView()
+        bindToMainViewModelOutputs()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -117,6 +119,7 @@ final class MainViewController: UIViewController {
 
         // MEMO: ViewModelのInputsを経由したAPIでのデータ取得処理を実行する
         viewModel.inputs.fetchFeaturedBannersTrigger.send()
+        viewModel.inputs.fetchFeaturedInterviewsTrigger.send()
         viewModel.inputs.fetchKeywordsTrigger.send()
         viewModel.inputs.fetchNewArrivalsTrigger.send()
         viewModel.inputs.fetchArticlesTrigger.send()
@@ -127,13 +130,24 @@ final class MainViewController: UIViewController {
     private func setupCollectionView() {
 
         // MEMO: このレイアウトで利用するセル要素・Header・Footerの登録
+
+        // MainSection: 0 (FeaturedBanner)
+        collectionView.registerCustomCell(FeaturedCollectionViewCell.self)
+
+        // MainSection: 1 (FeaturedInterview)
+        collectionView.registerCustomCell(FeaturedInterviewCollectionViewCell.self)
+
+        // MainSection: 2 (RecentKeyword)
         collectionView.registerCustomCell(KeywordCollectionViewCell.self)
         collectionView.registerCustomReusableHeaderView(KeywordCollectionHeaderView.self)
         collectionView.registerCustomReusableFooterView(KeywordCollectionFooterView.self)
-        collectionView.registerCustomCell(FeaturedCollectionViewCell.self)
+
+        // MainSection: 3 (NewArrivalArticle)
         collectionView.registerCustomCell(NewArrivalCollectionViewCell.self)
-        collectionView.registerCustomReusableHeaderView(NewArrivalCollectionHeaderView.self)
         collectionView.registerCustomCell(PhotoCollectionViewCell.self)
+        collectionView.registerCustomReusableHeaderView(NewArrivalCollectionHeaderView.self)
+
+        // MainSection: 4 (RegularArticle)
         collectionView.registerCustomCell(ArticleCollectionViewCell.self)
         collectionView.registerCustomReusableHeaderView(ArticleCollectionHeaderView.self)
 
@@ -147,16 +161,32 @@ final class MainViewController: UIViewController {
         dataSource = UICollectionViewDiffableDataSource<MainSection, AnyHashable>(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, model: AnyHashable) -> UICollectionViewCell? in
             
             switch model {
+
+            // MainSection: 0 (FeaturedBanner)
             case let model as FeaturedBanner:
+
                 let cell = collectionView.dequeueReusableCustomCell(with: FeaturedCollectionViewCell.self, indexPath: indexPath)
                 cell.setCell(model)
                 return cell
+
+            // MainSection: 1 (FeaturedInterview)
+            case let model as FeaturedInterview:
+
+                let cell = collectionView.dequeueReusableCustomCell(with: FeaturedInterviewCollectionViewCell.self, indexPath: indexPath)
+                cell.setCell(model)
+                return cell
+
+            // MainSection: 2 (RecentKeyword)
             case let model as Keyword:
+
                 let cell = collectionView.dequeueReusableCustomCell(with: KeywordCollectionViewCell.self, indexPath: indexPath)
                 cell.setCell(model)
                 return cell
+
+            // MainSection: 3 (NewArrivalArticle)
             case let model as NewArrival:
-                // MEMO: 3で割って1余るインデックス値の場合だけ大きな画像になる
+
+                // MEMO: 3で割って1余るインデックス値の場合は大きなサイズのセルを適用する
                 if model.id % 3 == 1 {
                     let cell = collectionView.dequeueReusableCustomCell(with: NewArrivalCollectionViewCell.self, indexPath: indexPath)
                     cell.setCell(model, index: indexPath.row + 1)
@@ -166,10 +196,14 @@ final class MainViewController: UIViewController {
                     cell.setCell(model, index: indexPath.row + 1)
                     return cell
                 }
+
+            // MainSection: 4 (RegularArticle)
             case let model as Article:
+
                 let cell = collectionView.dequeueReusableCustomCell(with: ArticleCollectionViewCell.self, indexPath: indexPath)
                 cell.setCell(model)
                 return cell
+
             default:
                 return nil
             }
@@ -179,7 +213,9 @@ final class MainViewController: UIViewController {
         dataSource.supplementaryViewProvider = { (collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? in
 
             switch indexPath.section {
-            case MainSection.RecentKeywords.getSectionValue():
+
+            // MainSection: 2 (RecentKeyword)
+            case MainSection.RecentKeywords.rawValue:
                 if kind == UICollectionView.elementKindSectionHeader {
                     let header = collectionView.dequeueReusableCustomHeaderView(with: KeywordCollectionHeaderView.self, indexPath: indexPath)
                     header.setHeader(
@@ -192,7 +228,9 @@ final class MainViewController: UIViewController {
                     let footer = collectionView.dequeueReusableCustomFooterView(with: KeywordCollectionFooterView.self, indexPath: indexPath)
                     return footer
                 }
-            case MainSection.NewArrivalArticles.getSectionValue():
+
+            // MainSection: 3 (NewArrivalArticle)
+            case MainSection.NewArrivalArticles.rawValue:
                 if kind == UICollectionView.elementKindSectionHeader {
                     let header = collectionView.dequeueReusableCustomHeaderView(with: NewArrivalCollectionHeaderView.self, indexPath: indexPath)
                     header.setHeader(
@@ -201,7 +239,9 @@ final class MainViewController: UIViewController {
                     )
                     return header
                 }
-            case MainSection.RegularArticles.getSectionValue():
+
+            // MainSection: 4 (RegularArticle)
+            case MainSection.RegularArticles.rawValue:
                 if kind == UICollectionView.elementKindSectionHeader {
                     let header = collectionView.dequeueReusableCustomHeaderView(with: ArticleCollectionHeaderView.self, indexPath: indexPath)
                     header.setHeader(
@@ -210,32 +250,49 @@ final class MainViewController: UIViewController {
                     )
                     return header
                 }
+
             default:
                 break
             }
             return nil
         }
 
-        // MEMO: NSDiffableDataSourceSnapshotの初期化
+        // MEMO: NSDiffableDataSourceSnapshotの初期設定
         snapshot = NSDiffableDataSourceSnapshot<MainSection, AnyHashable>()
         snapshot.appendSections(MainSection.allCases)
         for mainSection in MainSection.allCases {
             snapshot.appendItems([], toSection: mainSection)
         }
         dataSource.apply(snapshot, animatingDifferences: false)
+    }
 
-        // 1. ViewModelのOutputsを経由した特集データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+    private func bindToMainViewModelOutputs() {
+
+        // 1. ViewModelのOutputsを経由した特集バナーデータの取得とNSDiffableDataSourceSnapshotの入れ替え処理
         viewModel.outputs.featuredBanners
             .subscribe(on: RunLoop.main)
             .sink(
                 receiveValue: { [weak self] featuredBanners in
                     guard let self = self else { return }
-                    self.snapshot.appendItems(featuredBanners, toSection: .FeaturedArticles)
+                    self.snapshot.appendItems(featuredBanners, toSection: .FeaturedBanners)
                     self.dataSource.apply(self.snapshot, animatingDifferences: false)
                 }
             )
             .store(in: &cancellables)
-        // 2. ViewModelのOutputsを経由したキーワードデータの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+
+        // 2. ViewModelのOutputsを経由した特集インタビューデータの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+        viewModel.outputs.featuredInterviews
+            .subscribe(on: RunLoop.main)
+            .sink(
+                receiveValue: { [weak self] featuredInterviews in
+                    guard let self = self else { return }
+                    self.snapshot.appendItems(featuredInterviews, toSection: .FeaturedInterviews)
+                    self.dataSource.apply(self.snapshot, animatingDifferences: false)
+                }
+            )
+            .store(in: &cancellables)
+
+        // 3. ViewModelのOutputsを経由したキーワードデータの取得とNSDiffableDataSourceSnapshotの入れ替え処理
         viewModel.outputs.keywords
             .subscribe(on: RunLoop.main)
             .sink(
@@ -246,7 +303,8 @@ final class MainViewController: UIViewController {
                 }
             )
             .store(in: &cancellables)
-        // 3. ViewModelのOutputsを経由した新着データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+
+        // 4. ViewModelのOutputsを経由した新着データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
         viewModel.outputs.newArrivals
             .subscribe(on: RunLoop.main)
             .sink(
@@ -257,7 +315,8 @@ final class MainViewController: UIViewController {
                 }
             )
             .store(in: &cancellables)
-        // 4. ViewModelのOutputsを経由した記事データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
+
+        // 5. ViewModelのOutputsを経由した記事データの取得とNSDiffableDataSourceSnapshotの入れ替え処理
         viewModel.outputs.articles
             .subscribe(on: RunLoop.main)
             .sink(
@@ -272,25 +331,47 @@ final class MainViewController: UIViewController {
 
     // MARK: - Private Function (for UICollectionViewCompositionalLayout Setup)
 
-    private func createFeaturedArticlesLayout() -> NSCollectionLayoutSection {
+    private func createFeaturedBannersLayout() -> NSCollectionLayoutSection {
 
         // 1. Itemのサイズ設定
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        item.contentInsets = .zero
 
         // 2. Groupのサイズ設定
         // MEMO: 1列に表示するカラム数を1として設定し、itemのサイズがgroupのサイズで決定する形にしている
         let groupHeight = UIScreen.main.bounds.width * (3 / 8)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(groupHeight))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        group.contentInsets = .zero
 
         // 3. Sectionのサイズ設定
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
         // MEMO: スクロール終了時に水平方向のスクロールが可能で中心位置で止まる
         section.orthogonalScrollingBehavior = .groupPagingCentered
+        return section
+    }
+
+    private func createFeaturedInterviewsLayout() -> NSCollectionLayoutSection {
+
+        // MEMO: 該当のセルを基準にした高さの予測値を設定する
+        let estimatedHeight = UIScreen.main.bounds.width * 0.5 + 180.0
+
+        // 1. Itemのサイズ設定
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(estimatedHeight))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .zero
+
+        // 2. Groupのサイズ設定
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(estimatedHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        group.contentInsets = .zero
+
+        // 3. Sectionのサイズ設定
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
+
         return section
     }
 
@@ -350,13 +431,16 @@ final class MainViewController: UIViewController {
 
     private func createRegularArticles() -> NSCollectionLayoutSection {
 
+        // MEMO: 該当のセルを基準にした高さを設定する
+        let absoluteHeight = UIScreen.main.bounds.width * 0.5 + 90.0
+
         // 1. Itemのサイズ設定
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0.5, leading: 0.5, bottom: 0.5, trailing: 0.5)
 
         // 2. Groupのサイズ設定
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(UIScreen.main.bounds.width / 2 + 80.0))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(absoluteHeight))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
 
         // 3. Sectionのサイズ設定
@@ -372,7 +456,19 @@ final class MainViewController: UIViewController {
 
 // MARK: - UICollectionViewDelegate
 
-extension MainViewController: UICollectionViewDelegate {}
+extension MainViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        // MEMO: 該当のセクションとIndexPathからNSDiffableDataSourceSnapshot内の該当する値を取得する
+        if let targetSection = MainSection(rawValue: indexPath.section) {
+            let targetSnapshot = snapshot.itemIdentifiers(inSection: targetSection)
+            print("Section: ", targetSection)
+            print("IndexPath.row: ", indexPath.row)
+            print("Model: ", targetSnapshot[indexPath.row])
+        }
+    }
+}
 
 // MARK: - UIScrollViewDelegate
 

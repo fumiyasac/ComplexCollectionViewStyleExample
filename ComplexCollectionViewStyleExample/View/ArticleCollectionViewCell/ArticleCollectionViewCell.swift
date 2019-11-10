@@ -18,13 +18,15 @@ final class ArticleCollectionViewCell: UICollectionViewCell {
     // MARK: - Function
 
     func setCell(_ article: Article) {
+
         // MEMO: Nukeでの画像キャッシュと表示に関するオプション設定
         let imageDisplayOptions = ImageLoadingOptions(transition: .fadeIn(duration: 0.33))
         if let imageUrl = URL(string: article.imageUrl) {
             Nuke.loadImage(with: imageUrl, options: imageDisplayOptions, into: thumbnailImageView)
         }
-        titleLabel.attributedText = NSAttributedString(string: article.title, attributes: getLabelLineSpacingAttributes(5.0))
-        summaryLabel.attributedText = NSAttributedString(string: article.summary, attributes: getLabelLineSpacingAttributes(6.0))
+
+        titleLabel.attributedText = NSAttributedString(string: article.title, attributes: UILabelDecorator.getLabelLineSpacingAttributes(2.0))
+        summaryLabel.attributedText = NSAttributedString(string: article.summary, attributes: UILabelDecorator.getLabelLineSpacingAttributes(3.0))
     }
 
     // MARK: - Private Function

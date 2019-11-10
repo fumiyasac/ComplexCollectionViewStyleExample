@@ -13,14 +13,15 @@ import Combine
 
 protocol MainViewModelInputs {
     var fetchFeaturedBannersTrigger: PassthroughSubject<Void, Never> { get }
+    var fetchFeaturedInterviewsTrigger: PassthroughSubject<Void, Never> { get }
     var fetchKeywordsTrigger: PassthroughSubject<Void, Never> { get }
     var fetchNewArrivalsTrigger: PassthroughSubject<Void, Never> { get }
     var fetchArticlesTrigger: PassthroughSubject<Void, Never> { get }
-
 }
 
 protocol MainViewModelOutputs {
     var featuredBanners: AnyPublisher<[FeaturedBanner], Never> { get }
+    var featuredInterviews: AnyPublisher<[FeaturedInterview], Never> { get }
     var keywords: AnyPublisher<[Keyword], Never> { get }
     var newArrivals: AnyPublisher<[NewArrival], Never> { get }
     var articles: AnyPublisher<[Article], Never> { get }
@@ -41,6 +42,7 @@ final class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModel
     // MARK: - MainViewModelInputs
 
     let fetchFeaturedBannersTrigger = PassthroughSubject<Void, Never>()
+    let fetchFeaturedInterviewsTrigger = PassthroughSubject<Void, Never>()
     let fetchKeywordsTrigger = PassthroughSubject<Void, Never>()
     let fetchNewArrivalsTrigger = PassthroughSubject<Void, Never>()
     let fetchArticlesTrigger = PassthroughSubject<Void, Never>()
@@ -49,6 +51,9 @@ final class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModel
 
     var featuredBanners: AnyPublisher<[FeaturedBanner], Never> {
         return $_featuredBanners.eraseToAnyPublisher()
+    }
+    var featuredInterviews: AnyPublisher<[FeaturedInterview], Never> {
+        return $_featuredInterviews.eraseToAnyPublisher()
     }
     var keywords: AnyPublisher<[Keyword], Never> {
         return $_keywords.eraseToAnyPublisher()
@@ -68,6 +73,7 @@ final class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModel
 
     // MEMO: このコードではNSDiffableDataSourceSnapshotの差分更新部分で利用する
     @Published private var _featuredBanners: [FeaturedBanner] = []
+    @Published private var _featuredInterviews: [FeaturedInterview] = []
     @Published private var _keywords: [Keyword] = []
     @Published private var _newArrivals: [NewArrival] = []
     @Published private var _articles: [Article] = []
@@ -79,11 +85,18 @@ final class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModel
         // MEMO: 適用するAPIリクエスト用の処理
         self.api = api
 
-        // MEMO: InputTriggerとAPIリクエストをつなげる
+        // MEMO: InputTriggerとAPIリクエストをするための処理を結合する
         fetchFeaturedBannersTrigger
             .sink(
                 receiveValue: { [weak self] in
                     self?.fetchFeaturedBanners()
+                }
+            )
+            .store(in: &cancellables)
+        fetchFeaturedInterviewsTrigger
+            .sink(
+                receiveValue: { [weak self] in
+                    self?.fetchFeaturedInterviews()
                 }
             )
             .store(in: &cancellables)
@@ -119,7 +132,7 @@ final class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModel
     // MARK: - Privete Function
 
     private func fetchFeaturedBanners() {
-        api.getFeatureBanners()
+        api.getFeaturedBanners()
             .receive(on: RunLoop.main)
             .sink(
                 receiveCompletion: { completion in
@@ -135,6 +148,28 @@ final class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModel
                 receiveValue: { [weak self] hashableObjects in
                     print(hashableObjects)
                     self?._featuredBanners = hashableObjects
+                }
+            )
+            .store(in: &cancellables)
+    }
+
+    private func fetchFeaturedInterviews() {
+        api.getFeaturedInterviews()
+            .receive(on: RunLoop.main)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    // MEMO: 値取得成功時（※本当は厳密にエラーハンドリングする必要がある）
+                    case .finished:
+                        print("finished fetchFeaturedInterviews(): \(completion)")
+                    // MEMO: エラー時（※本当は厳密にエラーハンドリングする必要がある）
+                    case .failure(let error):
+                        print("error fetchFeaturedInterviews(): \(error.localizedDescription)")
+                    }
+                },
+                receiveValue: { [weak self] hashableObjects in
+                    print(hashableObjects)
+                    self?._featuredInterviews = hashableObjects
                 }
             )
             .store(in: &cancellables)

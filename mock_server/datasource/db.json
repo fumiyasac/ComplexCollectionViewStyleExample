@@ -243,6 +243,38 @@
             "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/sample40.jpg"
         }
     ],
+    "get_new_arrivals": [
+        {
+            "id": 1,
+            "title": "リングイネのクリームパスタ",
+            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new1.jpg"
+        },
+        {
+            "id": 2,
+            "title": "厚切りポークジンジャー",
+            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new2.jpg"
+        },
+        {
+            "id": 3,
+            "title": "ミックスフライランチプレート",
+            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new3.jpg"
+        },
+        {
+            "id": 4,
+            "title": "クリスピータイプミックスピザ",
+            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new4.jpg"
+        },
+        {
+            "id": 5,
+            "title": "ハンバーグランチプレート",
+            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new5.jpg"
+        },
+        {
+            "id": 6,
+            "title": "特製ローストポークオーバーライス",
+            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new6.jpg"
+        }
+    ],
     "get_keywords": [
         {
             "id": 1,
@@ -285,36 +317,24 @@
             "keyword": "ラタトゥイユ"
         }
     ],
-    "get_new_arrivals": [
+    "get_featured_interviews": [
         {
             "id": 1,
-            "title": "リングイネのクリームパスタ",
-            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new1.jpg"
+            "profile_name": "testuser123456",
+            "date_string": "2019.11.10",
+            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/interview1.jpg",
+            "title": "ランチなのに美味しいお寿司が、こんなに安いお値段で食べ放題。️",
+            "description": "握り寿司🍣を好きなネタ10貫分選べて、オプションで海苔巻きを追加できてお値段は1980円💰。今回は「サーモンが食べたい️️」気分だったので全部サーモンにしてみました💦",
+            "tags" : "お寿司,握り寿司,巻き寿司,サーモン,2000円以内,東京,ランチタイム,食べ放題,築地時間制限なし,築地"
         },
         {
             "id": 2,
-            "title": "厚切りポークジンジャー",
-            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new2.jpg"
-        },
-        {
-            "id": 3,
-            "title": "ミックスフライランチプレート",
-            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new3.jpg"
-        },
-        {
-            "id": 4,
-            "title": "クリスピータイプミックスピザ",
-            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new4.jpg"
-        },
-        {
-            "id": 5,
-            "title": "ハンバーグランチプレート",
-            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new5.jpg"
-        },
-        {
-            "id": 6,
-            "title": "特製ローストポークオーバーライス",
-            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/new6.jpg"
+            "profile_name": "testuser123456",
+            "date_string": "2019.11.10",
+            "image_url": "https://s3-ap-northeast-1.amazonaws.com/development-image-samples/thumbnails/interview2.jpg",
+            "title": "大好物のボルシチをこの休日に頑張って作ってみました！個人的には結構いい感じに仕上がったと思います！（そしてゆくゆくは私の得意料理としてみんなに振舞うぞ！）",
+            "description": "久しぶりに母が地元から遊びにきたので、手料理を振る舞おうと思い立って手料理を作ってあげました🥕赤かぶやサワークリーム等の欠かせない材料は近所で購入してビーフ🥩多めの感じに仕上げました。母にも料理や食生活は問題ないことが伝えられたので、あの時からは成長しているんだなーと。\nでもね、お味噌汁とか野菜炒めに関してはまだまだあの懐かしい絶妙な味はまだまだ再現することは出来ていないのですね...",
+            "tags" : "ボルシチ,ロシア料理,家庭でもできるレシピ,煮込み料理,贅沢なディナー,手料理"
         }
     ],
     "get_featured_banners": [
