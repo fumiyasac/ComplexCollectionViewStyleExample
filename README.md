@@ -2,11 +2,23 @@
 
 iOS13から新しく追加されたUICollectionViewCompositionalLayoutとCombineを利用した複雑な画面構造を持つ画面のUI実装サンプルになります。
 
-### 1. サンプルのキャプチャ画像
+### 1. このサンプルについて
+
+__【サンプル画面のデザイン】__
 
 ![サンプル図その1](https://github.com/fumiyasac/ComplexCollectionViewStyleExample/blob/master/images/sample_thumbnail1.jpg)
 
 ![サンプル図その2](https://github.com/fumiyasac/ComplexCollectionViewStyleExample/blob/master/images/sample_thumbnail2.jpg)
+
+__【解説資料のメモ】__
+
+全体的な流れとポイントとなりうる点に関してまとめたメモです。
+
+![設計メモ](https://github.com/fumiyasac/ComplexCollectionViewStyleExample/blob/master/images/idea_note.png)
+
+※ 登壇の際にまとめた資料は下記になります。
+
++ [試して感覚を掴んでみるUICollectionViewCompositionalLayout & Combine](https://www.slideshare.net/fumiyasakai37/uicollectionviewcompositionallayout-combine)
 
 ### 2. 事前準備と検証用Mockサーバーについて
 
