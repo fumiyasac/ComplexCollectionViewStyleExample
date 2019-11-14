@@ -14,7 +14,7 @@ __【解説資料のメモ】__
 
 全体的な流れとポイントとなりうる点に関してまとめたメモです。
 
-![設計メモ](https://github.com/fumiyasac/ComplexCollectionViewStyleExample/blob/master/images/idea_note.png)
+![設計メモ](https://github.com/fumiyasac/ComplexCollectionViewStyleExample/blob/master/images/idea_note.jpg)
 
 ※ 登壇の際にまとめた資料は下記になります。
 
