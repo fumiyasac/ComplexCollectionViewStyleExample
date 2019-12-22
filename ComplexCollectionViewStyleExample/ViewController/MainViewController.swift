@@ -356,7 +356,7 @@ final class MainViewController: UIViewController {
     private func createFeaturedInterviewsLayout() -> NSCollectionLayoutSection {
 
         // MEMO: 該当のセルを基準にした高さの予測値を設定する
-        let estimatedHeight = UIScreen.main.bounds.width * 0.5 + 180.0
+        let estimatedHeight = UIScreen.main.bounds.width + 180.0
 
         // 1. Itemのサイズ設定
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(estimatedHeight))
