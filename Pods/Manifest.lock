@@ -1,7 +1,7 @@
 PODS:
   - ActiveLabel (1.1.0)
-  - FontAwesome.swift (1.8.2)
-  - Nuke (8.3.1)
+  - FontAwesome.swift (1.9.1)
+  - Nuke (9.2.0)
 
 DEPENDENCIES:
   - ActiveLabel
@@ -16,9 +16,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
-  FontAwesome.swift: 7938d6a03113ff3f39001bde7f50be8a0903d605
-  Nuke: 85fb80f8df0cb26c28d2f4e0cb7fb93bcd6548d3
+  FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
+  Nuke: 1394e48b0940e01dd20f52ac56b121ab154e370d
 
 PODFILE CHECKSUM: d8a0735663e13c68e46e309248b7231dc4891429
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0

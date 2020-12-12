@@ -1,14 +1,16 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2019 Alexander Grebenyuk (github.com/kean).
+// Copyright (c) 2015-2020 Alexander Grebenyuk (github.com/kean).
 
 import Foundation
+import os
 
 // MARK: - Lock
 
 extension NSLock {
     func sync<T>(_ closure: () -> T) -> T {
-        lock(); defer { unlock() }
+        lock()
+        defer { unlock() }
         return closure()
     }
 }
@@ -58,9 +60,10 @@ final class RateLimiter {
         isExecutingPendingTasks = true
         // Compute a delay such that by the time the closure is executed the
         // bucket is refilled to a point that is able to execute at least one
-        // pending task. With a rate of 100 tasks we expect a refill every 10 ms.
-        let delay = Int(1.15 * (1000 / bucket.rate)) // 14 ms for rate 80 (default)
-        let bounds = max(100, min(5, delay)) // Make the delay is reasonable
+        // pending task. With a rate of 80 tasks we expect a refill every ~26 ms
+        // or as soon as the new tasks are added.
+        let delay = Int(2.1 * (1000 / bucket.rate)) // 14 ms for rate 80 (default)
+        let bounds = min(100, max(15, delay))
         queue.asyncAfter(deadline: .now() + .milliseconds(bounds), execute: executePendingTasks)
     }
 
@@ -115,34 +118,34 @@ private final class TokenBucket {
 // MARK: - Operation
 
 final class Operation: Foundation.Operation {
-    private var _isExecuting = false
-    private var _isFinished = false
+    private var _isExecuting = Atomic(false)
+    private var _isFinished = Atomic(false)
     private var isFinishCalled = Atomic(false)
 
     override var isExecuting: Bool {
+        get {
+            _isExecuting.value
+        }
         set {
-            guard _isExecuting != newValue else {
+            guard _isExecuting.value != newValue else {
                 fatalError("Invalid state, operation is already (not) executing")
             }
             willChangeValue(forKey: "isExecuting")
-            _isExecuting = newValue
+            _isExecuting.value = newValue
             didChangeValue(forKey: "isExecuting")
-        }
-        get {
-            return _isExecuting
         }
     }
     override var isFinished: Bool {
+        get {
+            _isFinished.value
+        }
         set {
-            guard !_isFinished else {
+            guard !_isFinished.value else {
                 fatalError("Invalid state, operation is already finished")
             }
             willChangeValue(forKey: "isFinished")
-            _isFinished = newValue
+            _isFinished.value = newValue
             didChangeValue(forKey: "isFinished")
-        }
-        get {
-            return _isFinished
         }
     }
 
@@ -186,7 +189,7 @@ final class LinkedList<Element> {
     }
 
     var isEmpty: Bool {
-        return last == nil
+        last == nil
     }
 
     /// Adds an element to the end of the list.
@@ -257,6 +260,7 @@ struct ResumableData {
         // Check if "Accept-Ranges" is present and the response is valid.
         guard !data.isEmpty,
             let response = response as? HTTPURLResponse,
+            data.count < response.expectedContentLength,
             response.statusCode == 200 /* OK */ || response.statusCode == 206, /* Partial Content */
             let acceptRanges = response.allHeaderFields["Accept-Ranges"] as? String,
             acceptRanges.lowercased() == "bytes",
@@ -300,7 +304,7 @@ struct ResumableData {
     // Check if the server decided to resume the response.
     static func isResumedResponse(_ response: URLResponse) -> Bool {
         // "206 Partial Content" (server accepted "If-Range")
-        return (response as? HTTPURLResponse)?.statusCode == 206
+        (response as? HTTPURLResponse)?.statusCode == 206
     }
 
     // MARK: Storing Resumable Data
@@ -402,9 +406,62 @@ extension String {
     }
 }
 
-// MARK: - Signpost
+// MARK: - Log
 
-import os
+final class Log {
+    private let log: OSLog
+    private let name: StaticString
+    private let signpostsEnabled: Bool
+
+    init(_ log: OSLog, _ name: StaticString, _ signpostsEnabled: Bool = ImagePipeline.Configuration.isSignpostLoggingEnabled) {
+        self.log = log
+        self.name = name
+        self.signpostsEnabled = signpostsEnabled
+    }
+
+    // MARK: Signposts
+
+    func signpost(_ type: SignpostType, _ message: @autoclosure () -> String) {
+        guard signpostsEnabled else { return }
+        signpost(type, "%{public}s", message())
+    }
+
+    func signpost(_ type: SignpostType) {
+        guard signpostsEnabled else { return }
+        if #available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *) {
+            os_signpost(type.os, log: log, name: name, signpostID: signpostID)
+        }
+    }
+
+    // Unfortunately, there is no way to wrap os_signpost which takes variadic
+    // arguments, because Swift implicitly wraps `arguments CVarArg...` from `log`
+    // into an array and passes the array to `os_signpost` which is not what
+    // we expect. So in this scenario we have to limit the number of arguments
+    // to one, there is no way to pass more. For more info see https://stackoverflow.com/questions/50937765/why-does-wrapping-os-log-cause-doubles-to-not-be-logged-correctly
+    func signpost(_ type: SignpostType, _ format: StaticString, _ argument: CVarArg) {
+        guard signpostsEnabled else { return }
+        if #available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *) {
+            os_signpost(type.os, log: log, name: name, signpostID: signpostID, format, argument)
+        }
+    }
+
+    @available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+    var signpostID: OSSignpostID {
+        OSSignpostID(log: log, object: self)
+    }
+}
+
+private let byteFormatter = ByteCountFormatter()
+
+extension Log {
+    static func bytes(_ count: Int) -> String {
+        bytes(Int64(count))
+    }
+
+    static func bytes(_ count: Int64) -> String {
+        byteFormatter.string(fromByteCount: count)
+    }
+}
 
 enum SignpostType {
     case begin, event, end
@@ -417,26 +474,4 @@ enum SignpostType {
         case .end: return .end
         }
     }
-}
-
-final class Signpost {
-    private let log: OSLog
-
-    @available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
-    var signpostID: OSSignpostID {
-        return OSSignpostID(log: log, object: self)
-    }
-
-    init(log: OSLog) {
-        self.log = log
-    }
-
-    func log(_ type: SignpostType, name: StaticString) {
-        if #available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *) {
-            os_signpost(type.os, log: log, name: name, signpostID: signpostID)
-        }
-    }
-
-    // Unfortunately, it's not technically possible to wrap the version which
-    // accepts `CVarArg...` because there is no way to pass them to `os_singpost`
 }
