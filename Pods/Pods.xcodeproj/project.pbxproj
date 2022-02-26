@@ -7,163 +7,249 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04B6546BC465697F26A2DCAF0DCC34FF /* StringTrimExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0EBC750111B223B928F966E699C57 /* StringTrimExtension.swift */; };
+		0145DFAA2863BA55A52613FC7337A3F8 /* ImageProcessors+Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C82DB69A4D9330C70F964151B3947 /* ImageProcessors+Composition.swift */; };
+		0278689EA2F6FF2304FF3C94EF646F9C /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5815387C6E413B45D32525027ACFA9 /* Operation.swift */; };
+		028BAB8515C91A24657E2BEE6CE6F00A /* ImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099051C8E6C66E30CEE9341322598E9 /* ImageTask.swift */; };
+		04B6546BC465697F26A2DCAF0DCC34FF /* StringTrimExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B268CE27AA37A07935277A0362CB4E4 /* StringTrimExtension.swift */; };
+		0576A29C99CC9B4538714C7CD82E4853 /* ImageProcessors+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3DFC65C819452503551F44D096840D /* ImageProcessors+Circle.swift */; };
+		0B08380F98C26F25464558AD06D2E476 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1DFAF74F40AB350EBF6CA85D416903 /* Graphics.swift */; };
+		0E4C4849F1DDCED407B67BFEB0A90A5B /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB90D2777C271926E7277B06FE33B8F /* ImageProcessing.swift */; };
+		11B361373AE4D57411AA4A8337C80750 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DE491D089DDDC56780F0F2ACED9710 /* DataLoader.swift */; };
 		16CA6A1917DB699356FA241C9C9CC58D /* Pods-ComplexCollectionViewStyleExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ECE7CA868AF47CC5B920E32C9304E4 /* Pods-ComplexCollectionViewStyleExample-dummy.m */; };
-		292B62DAF0ADBEDB86A60C4362EBBCFC /* ActiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6F4520BDED9EDE7F1D0CC40FE76129 /* ActiveLabel.swift */; };
-		2CC1EEC410C399C6C1B6BAB608B7CE4F /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46DB08B91106C2956AB58229F564DB /* Internal.swift */; };
-		2DC3B72E8EF51297F55C5B4F7673DB37 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67770E11881D53300F4E3F910012C45F /* FontAwesome.swift */; };
-		33DA77EE1506C87C374EAC4598286B07 /* Nuke-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F46CF6C4830C5CEC69285925E4F26600 /* Nuke-dummy.m */; };
-		33E19BC096B66CDE9AF092BE4B1EE4D2 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E361DA13B05E1E1E7C82E63A4DEBB5 /* DataLoader.swift */; };
+		178757DCA528997667A0857CF21574A5 /* ImagePipelineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7008EF85B50D95916673F385A7EA24B7 /* ImagePipelineDelegate.swift */; };
+		1A82E0A9D791653CFD9381A53ED5B417 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8079CD9734C6C73808008263D396C5E /* Combine.swift */; };
+		1E25F3A17A959385AE6802C6F5B1EE1E /* ImageProcessingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF995FBCDE0607B4843E6D2C8FC0D53 /* ImageProcessingOptions.swift */; };
+		211E1C10CD177E91878FA475226EB059 /* ImagePipelineConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23767CBF98351BEAF35224EEDC70C80D /* ImagePipelineConfiguration.swift */; };
+		292B62DAF0ADBEDB86A60C4362EBBCFC /* ActiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28683753BFC5C30C057CA8C6CA7FDF2F /* ActiveLabel.swift */; };
+		2DC3B72E8EF51297F55C5B4F7673DB37 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F961A2D3FD0BC665EDC3A14F934DA6 /* FontAwesome.swift */; };
+		2DCA737D1A79C2BE4662D70630674C0C /* TaskLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82E5D38738A5B4529AEBAB5346F33 /* TaskLoadData.swift */; };
+		2FCEC10B1666324F0662E3F51AF77A88 /* Nuke-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D51B8FD76DC3E672149CEE9889F0ADE /* Nuke-dummy.m */; };
+		33C194A68126D288FC8974179D1A0C04 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113776395F28462B0F6D3E0B93B6543 /* RateLimiter.swift */; };
+		34E094803480DD0F2C0CCAAA9454E28C /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF47D51CCBA52E11B23A84EEBB3B8ED1 /* Deprecated.swift */; };
 		361F998D6BF536D96D746D38517A5F09 /* FontAwesome.swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift.bundle */; };
-		371C78B986C126777CA39ED815AE55B9 /* ActiveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149F843BC695C8651C0CA1E372FEAF45 /* ActiveType.swift */; };
-		3943E6B45E3B22B6BA0F1838121E0FF2 /* FontAwesomeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87322EE95DCA9D7A1F1060EEDCD703EE /* FontAwesomeSegmentedControl.swift */; };
+		371C78B986C126777CA39ED815AE55B9 /* ActiveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0B4E77BFEB236993CC76E0DCF3787 /* ActiveType.swift */; };
+		3943E6B45E3B22B6BA0F1838121E0FF2 /* FontAwesomeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB9593C1CD028678269E514EB8E992C /* FontAwesomeSegmentedControl.swift */; };
+		3EF74E50A8DBD7AE01FAD0AE671B646B /* ImageEncoders+ImageIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DCE9ABEE9C84469D1EEDB7810B851F /* ImageEncoders+ImageIO.swift */; };
+		440FB3EEB627A5364BA32FB342F56558 /* DataCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3498A900FD95429041A53C2465C4E36E /* DataCaching.swift */; };
+		44DF02C37278C9D1EA238231CF2631C1 /* ImagePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856DD392FA370E592152823A1CF68115 /* ImagePublisher.swift */; };
+		46E01D32729739F4E652087F11719A49 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CE08D3B4790EC4F70319A71BE7301 /* ImageResponse.swift */; };
 		47588CB042262E11CECC4C7F44F10401 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA76860B506E69F08B0B154D70C038E /* CoreText.framework */; };
-		47DE514FFAFC77339A281C88DC9D26C5 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37090632D44AB1074E54A78461E15E63 /* ImageCache.swift */; };
-		51705646643B54960D453044AF46BBC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF26CFF1E862548F8E456C64372DC06 /* Foundation.framework */; };
-		531E8E961587F0E6885690056718AAB4 /* ImagePreheater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81955C8E29716EF248AF3FBCFCDEE28F /* ImagePreheater.swift */; };
-		57B31AE955ABBC6ACA9E7157844E1003 /* ImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6113C294308A351542BB4BE25287860 /* ImageTask.swift */; };
+		4FFBC6DFB9333866142EFBA26DF7D851 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCD187DE7CF45FE90A53ABD173D556F /* ImageRequest.swift */; };
+		54CD5345F3261D003B0331CA859E4D34 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B02501FF4A08408CC829F18D89EDF0 /* LinkedList.swift */; };
+		56A89E718B207B9C941974329EB7D25E /* ImageDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD388221B866773255F5527B840CA7 /* ImageDecoding.swift */; };
 		5841D4ACAE4E5F2E19AE1E7824056272 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74D207BDA239A25C1380A816F90FF59 /* UIKit.framework */; };
-		5857E4CC0AAF89BB24A5DA2EC2CB6481 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AD50648A8A1F74F974130CF23AED6F /* ImageRequest.swift */; };
-		5DA2B11F9A41C6EAEC8B31F281A6E549 /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E2C89C74D04384D8CFD2A2A2CE00 /* ImageViewExtensions.swift */; };
-		64001D1B1DCD6EAD400FF6315079DC3B /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = E24A970E1B7145AE69AD122F0A401B79 /* Font Awesome 5 Free-Solid-900.otf */; };
-		67A07AF1C052D1754B1A01AA8106F611 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB09B3E52B330A7A3150EF3E7F50E107 /* Enum.swift */; };
-		6C11C0AE662455FF5ECF3C3699A2C639 /* ActiveLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C80F746F872ED2A28E986A9B31B567CF /* ActiveLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F5F3A61CB4167CE84E3FD7D9626092D /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C99ADE119BCC5EF29108873BCCDABB /* AssetType.swift */; };
+		67A07AF1C052D1754B1A01AA8106F611 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745DE6A0C40A5D22D2B2947814B7F295 /* Enum.swift */; };
+		68007AC6AB1DB3090D1B4D4FC78705AC /* ImagePipelineCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC4B0DBF479E5EB627385E14A40B7A /* ImagePipelineCache.swift */; };
+		6C11C0AE662455FF5ECF3C3699A2C639 /* ActiveLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC66720AF4E3D592ADE8F71185E47A8 /* ActiveLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D089163A228D2F93221548126A2D3A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF26CFF1E862548F8E456C64372DC06 /* Foundation.framework */; };
-		7A38D7188792F42AA0B525259BBE3118 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F747C66E104CE290BF456A75E81C1A9 /* Task.swift */; };
-		8073BE65353BBBE430DC2047C2E96830 /* FontAwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3173E14C7914B19F069107986B217 /* FontAwesomeImageView.swift */; };
-		833AB5F253E5DE2AD3BDC708F1AC0B4F /* ActiveLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E709448C23ACCA7162B65944ACA91E3 /* ActiveLabel-dummy.m */; };
-		844BB8D9B204161C40D80A1EDC17F73A /* Nuke-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7A5C0216D0FC4F8EE498081D33B8D1A /* Nuke-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8A8ECA607EA4E9DDA4A2F1404F1AA4A2 /* ImageDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD2C972ED0BE5047F10B6224088073 /* ImageDecoding.swift */; };
-		8DF645F4FB874A03AB8D448233E5CD2C /* FontAwesome.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D40139F9E23BFF201E9F19E2F41A42FE /* FontAwesome.swift-dummy.m */; };
-		9013971789C9A64B8503D4E386E0FB8B /* FontAwesomeImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC59E0E44809652EC444C0F0CE8743A /* FontAwesomeImageRepresentable.swift */; };
-		97E8ED9DB608EF403A805DBD2DE77574 /* FontAwesomeTextRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55653D3BF9D067C4310C2A691206FC15 /* FontAwesomeTextRepresentable.swift */; };
-		9D36E15B981166952D88ACDA7EF1FCEF /* ImagePipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37489B8E53A2C330BD6D5E86632EE2C2 /* ImagePipeline.swift */; };
-		9E52B049FA39B2E3AB2368743FD12122 /* FontAwesomeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA368285B8734C3CE521EA7F773E7F /* FontAwesomeBarButtonItem.swift */; };
-		A198E44609AC439B57F319EBA10C42DA /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3B77F34D383BE79CEFA367F53D557 /* ImageProcessing.swift */; };
-		A9AEFFE56E4096A9856FDE70A4988408 /* FontAwesomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38711A4010C2C4E581B3A9CEC68070FF /* FontAwesomeView.swift */; };
-		AA2173C5FBECA4F081590EFE8282B430 /* FontAwesomeStateRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6982522EB544C333E51F87403F82B8E0 /* FontAwesomeStateRequirement.swift */; };
-		AB1778BEF12E281DCA6520DB182C0A30 /* ImagePipelineConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947B20951CB7435F184F10A1A30D23A1 /* ImagePipelineConfiguration.swift */; };
-		AD50A90048B096427A10487F5ED428D8 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5FBF1BCAEAF17F28601BF423F8BA6DF /* Font Awesome 5 Free-Regular-400.otf */; };
-		BBAAD3B1ADC780DE6001E027DC39D4DC /* RegexParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD619E964AD4B835DE929A4E7009BE7B /* RegexParser.swift */; };
-		BF5AA3C05B5C6B6ED084FA31623447CE /* FontAwesome.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A54B66ED4C6ACEE955DC4E3B367F13EC /* FontAwesome.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C1D40AA07CA8A548B7085C26177B1223 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F89444B273BB86BEEEA30008D75EFE5 /* Font Awesome 5 Brands-Regular-400.otf */; };
-		C2B4C43E316156C7BAA89EF72C3BC209 /* ImageEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B7DAEBC2699C21E760BA3BAECF52C /* ImageEncoding.swift */; };
-		CA763E9FED2566BAD65CF14A47D1E6FD /* ActiveBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88929971E34CEF6367847B6A6C81E25 /* ActiveBuilder.swift */; };
+		6E4638BDA50CAD2C36F1875429F00642 /* ImagePipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B7199A9C2D8AAABE63815A9FEC7E4 /* ImagePipeline.swift */; };
+		70473E7C5F830BEBB012D586CC23433F /* ImageDecoders+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBA1B206AA629407D7673C0A87674AD /* ImageDecoders+Default.swift */; };
+		73EE45B1D28085C048F976682F67699A /* ImageEncoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20CE0C5E30A79825AB22D59E31A626C /* ImageEncoders.swift */; };
+		79D7C6D7F5A0427273042D074A576E0C /* ImageProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7535FEB3B7852B075066E42DCE6DCF /* ImageProcessors.swift */; };
+		7FAB696999AD1875D2CC7A8597D53C6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8E514D92ACDC556A3DF05AB7E0468A /* Extensions.swift */; };
+		8073BE65353BBBE430DC2047C2E96830 /* FontAwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B5DF19878A6C4F361871527C02FA47 /* FontAwesomeImageView.swift */; };
+		8175904831B9B01200717830748AB9E6 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4BDEC33D6B045184A490DFCB5BAECECC /* Font Awesome 5 Free-Regular-400.otf */; };
+		833760327CD73F9357FF9C8010B79867 /* OperationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A401E1BC95109B15D78CCE82E9403 /* OperationTask.swift */; };
+		833AB5F253E5DE2AD3BDC708F1AC0B4F /* ActiveLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4463D815FD4098E2DB0909B3785CC8E /* ActiveLabel-dummy.m */; };
+		89541256E0896D0DB1B01FF4CD6F6677 /* AVDataAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D5839DA8C62D9F625EEFD73ABEE82 /* AVDataAsset.swift */; };
+		8AB89185FEC0B89571D762C367EF592C /* ImageDecoders+Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75449ED87F7484303BD24598AF3399 /* ImageDecoders+Video.swift */; };
+		8C5F4EFDF708EDA835905DE0F79CED18 /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F21EC562E6CB46A382360E5BC67ED /* FetchImage.swift */; };
+		8DAC4BA44E0D2B9E338773AEDA262C99 /* ImageProcessors+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74160592BD42BB71FA26CB0573083292 /* ImageProcessors+Resize.swift */; };
+		8DF645F4FB874A03AB8D448233E5CD2C /* FontAwesome.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05349535A649E99261537BF5095AEDA1 /* FontAwesome.swift-dummy.m */; };
+		9013971789C9A64B8503D4E386E0FB8B /* FontAwesomeImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72184210837CE30FC5BC70A7E919EF60 /* FontAwesomeImageRepresentable.swift */; };
+		94BC498195C3656FE15CA538FEAFE569 /* Nuke-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D72C63DC4C72BC9D02A2A14E8C1A91BD /* Nuke-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94E7F39942F7393637B7DB0120C26CB6 /* Allocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E2ECBC839A77DC48BE590F3CFA06D0 /* Allocations.swift */; };
+		9753ABD7B056ADF7624EFA1E9BAD8D54 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D1DE970BF5CD9884A1919AEFB780CD /* DataCache.swift */; };
+		97E8ED9DB608EF403A805DBD2DE77574 /* FontAwesomeTextRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC13FEBD80C795C46330938C56C5704 /* FontAwesomeTextRepresentable.swift */; };
+		9E52B049FA39B2E3AB2368743FD12122 /* FontAwesomeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F30CCEA397E319DF695F3A30A7F5F4 /* FontAwesomeBarButtonItem.swift */; };
+		A9AEFFE56E4096A9856FDE70A4988408 /* FontAwesomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF686923445D9B13BFDFB3847990ED3 /* FontAwesomeView.swift */; };
+		AA2173C5FBECA4F081590EFE8282B430 /* FontAwesomeStateRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFCDC0F951EC6F31BFA7772218AE5CB /* FontAwesomeStateRequirement.swift */; };
+		ADF4BCC192ABC47D6AD91A2920215486 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB2E5B76A66AACF2BBE44C63E4BC3CC7 /* Font Awesome 5 Brands-Regular-400.otf */; };
+		B022AF50744129E7E3A86CCEDA44C9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF26CFF1E862548F8E456C64372DC06 /* Foundation.framework */; };
+		B1760AFAF139258CF9A7EC8F079C0CF6 /* ResumableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6526643ECD65C3E81F87DC5EF6C25FA /* ResumableData.swift */; };
+		B4C00C781823BC9F64C4780553B8C37A /* ImagePipelineTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F9DA54383FE953EF96C60C0D201A38 /* ImagePipelineTask.swift */; };
+		B540300B73D64A56A2282CEE77883E2C /* ImageCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93316EAD4FF710FC14D38A38FCC13B /* ImageCaching.swift */; };
+		B8FC016C0102FD7DEEF2AEA42A1AB479 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED89C4DCB19173008994FE4265AF24D /* ImageCache.swift */; };
+		BBAAD3B1ADC780DE6001E027DC39D4DC /* RegexParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E17A6A171D50050667F032698BA5E0 /* RegexParser.swift */; };
+		BF5AA3C05B5C6B6ED084FA31623447CE /* FontAwesome.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 772C0ECA89F53CA25779C74B5981AD02 /* FontAwesome.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C488085767B58AC34208793EBBB6CA19 /* ImageProcessors+GaussianBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36A31894DC14300690720F70410B88 /* ImageProcessors+GaussianBlur.swift */; };
+		C98BFD6DABF96EEE9ACED2EE5F42A77D /* TaskLoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D3596DB7BA2E4E20F7B4A590090B7 /* TaskLoadImage.swift */; };
+		CA035A2438F395ADD4FA6C67A14C41C8 /* TaskFetchDecodedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77766317269E3AE5DE2E5CCA82E546CA /* TaskFetchDecodedImage.swift */; };
+		CA4A8E090963608140D6362B5D9FDE53 /* ImageProcessors+Anonymous.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD2B53AF463359C316C51614BA691B /* ImageProcessors+Anonymous.swift */; };
+		CA763E9FED2566BAD65CF14A47D1E6FD /* ActiveBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF857D04B08B54D73126F84AF7D0B9D3 /* ActiveBuilder.swift */; };
+		CD50DC224408660C7160B621249CBFD8 /* ImageProcessors+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE21AC9450566E1DED7543B2F0C9FA /* ImageProcessors+RoundedCorners.swift */; };
+		D11D46285313EAB3161E8748AC67DE37 /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6171B70D48A323304FEA56465696B3D /* ImageViewExtensions.swift */; };
 		D11D6D4DFA864A1059022075FC5BE052 /* Pods-ComplexCollectionViewStyleExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E15518962889295F11E474A364FC56DF /* Pods-ComplexCollectionViewStyleExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEF0712EB9D0C0605AB0DEB85B9C04A7 /* FontAwesomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ABD2C401D847AC69CBACDAE22FF11 /* FontAwesomeExtension.swift */; };
-		E113BFF705F231576AB1BC02E8CD31FF /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB93D8D1778767C2DECC4EE6BA127B3 /* Deprecated.swift */; };
+		D373FD8D8E68E22A4E0737FF44667F17 /* TaskFetchWithPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F84D88587C296CE2FCCE60531B106 /* TaskFetchWithPublisher.swift */; };
+		D4525320E03678A16FAA9C8A07252FDC /* DataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B814E8060835A76DB7DF136D2E3574 /* DataLoading.swift */; };
+		DB1888B38ECC96F5972D301DDF6855F4 /* ImageDecoders+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA083887AAC9C486F38898E01F48B8FB /* ImageDecoders+Empty.swift */; };
+		DBB3252883F544589B0E8FC65009CA0D /* ImageDecoderRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639989C3154B82411ECE30F3616BBE5A /* ImageDecoderRegistry.swift */; };
+		DBCFF0A60797E3B757A1F454A1E5E92B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD068B7822F095078426F8AEE1C3853 /* Log.swift */; };
+		DEF0712EB9D0C0605AB0DEB85B9C04A7 /* FontAwesomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F9B5FBE0B0914981A55DA1E846E9 /* FontAwesomeExtension.swift */; };
 		E196E933DDF9D1FDBD7CE2AEE4CA32BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF26CFF1E862548F8E456C64372DC06 /* Foundation.framework */; };
+		E2E4C39B1617F01CF1B97B103C4FCF9E /* ImageProcessors+CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B92BBA0E77D54E47CE44C609FCA4F6F /* ImageProcessors+CoreImage.swift */; };
+		E32B1C933FD05D12A39E7B50AC0AE13A /* ImageRequestKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38599CA9594461B5D590C61578C261E0 /* ImageRequestKeys.swift */; };
 		E3EF3166F0F45A747DDB14A4C03454AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF26CFF1E862548F8E456C64372DC06 /* Foundation.framework */; };
-		F09ACB2C5062701272570EBBE36BB7C7 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C7183644E5115774F6DA9CC49B94A9 /* DataCache.swift */; };
-		F8C4A7CD12FCF75141E5131A38F34179 /* FontAwesomeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED06570B6A3C87FD9E1994A9FD3AF966 /* FontAwesomeTabBarItem.swift */; };
+		E450E80EEC08EADE47349313C86F5C5F /* TaskFetchOriginalImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7B7D71032C60D1E1CC6A625776A26 /* TaskFetchOriginalImageData.swift */; };
+		EC946D47528009DCF8D87B685EB51E49 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 438D7F1BF176B934D9805DB385E3B056 /* Font Awesome 5 Free-Solid-900.otf */; };
+		ECE2FE4C255835123AB215A0BCF85CC7 /* ImageEncoders+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB8E25E2530DE216A5DB8588D2328F /* ImageEncoders+Default.swift */; };
+		F3EB1C8345582E728DA248329A816C94 /* ImageEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF391AE5C74B7AAE41B66E7CEBC877A /* ImageEncoding.swift */; };
+		F89C6D435B8DCED0EA803C04D46542AA /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188380AFD2E92D9E07D52669B9519BD /* ImagePrefetcher.swift */; };
+		F8C4A7CD12FCF75141E5131A38F34179 /* FontAwesomeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B78D2BD34864A92360A680BC55D1F /* FontAwesomeTabBarItem.swift */; };
+		F939A61E2587786BD0C5176E2E03460B /* ImageDecompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B00CDF88DEA15FC4349B9BB331C46F5 /* ImageDecompression.swift */; };
+		FD45DB5F8EB88D24F6B008F20B377C39 /* AsyncTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D662F58EDC95F5795759ED489B37495 /* AsyncTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		30EA655E5265670F4789006ED71DB601 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 062A64896E847A6749F58B6BA9A931B1;
-			remoteInfo = Nuke;
-		};
-		40367EC5AF4C8A251268C9B730AB7029 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E18EE5DE3744DADF64511923F006E05;
-			remoteInfo = ActiveLabel;
-		};
-		B590C731C13374F4AD191BC0E86B5CC3 /* PBXContainerItemProxy */ = {
+		2B143500601E6F1145EE64E28D84A2EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BB240150692F32EC312F3CF346C8B9D1;
 			remoteInfo = FontAwesome.swift;
 		};
-		C27ED67F95247CAFF55165FF166459CD /* PBXContainerItemProxy */ = {
+		437081B84853EFAA2E1A7979B5642259 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E18EE5DE3744DADF64511923F006E05;
+			remoteInfo = ActiveLabel;
+		};
+		6D993D2E4FDD9E64D3350649FD476214 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4DC20DD2E50259D674257304EC016C93;
 			remoteInfo = "FontAwesome.swift-FontAwesome.swift";
 		};
+		9BCEC45259296D048F54F22C1958EDCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 062A64896E847A6749F58B6BA9A931B1;
+			remoteInfo = Nuke;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0113776395F28462B0F6D3E0B93B6543 /* RateLimiter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RateLimiter.swift; path = Sources/Internal/RateLimiter.swift; sourceTree = "<group>"; };
 		01E0956426DD496B2E98990ABD963384 /* Pods-ComplexCollectionViewStyleExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComplexCollectionViewStyleExample.debug.xcconfig"; sourceTree = "<group>"; };
-		08A9CB993D74299F623F8D7AB05B8627 /* Nuke.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Nuke.modulemap; sourceTree = "<group>"; };
-		09FF029FA7EB203C70FAF73EB716A994 /* ActiveLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ActiveLabel-prefix.pch"; sourceTree = "<group>"; };
-		0BA0EBC750111B223B928F966E699C57 /* StringTrimExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringTrimExtension.swift; path = ActiveLabel/StringTrimExtension.swift; sourceTree = "<group>"; };
-		0CB93D8D1778767C2DECC4EE6BA127B3 /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/Deprecated.swift; sourceTree = "<group>"; };
-		135C0598A6E266C7E89E7CC81F38D467 /* FontAwesome.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FontAwesome.swift.modulemap; sourceTree = "<group>"; };
-		149F843BC695C8651C0CA1E372FEAF45 /* ActiveType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActiveType.swift; path = ActiveLabel/ActiveType.swift; sourceTree = "<group>"; };
+		05349535A649E99261537BF5095AEDA1 /* FontAwesome.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FontAwesome.swift-dummy.m"; sourceTree = "<group>"; };
+		09B5DF19878A6C4F361871527C02FA47 /* FontAwesomeImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeImageView.swift; path = FontAwesome/FontAwesomeImageView.swift; sourceTree = "<group>"; };
+		0A3DFC65C819452503551F44D096840D /* ImageProcessors+Circle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageProcessors+Circle.swift"; path = "Sources/Core/Processing/ImageProcessors+Circle.swift"; sourceTree = "<group>"; };
+		0C3D3596DB7BA2E4E20F7B4A590090B7 /* TaskLoadImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskLoadImage.swift; path = Sources/Core/Tasks/TaskLoadImage.swift; sourceTree = "<group>"; };
+		10DE491D089DDDC56780F0F2ACED9710 /* DataLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Sources/Core/Loading/DataLoader.swift; sourceTree = "<group>"; };
+		10E0B4E77BFEB236993CC76E0DCF3787 /* ActiveType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActiveType.swift; path = ActiveLabel/ActiveType.swift; sourceTree = "<group>"; };
+		10FE21AC9450566E1DED7543B2F0C9FA /* ImageProcessors+RoundedCorners.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageProcessors+RoundedCorners.swift"; path = "Sources/Core/Processing/ImageProcessors+RoundedCorners.swift"; sourceTree = "<group>"; };
+		13A6BFAE916C4A63DD9A6704A73EB359 /* FontAwesome.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontAwesome.swift.debug.xcconfig; sourceTree = "<group>"; };
 		15ECE7CA868AF47CC5B920E32C9304E4 /* Pods-ComplexCollectionViewStyleExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ComplexCollectionViewStyleExample-dummy.m"; sourceTree = "<group>"; };
-		1770E2C89C74D04384D8CFD2A2A2CE00 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageViewExtensions.swift; path = Sources/ImageViewExtensions.swift; sourceTree = "<group>"; };
-		19C7183644E5115774F6DA9CC49B94A9 /* DataCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataCache.swift; path = Sources/DataCache.swift; sourceTree = "<group>"; };
+		18B7B7D71032C60D1E1CC6A625776A26 /* TaskFetchOriginalImageData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskFetchOriginalImageData.swift; path = Sources/Core/Tasks/TaskFetchOriginalImageData.swift; sourceTree = "<group>"; };
+		1BCC4B0DBF479E5EB627385E14A40B7A /* ImagePipelineCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipelineCache.swift; path = Sources/Core/Caching/ImagePipelineCache.swift; sourceTree = "<group>"; };
 		1DE029861A43CC7E574D9D6D454D4770 /* Pods-ComplexCollectionViewStyleExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ComplexCollectionViewStyleExample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		242698546701C13E4F3A67DBB1ADBDF8 /* ActiveLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ActiveLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		280ABD2C401D847AC69CBACDAE22FF11 /* FontAwesomeExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeExtension.swift; path = FontAwesome/FontAwesomeExtension.swift; sourceTree = "<group>"; };
-		28A3CCFDC77829170B0B12EB9E3391CF /* FontAwesome_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FontAwesome_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FF391AE5C74B7AAE41B66E7CEBC877A /* ImageEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageEncoding.swift; path = Sources/Core/Encoding/ImageEncoding.swift; sourceTree = "<group>"; };
+		23767CBF98351BEAF35224EEDC70C80D /* ImagePipelineConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipelineConfiguration.swift; path = Sources/Core/ImagePipelineConfiguration.swift; sourceTree = "<group>"; };
+		242698546701C13E4F3A67DBB1ADBDF8 /* ActiveLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ActiveLabel.framework; path = ActiveLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28683753BFC5C30C057CA8C6CA7FDF2F /* ActiveLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActiveLabel.swift; path = ActiveLabel/ActiveLabel.swift; sourceTree = "<group>"; };
+		28A3CCFDC77829170B0B12EB9E3391CF /* FontAwesome_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FontAwesome_swift.framework; path = FontAwesome.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC560223F756CEE946D0B1589B7C895 /* Pods-ComplexCollectionViewStyleExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ComplexCollectionViewStyleExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		2DAD7D76FC007F48AE48F2FD15BF01BB /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B1DFAF74F40AB350EBF6CA85D416903 /* Graphics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Graphics.swift; path = Sources/Internal/Graphics.swift; sourceTree = "<group>"; };
+		2CC66720AF4E3D592ADE8F71185E47A8 /* ActiveLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ActiveLabel-umbrella.h"; sourceTree = "<group>"; };
+		2DAD7D76FC007F48AE48F2FD15BF01BB /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nuke.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DCD187DE7CF45FE90A53ABD173D556F /* ImageRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageRequest.swift; path = Sources/Core/ImageRequest.swift; sourceTree = "<group>"; };
 		2DF26CFF1E862548F8E456C64372DC06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		2E709448C23ACCA7162B65944ACA91E3 /* ActiveLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ActiveLabel-dummy.m"; sourceTree = "<group>"; };
-		35A0ADCFC33E0699BD178AFAB7858B0F /* ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist"; sourceTree = "<group>"; };
-		37090632D44AB1074E54A78461E15E63 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/ImageCache.swift; sourceTree = "<group>"; };
-		37489B8E53A2C330BD6D5E86632EE2C2 /* ImagePipeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipeline.swift; path = Sources/ImagePipeline.swift; sourceTree = "<group>"; };
-		38711A4010C2C4E581B3A9CEC68070FF /* FontAwesomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeView.swift; path = FontAwesome/FontAwesomeView.swift; sourceTree = "<group>"; };
-		3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontAwesome.swift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DD3173E14C7914B19F069107986B217 /* FontAwesomeImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeImageView.swift; path = FontAwesome/FontAwesomeImageView.swift; sourceTree = "<group>"; };
-		41C1A3925FF80A5E4AB0F463626F26E6 /* Pods_ComplexCollectionViewStyleExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComplexCollectionViewStyleExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4897D16A60FF75B4F2C9CCC74A4C853C /* FontAwesome.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontAwesome.swift.debug.xcconfig; sourceTree = "<group>"; };
-		55653D3BF9D067C4310C2A691206FC15 /* FontAwesomeTextRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeTextRepresentable.swift; path = FontAwesome/FontAwesomeTextRepresentable.swift; sourceTree = "<group>"; };
-		63E361DA13B05E1E1E7C82E63A4DEBB5 /* DataLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Sources/DataLoader.swift; sourceTree = "<group>"; };
-		66FBE133175F607CF93E683307995EEC /* ActiveLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ActiveLabel.debug.xcconfig; sourceTree = "<group>"; };
-		67770E11881D53300F4E3F910012C45F /* FontAwesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesome.swift; path = FontAwesome/FontAwesome.swift; sourceTree = "<group>"; };
-		6982522EB544C333E51F87403F82B8E0 /* FontAwesomeStateRequirement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeStateRequirement.swift; path = FontAwesome/FontAwesomeStateRequirement.swift; sourceTree = "<group>"; };
-		6E3F4C641D7819D6E871ACC352EF615E /* Nuke-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nuke-prefix.pch"; sourceTree = "<group>"; };
-		7F747C66E104CE290BF456A75E81C1A9 /* Task.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Sources/Task.swift; sourceTree = "<group>"; };
-		801B7DAEBC2699C21E760BA3BAECF52C /* ImageEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageEncoding.swift; path = Sources/ImageEncoding.swift; sourceTree = "<group>"; };
-		81955C8E29716EF248AF3FBCFCDEE28F /* ImagePreheater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePreheater.swift; path = Sources/ImagePreheater.swift; sourceTree = "<group>"; };
-		87322EE95DCA9D7A1F1060EEDCD703EE /* FontAwesomeSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeSegmentedControl.swift; path = FontAwesome/FontAwesomeSegmentedControl.swift; sourceTree = "<group>"; };
-		8F89444B273BB86BEEEA30008D75EFE5 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Font Awesome 5 Brands-Regular-400.otf"; path = "FontAwesome/Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
-		91FA368285B8734C3CE521EA7F773E7F /* FontAwesomeBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeBarButtonItem.swift; path = FontAwesome/FontAwesomeBarButtonItem.swift; sourceTree = "<group>"; };
-		923AA42931EA40770E59FB8C35F898E1 /* ActiveLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ActiveLabel.modulemap; sourceTree = "<group>"; };
-		93F3B77F34D383BE79CEFA367F53D557 /* ImageProcessing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessing.swift; path = Sources/ImageProcessing.swift; sourceTree = "<group>"; };
-		947B20951CB7435F184F10A1A30D23A1 /* ImagePipelineConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipelineConfiguration.swift; path = Sources/ImagePipelineConfiguration.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3498A900FD95429041A53C2465C4E36E /* DataCaching.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataCaching.swift; path = Sources/Core/Caching/DataCaching.swift; sourceTree = "<group>"; };
+		36F30CCEA397E319DF695F3A30A7F5F4 /* FontAwesomeBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeBarButtonItem.swift; path = FontAwesome/FontAwesomeBarButtonItem.swift; sourceTree = "<group>"; };
+		38599CA9594461B5D590C61578C261E0 /* ImageRequestKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageRequestKeys.swift; path = Sources/Internal/ImageRequestKeys.swift; sourceTree = "<group>"; };
+		3B268CE27AA37A07935277A0362CB4E4 /* StringTrimExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringTrimExtension.swift; path = ActiveLabel/StringTrimExtension.swift; sourceTree = "<group>"; };
+		3CE210AA154CD21A6AB94629BE21115B /* ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist"; sourceTree = "<group>"; };
+		3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FontAwesome.swift.bundle; path = "FontAwesome.swift-FontAwesome.swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DB13CE53E9BADCD2B4445B69F675FBE /* Nuke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nuke.debug.xcconfig; sourceTree = "<group>"; };
+		3FFB8E25E2530DE216A5DB8588D2328F /* ImageEncoders+Default.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageEncoders+Default.swift"; path = "Sources/Core/Encoding/ImageEncoders+Default.swift"; sourceTree = "<group>"; };
+		41C1A3925FF80A5E4AB0F463626F26E6 /* Pods_ComplexCollectionViewStyleExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ComplexCollectionViewStyleExample.framework; path = "Pods-ComplexCollectionViewStyleExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		438D7F1BF176B934D9805DB385E3B056 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Font Awesome 5 Free-Solid-900.otf"; path = "FontAwesome/Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		4BDEC33D6B045184A490DFCB5BAECECC /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Font Awesome 5 Free-Regular-400.otf"; path = "FontAwesome/Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		4DDFFEAF5835259FA00988617EA6C4A5 /* Nuke-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nuke-prefix.pch"; sourceTree = "<group>"; };
+		4E7535FEB3B7852B075066E42DCE6DCF /* ImageProcessors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessors.swift; path = Sources/Core/Processing/ImageProcessors.swift; sourceTree = "<group>"; };
+		4EA9E4B564C2D7503374B03990193AF8 /* ActiveLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ActiveLabel-prefix.pch"; sourceTree = "<group>"; };
+		4F2D5839DA8C62D9F625EEFD73ABEE82 /* AVDataAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AVDataAsset.swift; path = Sources/Internal/AVDataAsset.swift; sourceTree = "<group>"; };
+		4FBA1B206AA629407D7673C0A87674AD /* ImageDecoders+Default.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageDecoders+Default.swift"; path = "Sources/Core/Decoding/ImageDecoders+Default.swift"; sourceTree = "<group>"; };
+		51B814E8060835A76DB7DF136D2E3574 /* DataLoading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoading.swift; path = Sources/Core/Loading/DataLoading.swift; sourceTree = "<group>"; };
+		59C99ADE119BCC5EF29108873BCCDABB /* AssetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetType.swift; path = Sources/Core/Decoding/AssetType.swift; sourceTree = "<group>"; };
+		5A4A401E1BC95109B15D78CCE82E9403 /* OperationTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OperationTask.swift; path = Sources/Core/Tasks/OperationTask.swift; sourceTree = "<group>"; };
+		5EB9593C1CD028678269E514EB8E992C /* FontAwesomeSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeSegmentedControl.swift; path = FontAwesome/FontAwesomeSegmentedControl.swift; sourceTree = "<group>"; };
+		6234AF0616325306F47652B5BF26FEE4 /* Nuke.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Nuke.modulemap; sourceTree = "<group>"; };
+		62D1DE970BF5CD9884A1919AEFB780CD /* DataCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataCache.swift; path = Sources/Core/Caching/DataCache.swift; sourceTree = "<group>"; };
+		639989C3154B82411ECE30F3616BBE5A /* ImageDecoderRegistry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDecoderRegistry.swift; path = Sources/Core/Decoding/ImageDecoderRegistry.swift; sourceTree = "<group>"; };
+		66B82E5D38738A5B4529AEBAB5346F33 /* TaskLoadData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskLoadData.swift; path = Sources/Core/Tasks/TaskLoadData.swift; sourceTree = "<group>"; };
+		6A93316EAD4FF710FC14D38A38FCC13B /* ImageCaching.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCaching.swift; path = Sources/Core/Caching/ImageCaching.swift; sourceTree = "<group>"; };
+		6B92BBA0E77D54E47CE44C609FCA4F6F /* ImageProcessors+CoreImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageProcessors+CoreImage.swift"; path = "Sources/Core/Processing/ImageProcessors+CoreImage.swift"; sourceTree = "<group>"; };
+		6CF995FBCDE0607B4843E6D2C8FC0D53 /* ImageProcessingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessingOptions.swift; path = Sources/Core/Processing/ImageProcessingOptions.swift; sourceTree = "<group>"; };
+		7008EF85B50D95916673F385A7EA24B7 /* ImagePipelineDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipelineDelegate.swift; path = Sources/Core/ImagePipelineDelegate.swift; sourceTree = "<group>"; };
+		72184210837CE30FC5BC70A7E919EF60 /* FontAwesomeImageRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeImageRepresentable.swift; path = FontAwesome/FontAwesomeImageRepresentable.swift; sourceTree = "<group>"; };
+		74160592BD42BB71FA26CB0573083292 /* ImageProcessors+Resize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageProcessors+Resize.swift"; path = "Sources/Core/Processing/ImageProcessors+Resize.swift"; sourceTree = "<group>"; };
+		745DE6A0C40A5D22D2B2947814B7F295 /* Enum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = FontAwesome/Enum.swift; sourceTree = "<group>"; };
+		763CE08D3B4790EC4F70319A71BE7301 /* ImageResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResponse.swift; path = Sources/Core/ImageResponse.swift; sourceTree = "<group>"; };
+		772C0ECA89F53CA25779C74B5981AD02 /* FontAwesome.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome.swift-umbrella.h"; sourceTree = "<group>"; };
+		77766317269E3AE5DE2E5CCA82E546CA /* TaskFetchDecodedImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskFetchDecodedImage.swift; path = Sources/Core/Tasks/TaskFetchDecodedImage.swift; sourceTree = "<group>"; };
+		7D51B8FD76DC3E672149CEE9889F0ADE /* Nuke-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nuke-dummy.m"; sourceTree = "<group>"; };
+		7D5815387C6E413B45D32525027ACFA9 /* Operation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operation.swift; path = Sources/Internal/Operation.swift; sourceTree = "<group>"; };
+		7D662F58EDC95F5795759ED489B37495 /* AsyncTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncTask.swift; path = Sources/Core/Tasks/AsyncTask.swift; sourceTree = "<group>"; };
+		84BD388221B866773255F5527B840CA7 /* ImageDecoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDecoding.swift; path = Sources/Core/Decoding/ImageDecoding.swift; sourceTree = "<group>"; };
+		84F961A2D3FD0BC665EDC3A14F934DA6 /* FontAwesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesome.swift; path = FontAwesome/FontAwesome.swift; sourceTree = "<group>"; };
+		856DD392FA370E592152823A1CF68115 /* ImagePublisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePublisher.swift; path = Sources/Combine/ImagePublisher.swift; sourceTree = "<group>"; };
+		86F9DA54383FE953EF96C60C0D201A38 /* ImagePipelineTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipelineTask.swift; path = Sources/Core/Tasks/ImagePipelineTask.swift; sourceTree = "<group>"; };
+		8A36A31894DC14300690720F70410B88 /* ImageProcessors+GaussianBlur.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageProcessors+GaussianBlur.swift"; path = "Sources/Core/Processing/ImageProcessors+GaussianBlur.swift"; sourceTree = "<group>"; };
+		8B00CDF88DEA15FC4349B9BB331C46F5 /* ImageDecompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDecompression.swift; path = Sources/Core/Processing/ImageDecompression.swift; sourceTree = "<group>"; };
+		8B2B78D2BD34864A92360A680BC55D1F /* FontAwesomeTabBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeTabBarItem.swift; path = FontAwesome/FontAwesomeTabBarItem.swift; sourceTree = "<group>"; };
+		8B8E514D92ACDC556A3DF05AB7E0468A /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Internal/Extensions.swift; sourceTree = "<group>"; };
+		8FB90D2777C271926E7277B06FE33B8F /* ImageProcessing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessing.swift; path = Sources/Core/Processing/ImageProcessing.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E75449ED87F7484303BD24598AF3399 /* ImageDecoders+Video.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageDecoders+Video.swift"; path = "Sources/Core/Decoding/ImageDecoders+Video.swift"; sourceTree = "<group>"; };
+		9ED89C4DCB19173008994FE4265AF24D /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/Core/Caching/ImageCache.swift; sourceTree = "<group>"; };
+		9FF686923445D9B13BFDFB3847990ED3 /* FontAwesomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeView.swift; path = FontAwesome/FontAwesomeView.swift; sourceTree = "<group>"; };
 		A41A2148032FCC63CCF71A1747220761 /* Pods-ComplexCollectionViewStyleExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ComplexCollectionViewStyleExample-frameworks.sh"; sourceTree = "<group>"; };
-		A54B66ED4C6ACEE955DC4E3B367F13EC /* FontAwesome.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome.swift-umbrella.h"; sourceTree = "<group>"; };
-		A88929971E34CEF6367847B6A6C81E25 /* ActiveBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActiveBuilder.swift; path = ActiveLabel/ActiveBuilder.swift; sourceTree = "<group>"; };
-		AB09B3E52B330A7A3150EF3E7F50E107 /* Enum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = FontAwesome/Enum.swift; sourceTree = "<group>"; };
-		AF35189F7A9BE7271FF69BA83BF30CCF /* Nuke-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nuke-Info.plist"; sourceTree = "<group>"; };
-		BC6F4520BDED9EDE7F1D0CC40FE76129 /* ActiveLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActiveLabel.swift; path = ActiveLabel/ActiveLabel.swift; sourceTree = "<group>"; };
-		BD46DB08B91106C2956AB58229F564DB /* Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Internal.swift; path = Sources/Internal.swift; sourceTree = "<group>"; };
-		C72E365116849ADA5298116A601EC039 /* FontAwesome.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome.swift-prefix.pch"; sourceTree = "<group>"; };
-		C7A5C0216D0FC4F8EE498081D33B8D1A /* Nuke-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nuke-umbrella.h"; sourceTree = "<group>"; };
-		C80F746F872ED2A28E986A9B31B567CF /* ActiveLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ActiveLabel-umbrella.h"; sourceTree = "<group>"; };
-		C8FD2C972ED0BE5047F10B6224088073 /* ImageDecoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDecoding.swift; path = Sources/ImageDecoding.swift; sourceTree = "<group>"; };
+		A4463D815FD4098E2DB0909B3785CC8E /* ActiveLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ActiveLabel-dummy.m"; sourceTree = "<group>"; };
+		A8E67BE2FD39DFEE1DB095EC7190A92E /* FontAwesome.swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontAwesome.swift.release.xcconfig; sourceTree = "<group>"; };
+		A9E2ECBC839A77DC48BE590F3CFA06D0 /* Allocations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Allocations.swift; path = Sources/Internal/Allocations.swift; sourceTree = "<group>"; };
+		AF47D51CCBA52E11B23A84EEBB3B8ED1 /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/Internal/Deprecated.swift; sourceTree = "<group>"; };
+		B099051C8E6C66E30CEE9341322598E9 /* ImageTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTask.swift; path = Sources/Core/ImageTask.swift; sourceTree = "<group>"; };
+		B61F21EC562E6CB46A382360E5BC67ED /* FetchImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FetchImage.swift; path = Sources/UI/FetchImage.swift; sourceTree = "<group>"; };
+		B6526643ECD65C3E81F87DC5EF6C25FA /* ResumableData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResumableData.swift; path = Sources/Internal/ResumableData.swift; sourceTree = "<group>"; };
+		BA0AFB2CB6838D4A0C573F474696A582 /* ActiveLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ActiveLabel.modulemap; sourceTree = "<group>"; };
+		C23F84D88587C296CE2FCCE60531B106 /* TaskFetchWithPublisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskFetchWithPublisher.swift; path = Sources/Core/Tasks/TaskFetchWithPublisher.swift; sourceTree = "<group>"; };
+		C2B872C18F0ACC51F9879271A615DDDB /* ActiveLabel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ActiveLabel.release.xcconfig; sourceTree = "<group>"; };
+		C46B7199A9C2D8AAABE63815A9FEC7E4 /* ImagePipeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipeline.swift; path = Sources/Core/ImagePipeline.swift; sourceTree = "<group>"; };
+		C6171B70D48A323304FEA56465696B3D /* ImageViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageViewExtensions.swift; path = Sources/UI/ImageViewExtensions.swift; sourceTree = "<group>"; };
+		C66E1DD8579501207810724FBF065D61 /* FontAwesome.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome.swift-prefix.pch"; sourceTree = "<group>"; };
+		C694D165388718E0A1B829AE35F6D382 /* ActiveLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ActiveLabel.debug.xcconfig; sourceTree = "<group>"; };
+		CB2E5B76A66AACF2BBE44C63E4BC3CC7 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Font Awesome 5 Brands-Regular-400.otf"; path = "FontAwesome/Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		CE1C82DB69A4D9330C70F964151B3947 /* ImageProcessors+Composition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageProcessors+Composition.swift"; path = "Sources/Core/Processing/ImageProcessors+Composition.swift"; sourceTree = "<group>"; };
+		CE33C7EC43AA8F67C40B12EDFA189109 /* Nuke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nuke.release.xcconfig; sourceTree = "<group>"; };
 		CF3AAE89C83DD48E7FC8F7AE39BEAF5F /* Pods-ComplexCollectionViewStyleExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComplexCollectionViewStyleExample.release.xcconfig"; sourceTree = "<group>"; };
 		CFA76860B506E69F08B0B154D70C038E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
-		D40139F9E23BFF201E9F19E2F41A42FE /* FontAwesome.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FontAwesome.swift-dummy.m"; sourceTree = "<group>"; };
-		D5FBF1BCAEAF17F28601BF423F8BA6DF /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Font Awesome 5 Free-Regular-400.otf"; path = "FontAwesome/Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
-		D6D15FD8F1B34746E69E9D55FA0CF32D /* FontAwesome.swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FontAwesome.swift-Info.plist"; sourceTree = "<group>"; };
-		DCC59E0E44809652EC444C0F0CE8743A /* FontAwesomeImageRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeImageRepresentable.swift; path = FontAwesome/FontAwesomeImageRepresentable.swift; sourceTree = "<group>"; };
-		DD619E964AD4B835DE929A4E7009BE7B /* RegexParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RegexParser.swift; path = ActiveLabel/RegexParser.swift; sourceTree = "<group>"; };
+		D72C63DC4C72BC9D02A2A14E8C1A91BD /* Nuke-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nuke-umbrella.h"; sourceTree = "<group>"; };
+		D8079CD9734C6C73808008263D396C5E /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Sources/Internal/Combine.swift; sourceTree = "<group>"; };
 		E15518962889295F11E474A364FC56DF /* Pods-ComplexCollectionViewStyleExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ComplexCollectionViewStyleExample-umbrella.h"; sourceTree = "<group>"; };
-		E222E148243FE0059F1801E90A2B0B81 /* FontAwesome.swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontAwesome.swift.release.xcconfig; sourceTree = "<group>"; };
-		E24A970E1B7145AE69AD122F0A401B79 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Font Awesome 5 Free-Solid-900.otf"; path = "FontAwesome/Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		E6DEBFA2534B42418E3505821A479D0F /* Nuke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nuke.debug.xcconfig; sourceTree = "<group>"; };
+		E6E5358B73649D3282114E958388782A /* FontAwesome.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FontAwesome.swift.modulemap; sourceTree = "<group>"; };
 		E74D207BDA239A25C1380A816F90FF59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E8AD50648A8A1F74F974130CF23AED6F /* ImageRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageRequest.swift; path = Sources/ImageRequest.swift; sourceTree = "<group>"; };
-		ED06570B6A3C87FD9E1994A9FD3AF966 /* FontAwesomeTabBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeTabBarItem.swift; path = FontAwesome/FontAwesomeTabBarItem.swift; sourceTree = "<group>"; };
-		EE9348C4735B92B733D669EEB479D05B /* ActiveLabel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ActiveLabel.release.xcconfig; sourceTree = "<group>"; };
-		F46CF6C4830C5CEC69285925E4F26600 /* Nuke-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nuke-dummy.m"; sourceTree = "<group>"; };
-		F6113C294308A351542BB4BE25287860 /* ImageTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTask.swift; path = Sources/ImageTask.swift; sourceTree = "<group>"; };
-		F908AA22A391FC95A731ED0705851D56 /* Nuke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nuke.release.xcconfig; sourceTree = "<group>"; };
+		E7C5F9B5FBE0B0914981A55DA1E846E9 /* FontAwesomeExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeExtension.swift; path = FontAwesome/FontAwesomeExtension.swift; sourceTree = "<group>"; };
+		E9DCE9ABEE9C84469D1EEDB7810B851F /* ImageEncoders+ImageIO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageEncoders+ImageIO.swift"; path = "Sources/Core/Encoding/ImageEncoders+ImageIO.swift"; sourceTree = "<group>"; };
+		EC5DD705BE190E4C359E15E502A20166 /* FontAwesome.swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FontAwesome.swift-Info.plist"; sourceTree = "<group>"; };
+		ED23F4C6D1DC5C2DA38F28A51ED469CE /* ActiveLabel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ActiveLabel-Info.plist"; sourceTree = "<group>"; };
+		EDC13FEBD80C795C46330938C56C5704 /* FontAwesomeTextRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeTextRepresentable.swift; path = FontAwesome/FontAwesomeTextRepresentable.swift; sourceTree = "<group>"; };
+		EFFCDC0F951EC6F31BFA7772218AE5CB /* FontAwesomeStateRequirement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeStateRequirement.swift; path = FontAwesome/FontAwesomeStateRequirement.swift; sourceTree = "<group>"; };
+		F188380AFD2E92D9E07D52669B9519BD /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/Core/Prefetching/ImagePrefetcher.swift; sourceTree = "<group>"; };
+		F20CE0C5E30A79825AB22D59E31A626C /* ImageEncoders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageEncoders.swift; path = Sources/Core/Encoding/ImageEncoders.swift; sourceTree = "<group>"; };
+		F3B02501FF4A08408CC829F18D89EDF0 /* LinkedList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinkedList.swift; path = Sources/Internal/LinkedList.swift; sourceTree = "<group>"; };
 		F93D544B75AE6B9C5A6E9F37634B2376 /* Pods-ComplexCollectionViewStyleExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ComplexCollectionViewStyleExample.modulemap"; sourceTree = "<group>"; };
-		FC06726F38437FB8297BD120D62852D3 /* ActiveLabel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ActiveLabel-Info.plist"; sourceTree = "<group>"; };
+		F9E17A6A171D50050667F032698BA5E0 /* RegexParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RegexParser.swift; path = ActiveLabel/RegexParser.swift; sourceTree = "<group>"; };
+		FA083887AAC9C486F38898E01F48B8FB /* ImageDecoders+Empty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageDecoders+Empty.swift"; path = "Sources/Core/Decoding/ImageDecoders+Empty.swift"; sourceTree = "<group>"; };
+		FBD068B7822F095078426F8AEE1C3853 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = Sources/Internal/Log.swift; sourceTree = "<group>"; };
+		FBDD2B53AF463359C316C51614BA691B /* ImageProcessors+Anonymous.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageProcessors+Anonymous.swift"; path = "Sources/Core/Processing/ImageProcessors+Anonymous.swift"; sourceTree = "<group>"; };
 		FC1E549953AD7180DFBD936135FFE338 /* Pods-ComplexCollectionViewStyleExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ComplexCollectionViewStyleExample-Info.plist"; sourceTree = "<group>"; };
+		FF4671DBFA81175AAC6791A21E358566 /* Nuke-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nuke-Info.plist"; sourceTree = "<group>"; };
+		FF857D04B08B54D73126F84AF7D0B9D3 /* ActiveBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActiveBuilder.swift; path = ActiveLabel/ActiveBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +263,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		471A195829A286468062133776F4AAB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B022AF50744129E7E3A86CCEDA44C9BE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		765CB95F5EF2E118BDBCEE600A535801 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		887A515F3D3E7D9C7587FA9039843A6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,26 +286,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA3568AA4AFE557F7111A4352BA5849C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51705646643B54960D453044AF46BBC5 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DC5F950F4C26E71393D35F7B5CB37BD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E3EF3166F0F45A747DDB14A4C03454AE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EF81E9F6104AB0241CB578F60FE0274A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,19 +305,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		08FD4B332CA2385018CD0865D6077853 /* Support Files */ = {
+		1A45349988C002D9EEA91A94A8A8B540 /* ActiveLabel */ = {
 			isa = PBXGroup;
 			children = (
-				08A9CB993D74299F623F8D7AB05B8627 /* Nuke.modulemap */,
-				F46CF6C4830C5CEC69285925E4F26600 /* Nuke-dummy.m */,
-				AF35189F7A9BE7271FF69BA83BF30CCF /* Nuke-Info.plist */,
-				6E3F4C641D7819D6E871ACC352EF615E /* Nuke-prefix.pch */,
-				C7A5C0216D0FC4F8EE498081D33B8D1A /* Nuke-umbrella.h */,
-				E6DEBFA2534B42418E3505821A479D0F /* Nuke.debug.xcconfig */,
-				F908AA22A391FC95A731ED0705851D56 /* Nuke.release.xcconfig */,
+				FF857D04B08B54D73126F84AF7D0B9D3 /* ActiveBuilder.swift */,
+				28683753BFC5C30C057CA8C6CA7FDF2F /* ActiveLabel.swift */,
+				10E0B4E77BFEB236993CC76E0DCF3787 /* ActiveType.swift */,
+				F9E17A6A171D50050667F032698BA5E0 /* RegexParser.swift */,
+				3B268CE27AA37A07935277A0362CB4E4 /* StringTrimExtension.swift */,
+				301D2084EEA28240F9EFA89AEE16070E /* Support Files */,
+			);
+			name = ActiveLabel;
+			path = ActiveLabel;
+			sourceTree = "<group>";
+		};
+		20E920734E4F21E13D7B7DE0953967B4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6E5358B73649D3282114E958388782A /* FontAwesome.swift.modulemap */,
+				05349535A649E99261537BF5095AEDA1 /* FontAwesome.swift-dummy.m */,
+				EC5DD705BE190E4C359E15E502A20166 /* FontAwesome.swift-Info.plist */,
+				C66E1DD8579501207810724FBF065D61 /* FontAwesome.swift-prefix.pch */,
+				772C0ECA89F53CA25779C74B5981AD02 /* FontAwesome.swift-umbrella.h */,
+				13A6BFAE916C4A63DD9A6704A73EB359 /* FontAwesome.swift.debug.xcconfig */,
+				A8E67BE2FD39DFEE1DB095EC7190A92E /* FontAwesome.swift.release.xcconfig */,
+				3CE210AA154CD21A6AB94629BE21115B /* ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Nuke";
+			path = "../Target Support Files/FontAwesome.swift";
+			sourceTree = "<group>";
+		};
+		301D2084EEA28240F9EFA89AEE16070E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA0AFB2CB6838D4A0C573F474696A582 /* ActiveLabel.modulemap */,
+				A4463D815FD4098E2DB0909B3785CC8E /* ActiveLabel-dummy.m */,
+				ED23F4C6D1DC5C2DA38F28A51ED469CE /* ActiveLabel-Info.plist */,
+				4EA9E4B564C2D7503374B03990193AF8 /* ActiveLabel-prefix.pch */,
+				2CC66720AF4E3D592ADE8F71185E47A8 /* ActiveLabel-umbrella.h */,
+				C694D165388718E0A1B829AE35F6D382 /* ActiveLabel.debug.xcconfig */,
+				C2B872C18F0ACC51F9879271A615DDDB /* ActiveLabel.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ActiveLabel";
 			sourceTree = "<group>";
 		};
 		4CBC5424558CD50E0286D9373D1C3F5D /* Pods-ComplexCollectionViewStyleExample */ = {
@@ -251,19 +367,6 @@
 			path = "Target Support Files/Pods-ComplexCollectionViewStyleExample";
 			sourceTree = "<group>";
 		};
-		5149999C825A58D40A4C82A2930046CF /* ActiveLabel */ = {
-			isa = PBXGroup;
-			children = (
-				A88929971E34CEF6367847B6A6C81E25 /* ActiveBuilder.swift */,
-				BC6F4520BDED9EDE7F1D0CC40FE76129 /* ActiveLabel.swift */,
-				149F843BC695C8651C0CA1E372FEAF45 /* ActiveType.swift */,
-				DD619E964AD4B835DE929A4E7009BE7B /* RegexParser.swift */,
-				0BA0EBC750111B223B928F966E699C57 /* StringTrimExtension.swift */,
-				80D9F5A8BCF826CF4BE755919D46A6A6 /* Support Files */,
-			);
-			path = ActiveLabel;
-			sourceTree = "<group>";
-		};
 		5FD4246193BA39B99E913D1CF03C0849 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,16 +379,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6E2E7F3B24B0B604C051D58D28C9A628 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5149999C825A58D40A4C82A2930046CF /* ActiveLabel */,
-				CA82EFA37422CFEB9D1BE51BED7766A0 /* FontAwesome.swift */,
-				785EDC14F94D65C6E964DEC97DBEA14E /* Nuke */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		774DD89477A654AC8E4B43436316C693 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,68 +389,91 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		785EDC14F94D65C6E964DEC97DBEA14E /* Nuke */ = {
+		8BE07508D00073328E78BA3696BB7CB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				19C7183644E5115774F6DA9CC49B94A9 /* DataCache.swift */,
-				63E361DA13B05E1E1E7C82E63A4DEBB5 /* DataLoader.swift */,
-				0CB93D8D1778767C2DECC4EE6BA127B3 /* Deprecated.swift */,
-				37090632D44AB1074E54A78461E15E63 /* ImageCache.swift */,
-				C8FD2C972ED0BE5047F10B6224088073 /* ImageDecoding.swift */,
-				801B7DAEBC2699C21E760BA3BAECF52C /* ImageEncoding.swift */,
-				37489B8E53A2C330BD6D5E86632EE2C2 /* ImagePipeline.swift */,
-				947B20951CB7435F184F10A1A30D23A1 /* ImagePipelineConfiguration.swift */,
-				81955C8E29716EF248AF3FBCFCDEE28F /* ImagePreheater.swift */,
-				93F3B77F34D383BE79CEFA367F53D557 /* ImageProcessing.swift */,
-				E8AD50648A8A1F74F974130CF23AED6F /* ImageRequest.swift */,
-				F6113C294308A351542BB4BE25287860 /* ImageTask.swift */,
-				1770E2C89C74D04384D8CFD2A2A2CE00 /* ImageViewExtensions.swift */,
-				BD46DB08B91106C2956AB58229F564DB /* Internal.swift */,
-				7F747C66E104CE290BF456A75E81C1A9 /* Task.swift */,
-				08FD4B332CA2385018CD0865D6077853 /* Support Files */,
-			);
-			path = Nuke;
-			sourceTree = "<group>";
-		};
-		80D9F5A8BCF826CF4BE755919D46A6A6 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				923AA42931EA40770E59FB8C35F898E1 /* ActiveLabel.modulemap */,
-				2E709448C23ACCA7162B65944ACA91E3 /* ActiveLabel-dummy.m */,
-				FC06726F38437FB8297BD120D62852D3 /* ActiveLabel-Info.plist */,
-				09FF029FA7EB203C70FAF73EB716A994 /* ActiveLabel-prefix.pch */,
-				C80F746F872ED2A28E986A9B31B567CF /* ActiveLabel-umbrella.h */,
-				66FBE133175F607CF93E683307995EEC /* ActiveLabel.debug.xcconfig */,
-				EE9348C4735B92B733D669EEB479D05B /* ActiveLabel.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ActiveLabel";
-			sourceTree = "<group>";
-		};
-		99049E981C5F3C8D64C1B693730D66BD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				135C0598A6E266C7E89E7CC81F38D467 /* FontAwesome.swift.modulemap */,
-				D40139F9E23BFF201E9F19E2F41A42FE /* FontAwesome.swift-dummy.m */,
-				D6D15FD8F1B34746E69E9D55FA0CF32D /* FontAwesome.swift-Info.plist */,
-				C72E365116849ADA5298116A601EC039 /* FontAwesome.swift-prefix.pch */,
-				A54B66ED4C6ACEE955DC4E3B367F13EC /* FontAwesome.swift-umbrella.h */,
-				4897D16A60FF75B4F2C9CCC74A4C853C /* FontAwesome.swift.debug.xcconfig */,
-				E222E148243FE0059F1801E90A2B0B81 /* FontAwesome.swift.release.xcconfig */,
-				35A0ADCFC33E0699BD178AFAB7858B0F /* ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FontAwesome.swift";
-			sourceTree = "<group>";
-		};
-		ABC94D3BAC787CFCCFAA1BA1C32B9BA2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8F89444B273BB86BEEEA30008D75EFE5 /* Font Awesome 5 Brands-Regular-400.otf */,
-				D5FBF1BCAEAF17F28601BF423F8BA6DF /* Font Awesome 5 Free-Regular-400.otf */,
-				E24A970E1B7145AE69AD122F0A401B79 /* Font Awesome 5 Free-Solid-900.otf */,
+				CB2E5B76A66AACF2BBE44C63E4BC3CC7 /* Font Awesome 5 Brands-Regular-400.otf */,
+				4BDEC33D6B045184A490DFCB5BAECECC /* Font Awesome 5 Free-Regular-400.otf */,
+				438D7F1BF176B934D9805DB385E3B056 /* Font Awesome 5 Free-Solid-900.otf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		AE194BBB0605AD1EF5285A709FCC0B62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A45349988C002D9EEA91A94A8A8B540 /* ActiveLabel */,
+				C2503C9C9A12C0DCB34DEE0EF5A65779 /* FontAwesome.swift */,
+				B513C3A1C4D95C25314DCD8772110FCA /* Nuke */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B513C3A1C4D95C25314DCD8772110FCA /* Nuke */ = {
+			isa = PBXGroup;
+			children = (
+				A9E2ECBC839A77DC48BE590F3CFA06D0 /* Allocations.swift */,
+				59C99ADE119BCC5EF29108873BCCDABB /* AssetType.swift */,
+				7D662F58EDC95F5795759ED489B37495 /* AsyncTask.swift */,
+				4F2D5839DA8C62D9F625EEFD73ABEE82 /* AVDataAsset.swift */,
+				D8079CD9734C6C73808008263D396C5E /* Combine.swift */,
+				62D1DE970BF5CD9884A1919AEFB780CD /* DataCache.swift */,
+				3498A900FD95429041A53C2465C4E36E /* DataCaching.swift */,
+				10DE491D089DDDC56780F0F2ACED9710 /* DataLoader.swift */,
+				51B814E8060835A76DB7DF136D2E3574 /* DataLoading.swift */,
+				AF47D51CCBA52E11B23A84EEBB3B8ED1 /* Deprecated.swift */,
+				8B8E514D92ACDC556A3DF05AB7E0468A /* Extensions.swift */,
+				B61F21EC562E6CB46A382360E5BC67ED /* FetchImage.swift */,
+				2B1DFAF74F40AB350EBF6CA85D416903 /* Graphics.swift */,
+				9ED89C4DCB19173008994FE4265AF24D /* ImageCache.swift */,
+				6A93316EAD4FF710FC14D38A38FCC13B /* ImageCaching.swift */,
+				639989C3154B82411ECE30F3616BBE5A /* ImageDecoderRegistry.swift */,
+				4FBA1B206AA629407D7673C0A87674AD /* ImageDecoders+Default.swift */,
+				FA083887AAC9C486F38898E01F48B8FB /* ImageDecoders+Empty.swift */,
+				9E75449ED87F7484303BD24598AF3399 /* ImageDecoders+Video.swift */,
+				84BD388221B866773255F5527B840CA7 /* ImageDecoding.swift */,
+				8B00CDF88DEA15FC4349B9BB331C46F5 /* ImageDecompression.swift */,
+				F20CE0C5E30A79825AB22D59E31A626C /* ImageEncoders.swift */,
+				3FFB8E25E2530DE216A5DB8588D2328F /* ImageEncoders+Default.swift */,
+				E9DCE9ABEE9C84469D1EEDB7810B851F /* ImageEncoders+ImageIO.swift */,
+				1FF391AE5C74B7AAE41B66E7CEBC877A /* ImageEncoding.swift */,
+				C46B7199A9C2D8AAABE63815A9FEC7E4 /* ImagePipeline.swift */,
+				1BCC4B0DBF479E5EB627385E14A40B7A /* ImagePipelineCache.swift */,
+				23767CBF98351BEAF35224EEDC70C80D /* ImagePipelineConfiguration.swift */,
+				7008EF85B50D95916673F385A7EA24B7 /* ImagePipelineDelegate.swift */,
+				86F9DA54383FE953EF96C60C0D201A38 /* ImagePipelineTask.swift */,
+				F188380AFD2E92D9E07D52669B9519BD /* ImagePrefetcher.swift */,
+				8FB90D2777C271926E7277B06FE33B8F /* ImageProcessing.swift */,
+				6CF995FBCDE0607B4843E6D2C8FC0D53 /* ImageProcessingOptions.swift */,
+				4E7535FEB3B7852B075066E42DCE6DCF /* ImageProcessors.swift */,
+				FBDD2B53AF463359C316C51614BA691B /* ImageProcessors+Anonymous.swift */,
+				0A3DFC65C819452503551F44D096840D /* ImageProcessors+Circle.swift */,
+				CE1C82DB69A4D9330C70F964151B3947 /* ImageProcessors+Composition.swift */,
+				6B92BBA0E77D54E47CE44C609FCA4F6F /* ImageProcessors+CoreImage.swift */,
+				8A36A31894DC14300690720F70410B88 /* ImageProcessors+GaussianBlur.swift */,
+				74160592BD42BB71FA26CB0573083292 /* ImageProcessors+Resize.swift */,
+				10FE21AC9450566E1DED7543B2F0C9FA /* ImageProcessors+RoundedCorners.swift */,
+				856DD392FA370E592152823A1CF68115 /* ImagePublisher.swift */,
+				2DCD187DE7CF45FE90A53ABD173D556F /* ImageRequest.swift */,
+				38599CA9594461B5D590C61578C261E0 /* ImageRequestKeys.swift */,
+				763CE08D3B4790EC4F70319A71BE7301 /* ImageResponse.swift */,
+				B099051C8E6C66E30CEE9341322598E9 /* ImageTask.swift */,
+				C6171B70D48A323304FEA56465696B3D /* ImageViewExtensions.swift */,
+				F3B02501FF4A08408CC829F18D89EDF0 /* LinkedList.swift */,
+				FBD068B7822F095078426F8AEE1C3853 /* Log.swift */,
+				7D5815387C6E413B45D32525027ACFA9 /* Operation.swift */,
+				5A4A401E1BC95109B15D78CCE82E9403 /* OperationTask.swift */,
+				0113776395F28462B0F6D3E0B93B6543 /* RateLimiter.swift */,
+				B6526643ECD65C3E81F87DC5EF6C25FA /* ResumableData.swift */,
+				77766317269E3AE5DE2E5CCA82E546CA /* TaskFetchDecodedImage.swift */,
+				18B7B7D71032C60D1E1CC6A625776A26 /* TaskFetchOriginalImageData.swift */,
+				C23F84D88587C296CE2FCCE60531B106 /* TaskFetchWithPublisher.swift */,
+				66B82E5D38738A5B4529AEBAB5346F33 /* TaskLoadData.swift */,
+				0C3D3596DB7BA2E4E20F7B4A590090B7 /* TaskLoadImage.swift */,
+				BD1F8FE921AB5C87CC46FF062D649D92 /* Support Files */,
+			);
+			name = Nuke;
+			path = Nuke;
 			sourceTree = "<group>";
 		};
 		B7D2D8D4DF88269423DFD9223C7A734D /* Targets Support Files */ = {
@@ -368,23 +484,39 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		CA82EFA37422CFEB9D1BE51BED7766A0 /* FontAwesome.swift */ = {
+		BD1F8FE921AB5C87CC46FF062D649D92 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB09B3E52B330A7A3150EF3E7F50E107 /* Enum.swift */,
-				67770E11881D53300F4E3F910012C45F /* FontAwesome.swift */,
-				91FA368285B8734C3CE521EA7F773E7F /* FontAwesomeBarButtonItem.swift */,
-				280ABD2C401D847AC69CBACDAE22FF11 /* FontAwesomeExtension.swift */,
-				DCC59E0E44809652EC444C0F0CE8743A /* FontAwesomeImageRepresentable.swift */,
-				3DD3173E14C7914B19F069107986B217 /* FontAwesomeImageView.swift */,
-				87322EE95DCA9D7A1F1060EEDCD703EE /* FontAwesomeSegmentedControl.swift */,
-				6982522EB544C333E51F87403F82B8E0 /* FontAwesomeStateRequirement.swift */,
-				ED06570B6A3C87FD9E1994A9FD3AF966 /* FontAwesomeTabBarItem.swift */,
-				55653D3BF9D067C4310C2A691206FC15 /* FontAwesomeTextRepresentable.swift */,
-				38711A4010C2C4E581B3A9CEC68070FF /* FontAwesomeView.swift */,
-				ABC94D3BAC787CFCCFAA1BA1C32B9BA2 /* Resources */,
-				99049E981C5F3C8D64C1B693730D66BD /* Support Files */,
+				6234AF0616325306F47652B5BF26FEE4 /* Nuke.modulemap */,
+				7D51B8FD76DC3E672149CEE9889F0ADE /* Nuke-dummy.m */,
+				FF4671DBFA81175AAC6791A21E358566 /* Nuke-Info.plist */,
+				4DDFFEAF5835259FA00988617EA6C4A5 /* Nuke-prefix.pch */,
+				D72C63DC4C72BC9D02A2A14E8C1A91BD /* Nuke-umbrella.h */,
+				3DB13CE53E9BADCD2B4445B69F675FBE /* Nuke.debug.xcconfig */,
+				CE33C7EC43AA8F67C40B12EDFA189109 /* Nuke.release.xcconfig */,
 			);
+			name = "Support Files";
+			path = "../Target Support Files/Nuke";
+			sourceTree = "<group>";
+		};
+		C2503C9C9A12C0DCB34DEE0EF5A65779 /* FontAwesome.swift */ = {
+			isa = PBXGroup;
+			children = (
+				745DE6A0C40A5D22D2B2947814B7F295 /* Enum.swift */,
+				84F961A2D3FD0BC665EDC3A14F934DA6 /* FontAwesome.swift */,
+				36F30CCEA397E319DF695F3A30A7F5F4 /* FontAwesomeBarButtonItem.swift */,
+				E7C5F9B5FBE0B0914981A55DA1E846E9 /* FontAwesomeExtension.swift */,
+				72184210837CE30FC5BC70A7E919EF60 /* FontAwesomeImageRepresentable.swift */,
+				09B5DF19878A6C4F361871527C02FA47 /* FontAwesomeImageView.swift */,
+				5EB9593C1CD028678269E514EB8E992C /* FontAwesomeSegmentedControl.swift */,
+				EFFCDC0F951EC6F31BFA7772218AE5CB /* FontAwesomeStateRequirement.swift */,
+				8B2B78D2BD34864A92360A680BC55D1F /* FontAwesomeTabBarItem.swift */,
+				EDC13FEBD80C795C46330938C56C5704 /* FontAwesomeTextRepresentable.swift */,
+				9FF686923445D9B13BFDFB3847990ED3 /* FontAwesomeView.swift */,
+				8BE07508D00073328E78BA3696BB7CB7 /* Resources */,
+				20E920734E4F21E13D7B7DE0953967B4 /* Support Files */,
+			);
+			name = FontAwesome.swift;
 			path = FontAwesome.swift;
 			sourceTree = "<group>";
 		};
@@ -393,7 +525,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
-				6E2E7F3B24B0B604C051D58D28C9A628 /* Pods */,
+				AE194BBB0605AD1EF5285A709FCC0B62 /* Pods */,
 				5FD4246193BA39B99E913D1CF03C0849 /* Products */,
 				B7D2D8D4DF88269423DFD9223C7A734D /* Targets Support Files */,
 			);
@@ -402,6 +534,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		00695088021A088F2A58B2363228517B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BC498195C3656FE15CA538FEAFE569 /* Nuke-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19EA8766667B3A85308E6C8ED56FCE04 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,25 +566,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C44D679F7F971AED15E2C9354C128609 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				844BB8D9B204161C40D80A1EDC17F73A /* Nuke-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		062A64896E847A6749F58B6BA9A931B1 /* Nuke */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E1BEB9F8A32F7EBA4BCACF4FD0560CF /* Build configuration list for PBXNativeTarget "Nuke" */;
+			buildConfigurationList = 3BA7C9E76E83576B59E6FA39F896EC07 /* Build configuration list for PBXNativeTarget "Nuke" */;
 			buildPhases = (
-				C44D679F7F971AED15E2C9354C128609 /* Headers */,
-				632E5F6B7C79E5F66A05123E334F4641 /* Sources */,
-				DA3568AA4AFE557F7111A4352BA5849C /* Frameworks */,
-				BEC01ECE71CB572D70B4AC6400F9A919 /* Resources */,
+				00695088021A088F2A58B2363228517B /* Headers */,
+				80ACF7E960A65EFC9DF038441176C273 /* Sources */,
+				471A195829A286468062133776F4AAB7 /* Frameworks */,
+				56A927C2BBDF3CBB19C6361FA4450C8B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -457,11 +589,11 @@
 		};
 		4DC20DD2E50259D674257304EC016C93 /* FontAwesome.swift-FontAwesome.swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CE0B2C0860EC7D1C8F58013E0FBD0CC /* Build configuration list for PBXNativeTarget "FontAwesome.swift-FontAwesome.swift" */;
+			buildConfigurationList = 33A361510EEE957273164C39FCBA681C /* Build configuration list for PBXNativeTarget "FontAwesome.swift-FontAwesome.swift" */;
 			buildPhases = (
-				29504D1B6E61DACEB5A0F31B030E9088 /* Sources */,
-				EF81E9F6104AB0241CB578F60FE0274A /* Frameworks */,
-				36ED9BA3D4E987FAABCC81B74B67775B /* Resources */,
+				F70CC008B3E67C21A5413F5C4BD84679 /* Sources */,
+				765CB95F5EF2E118BDBCEE600A535801 /* Frameworks */,
+				FB9C8512D1A37978C3EB9263E40BA1E1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -502,9 +634,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				D19399656CE8B639011A5246166EC3C1 /* PBXTargetDependency */,
-				F818B99FA0B316100EE2D4DF02FC7400 /* PBXTargetDependency */,
-				953D4B59708FDFECF2425072C086A01B /* PBXTargetDependency */,
+				AC35E7619ED349B39AA4FFCB8D2B73D6 /* PBXTargetDependency */,
+				2FEF2545DB5844CD44E8C42787354B34 /* PBXTargetDependency */,
+				147B67D326ED5CA7D911946483939FD6 /* PBXTargetDependency */,
 			);
 			name = "Pods-ComplexCollectionViewStyleExample";
 			productName = "Pods-ComplexCollectionViewStyleExample";
@@ -523,7 +655,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				055F4DC41B210DB1918DA058FE09FABA /* PBXTargetDependency */,
+				67AAECA33D7550B01E5396DEF6CC0632 /* PBXTargetDependency */,
 			);
 			name = FontAwesome.swift;
 			productName = FontAwesome.swift;
@@ -537,7 +669,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -576,13 +708,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		36ED9BA3D4E987FAABCC81B74B67775B /* Resources */ = {
+		56A927C2BBDF3CBB19C6361FA4450C8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1D40AA07CA8A548B7085C26177B1223 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
-				AD50A90048B096427A10487F5ED428D8 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
-				64001D1B1DCD6EAD400FF6315079DC3B /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,10 +723,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BEC01ECE71CB572D70B4AC6400F9A919 /* Resources */ = {
+		FB9C8512D1A37978C3EB9263E40BA1E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADF4BCC192ABC47D6AD91A2920215486 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				8175904831B9B01200717830748AB9E6 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
+				EC946D47528009DCF8D87B685EB51E49 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,13 +755,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29504D1B6E61DACEB5A0F31B030E9088 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		484D65047E6CF24342C9C89A64284A12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,26 +768,69 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		632E5F6B7C79E5F66A05123E334F4641 /* Sources */ = {
+		80ACF7E960A65EFC9DF038441176C273 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F09ACB2C5062701272570EBBE36BB7C7 /* DataCache.swift in Sources */,
-				33E19BC096B66CDE9AF092BE4B1EE4D2 /* DataLoader.swift in Sources */,
-				E113BFF705F231576AB1BC02E8CD31FF /* Deprecated.swift in Sources */,
-				47DE514FFAFC77339A281C88DC9D26C5 /* ImageCache.swift in Sources */,
-				8A8ECA607EA4E9DDA4A2F1404F1AA4A2 /* ImageDecoding.swift in Sources */,
-				C2B4C43E316156C7BAA89EF72C3BC209 /* ImageEncoding.swift in Sources */,
-				9D36E15B981166952D88ACDA7EF1FCEF /* ImagePipeline.swift in Sources */,
-				AB1778BEF12E281DCA6520DB182C0A30 /* ImagePipelineConfiguration.swift in Sources */,
-				531E8E961587F0E6885690056718AAB4 /* ImagePreheater.swift in Sources */,
-				A198E44609AC439B57F319EBA10C42DA /* ImageProcessing.swift in Sources */,
-				5857E4CC0AAF89BB24A5DA2EC2CB6481 /* ImageRequest.swift in Sources */,
-				57B31AE955ABBC6ACA9E7157844E1003 /* ImageTask.swift in Sources */,
-				5DA2B11F9A41C6EAEC8B31F281A6E549 /* ImageViewExtensions.swift in Sources */,
-				2CC1EEC410C399C6C1B6BAB608B7CE4F /* Internal.swift in Sources */,
-				33DA77EE1506C87C374EAC4598286B07 /* Nuke-dummy.m in Sources */,
-				7A38D7188792F42AA0B525259BBE3118 /* Task.swift in Sources */,
+				94E7F39942F7393637B7DB0120C26CB6 /* Allocations.swift in Sources */,
+				5F5F3A61CB4167CE84E3FD7D9626092D /* AssetType.swift in Sources */,
+				FD45DB5F8EB88D24F6B008F20B377C39 /* AsyncTask.swift in Sources */,
+				89541256E0896D0DB1B01FF4CD6F6677 /* AVDataAsset.swift in Sources */,
+				1A82E0A9D791653CFD9381A53ED5B417 /* Combine.swift in Sources */,
+				9753ABD7B056ADF7624EFA1E9BAD8D54 /* DataCache.swift in Sources */,
+				440FB3EEB627A5364BA32FB342F56558 /* DataCaching.swift in Sources */,
+				11B361373AE4D57411AA4A8337C80750 /* DataLoader.swift in Sources */,
+				D4525320E03678A16FAA9C8A07252FDC /* DataLoading.swift in Sources */,
+				34E094803480DD0F2C0CCAAA9454E28C /* Deprecated.swift in Sources */,
+				7FAB696999AD1875D2CC7A8597D53C6B /* Extensions.swift in Sources */,
+				8C5F4EFDF708EDA835905DE0F79CED18 /* FetchImage.swift in Sources */,
+				0B08380F98C26F25464558AD06D2E476 /* Graphics.swift in Sources */,
+				B8FC016C0102FD7DEEF2AEA42A1AB479 /* ImageCache.swift in Sources */,
+				B540300B73D64A56A2282CEE77883E2C /* ImageCaching.swift in Sources */,
+				DBB3252883F544589B0E8FC65009CA0D /* ImageDecoderRegistry.swift in Sources */,
+				70473E7C5F830BEBB012D586CC23433F /* ImageDecoders+Default.swift in Sources */,
+				DB1888B38ECC96F5972D301DDF6855F4 /* ImageDecoders+Empty.swift in Sources */,
+				8AB89185FEC0B89571D762C367EF592C /* ImageDecoders+Video.swift in Sources */,
+				56A89E718B207B9C941974329EB7D25E /* ImageDecoding.swift in Sources */,
+				F939A61E2587786BD0C5176E2E03460B /* ImageDecompression.swift in Sources */,
+				ECE2FE4C255835123AB215A0BCF85CC7 /* ImageEncoders+Default.swift in Sources */,
+				3EF74E50A8DBD7AE01FAD0AE671B646B /* ImageEncoders+ImageIO.swift in Sources */,
+				73EE45B1D28085C048F976682F67699A /* ImageEncoders.swift in Sources */,
+				F3EB1C8345582E728DA248329A816C94 /* ImageEncoding.swift in Sources */,
+				6E4638BDA50CAD2C36F1875429F00642 /* ImagePipeline.swift in Sources */,
+				68007AC6AB1DB3090D1B4D4FC78705AC /* ImagePipelineCache.swift in Sources */,
+				211E1C10CD177E91878FA475226EB059 /* ImagePipelineConfiguration.swift in Sources */,
+				178757DCA528997667A0857CF21574A5 /* ImagePipelineDelegate.swift in Sources */,
+				B4C00C781823BC9F64C4780553B8C37A /* ImagePipelineTask.swift in Sources */,
+				F89C6D435B8DCED0EA803C04D46542AA /* ImagePrefetcher.swift in Sources */,
+				0E4C4849F1DDCED407B67BFEB0A90A5B /* ImageProcessing.swift in Sources */,
+				1E25F3A17A959385AE6802C6F5B1EE1E /* ImageProcessingOptions.swift in Sources */,
+				CA4A8E090963608140D6362B5D9FDE53 /* ImageProcessors+Anonymous.swift in Sources */,
+				0576A29C99CC9B4538714C7CD82E4853 /* ImageProcessors+Circle.swift in Sources */,
+				0145DFAA2863BA55A52613FC7337A3F8 /* ImageProcessors+Composition.swift in Sources */,
+				E2E4C39B1617F01CF1B97B103C4FCF9E /* ImageProcessors+CoreImage.swift in Sources */,
+				C488085767B58AC34208793EBBB6CA19 /* ImageProcessors+GaussianBlur.swift in Sources */,
+				8DAC4BA44E0D2B9E338773AEDA262C99 /* ImageProcessors+Resize.swift in Sources */,
+				CD50DC224408660C7160B621249CBFD8 /* ImageProcessors+RoundedCorners.swift in Sources */,
+				79D7C6D7F5A0427273042D074A576E0C /* ImageProcessors.swift in Sources */,
+				44DF02C37278C9D1EA238231CF2631C1 /* ImagePublisher.swift in Sources */,
+				4FFBC6DFB9333866142EFBA26DF7D851 /* ImageRequest.swift in Sources */,
+				E32B1C933FD05D12A39E7B50AC0AE13A /* ImageRequestKeys.swift in Sources */,
+				46E01D32729739F4E652087F11719A49 /* ImageResponse.swift in Sources */,
+				028BAB8515C91A24657E2BEE6CE6F00A /* ImageTask.swift in Sources */,
+				D11D46285313EAB3161E8748AC67DE37 /* ImageViewExtensions.swift in Sources */,
+				54CD5345F3261D003B0331CA859E4D34 /* LinkedList.swift in Sources */,
+				DBCFF0A60797E3B757A1F454A1E5E92B /* Log.swift in Sources */,
+				2FCEC10B1666324F0662E3F51AF77A88 /* Nuke-dummy.m in Sources */,
+				0278689EA2F6FF2304FF3C94EF646F9C /* Operation.swift in Sources */,
+				833760327CD73F9357FF9C8010B79867 /* OperationTask.swift in Sources */,
+				33C194A68126D288FC8974179D1A0C04 /* RateLimiter.swift in Sources */,
+				B1760AFAF139258CF9A7EC8F079C0CF6 /* ResumableData.swift in Sources */,
+				CA035A2438F395ADD4FA6C67A14C41C8 /* TaskFetchDecodedImage.swift in Sources */,
+				E450E80EEC08EADE47349313C86F5C5F /* TaskFetchOriginalImageData.swift in Sources */,
+				D373FD8D8E68E22A4E0737FF44667F17 /* TaskFetchWithPublisher.swift in Sources */,
+				2DCA737D1A79C2BE4662D70630674C0C /* TaskLoadData.swift in Sources */,
+				C98BFD6DABF96EEE9ACED2EE5F42A77D /* TaskLoadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,101 +842,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F70CC008B3E67C21A5413F5C4BD84679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		055F4DC41B210DB1918DA058FE09FABA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "FontAwesome.swift-FontAwesome.swift";
-			target = 4DC20DD2E50259D674257304EC016C93 /* FontAwesome.swift-FontAwesome.swift */;
-			targetProxy = C27ED67F95247CAFF55165FF166459CD /* PBXContainerItemProxy */;
-		};
-		953D4B59708FDFECF2425072C086A01B /* PBXTargetDependency */ = {
+		147B67D326ED5CA7D911946483939FD6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Nuke;
 			target = 062A64896E847A6749F58B6BA9A931B1 /* Nuke */;
-			targetProxy = 30EA655E5265670F4789006ED71DB601 /* PBXContainerItemProxy */;
+			targetProxy = 9BCEC45259296D048F54F22C1958EDCA /* PBXContainerItemProxy */;
 		};
-		D19399656CE8B639011A5246166EC3C1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ActiveLabel;
-			target = 6E18EE5DE3744DADF64511923F006E05 /* ActiveLabel */;
-			targetProxy = 40367EC5AF4C8A251268C9B730AB7029 /* PBXContainerItemProxy */;
-		};
-		F818B99FA0B316100EE2D4DF02FC7400 /* PBXTargetDependency */ = {
+		2FEF2545DB5844CD44E8C42787354B34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FontAwesome.swift;
 			target = BB240150692F32EC312F3CF346C8B9D1 /* FontAwesome.swift */;
-			targetProxy = B590C731C13374F4AD191BC0E86B5CC3 /* PBXContainerItemProxy */;
+			targetProxy = 2B143500601E6F1145EE64E28D84A2EE /* PBXContainerItemProxy */;
+		};
+		67AAECA33D7550B01E5396DEF6CC0632 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FontAwesome.swift-FontAwesome.swift";
+			target = 4DC20DD2E50259D674257304EC016C93 /* FontAwesome.swift-FontAwesome.swift */;
+			targetProxy = 6D993D2E4FDD9E64D3350649FD476214 /* PBXContainerItemProxy */;
+		};
+		AC35E7619ED349B39AA4FFCB8D2B73D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ActiveLabel;
+			target = 6E18EE5DE3744DADF64511923F006E05 /* ActiveLabel */;
+			targetProxy = 437081B84853EFAA2E1A7979B5642259 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		072CF24DD597B28B1EC6485A97C6DC75 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
 		1E4A77DA295FBC465E0E42AF0EF3C812 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66FBE133175F607CF93E683307995EEC /* ActiveLabel.debug.xcconfig */;
+			baseConfigurationReference = C694D165388718E0A1B829AE35F6D382 /* ActiveLabel.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -782,7 +895,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ActiveLabel/ActiveLabel-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ActiveLabel/ActiveLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -795,43 +908,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		20900F71EFEFFF73E3DB9483F461A611 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01E0956426DD496B2E98990ABD963384 /* Pods-ComplexCollectionViewStyleExample.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -840,7 +916,7 @@
 		};
 		2C19E708EB2A7965B4E7CCD33A053BC0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE9348C4735B92B733D669EEB479D05B /* ActiveLabel.release.xcconfig */;
+			baseConfigurationReference = C2B872C18F0ACC51F9879271A615DDDB /* ActiveLabel.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -854,7 +930,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ActiveLabel/ActiveLabel-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ActiveLabel/ActiveLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -874,96 +950,7 @@
 			};
 			name = Release;
 		};
-		3ED50D37B3A82CF86D539BF5B2693488 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF3AAE89C83DD48E7FC8F7AE39BEAF5F /* Pods-ComplexCollectionViewStyleExample.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		694F60AED25D9820500B232105C4ABF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4897D16A60FF75B4F2C9CCC74A4C853C /* FontAwesome.swift.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FontAwesome.swift";
-				IBSC_MODULE = FontAwesome_swift;
-				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = FontAwesome.swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		74FD33EC304B520AD97A98D295416B3A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E222E148243FE0059F1801E90A2B0B81 /* FontAwesome.swift.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FontAwesome.swift/FontAwesome.swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/FontAwesome.swift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/FontAwesome.swift/FontAwesome.swift.modulemap";
-				PRODUCT_MODULE_NAME = FontAwesome_swift;
-				PRODUCT_NAME = FontAwesome_swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		94CA9DF48CE575FECE47DDD8786D50E7 /* Debug */ = {
+		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1016,7 +1003,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1029,9 +1016,122 @@
 			};
 			name = Debug;
 		};
-		A399F19866317C08E5F1B44C52CF071E /* Debug */ = {
+		74FD33EC304B520AD97A98D295416B3A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6DEBFA2534B42418E3505821A479D0F /* Nuke.debug.xcconfig */;
+			baseConfigurationReference = A8E67BE2FD39DFEE1DB095EC7190A92E /* FontAwesome.swift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FontAwesome.swift/FontAwesome.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/FontAwesome.swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FontAwesome.swift/FontAwesome.swift.modulemap";
+				PRODUCT_MODULE_NAME = FontAwesome_swift;
+				PRODUCT_NAME = FontAwesome_swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7C7335D2F9F994A9F0241F375A95A83B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8E67BE2FD39DFEE1DB095EC7190A92E /* FontAwesome.swift.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FontAwesome.swift";
+				IBSC_MODULE = FontAwesome_swift;
+				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FontAwesome.swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		94168FF127BD8273DE403594DF6E2902 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DB13CE53E9BADCD2B4445B69F675FBE /* Nuke.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1045,7 +1145,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Nuke/Nuke-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Nuke/Nuke-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1057,7 +1157,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.3;
+				SWIFT_VERSION = 5.5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1066,7 +1166,7 @@
 		};
 		A3F3FCD3F556F8AC7292BC4B65659ED6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4897D16A60FF75B4F2C9CCC74A4C853C /* FontAwesome.swift.debug.xcconfig */;
+			baseConfigurationReference = 13A6BFAE916C4A63DD9A6704A73EB359 /* FontAwesome.swift.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1079,7 +1179,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FontAwesome.swift/FontAwesome.swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/FontAwesome.swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1098,9 +1198,25 @@
 			};
 			name = Debug;
 		};
-		E19472494B8F5EE92257CD1F4B132ABE /* Release */ = {
+		ABC61449C9E9331FE563DE1090E69ACB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F908AA22A391FC95A731ED0705851D56 /* Nuke.release.xcconfig */;
+			baseConfigurationReference = 13A6BFAE916C4A63DD9A6704A73EB359 /* FontAwesome.swift.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FontAwesome.swift";
+				IBSC_MODULE = FontAwesome_swift;
+				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FontAwesome.swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		EF5FC78EC197C0A51DDBCB650960696B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE33C7EC43AA8F67C40B12EDFA189109 /* Nuke.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1114,7 +1230,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Nuke/Nuke-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Nuke/Nuke-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1126,7 +1242,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.3;
+				SWIFT_VERSION = 5.5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1134,19 +1250,78 @@
 			};
 			name = Release;
 		};
-		EF817A53C6EEA0AB4FCA5444BAC8DCA7 /* Release */ = {
+		F86DDC980187CD9F2D2760A4DD2B2C33 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E222E148243FE0059F1801E90A2B0B81 /* FontAwesome.swift.release.xcconfig */;
+			baseConfigurationReference = 01E0956426DD496B2E98990ABD963384 /* Pods-ComplexCollectionViewStyleExample.debug.xcconfig */;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FontAwesome.swift";
-				IBSC_MODULE = FontAwesome_swift;
-				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = FontAwesome.swift;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FA2988EC484F68B086AE38EDCA1B877E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF3AAE89C83DD48E7FC8F7AE39BEAF5F /* Pods-ComplexCollectionViewStyleExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ComplexCollectionViewStyleExample/Pods-ComplexCollectionViewStyleExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1156,17 +1331,26 @@
 		1CC41735C83391A4A4ED724F31A7D2A1 /* Build configuration list for PBXNativeTarget "Pods-ComplexCollectionViewStyleExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				20900F71EFEFFF73E3DB9483F461A611 /* Debug */,
-				3ED50D37B3A82CF86D539BF5B2693488 /* Release */,
+				F86DDC980187CD9F2D2760A4DD2B2C33 /* Debug */,
+				FA2988EC484F68B086AE38EDCA1B877E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E1BEB9F8A32F7EBA4BCACF4FD0560CF /* Build configuration list for PBXNativeTarget "Nuke" */ = {
+		33A361510EEE957273164C39FCBA681C /* Build configuration list for PBXNativeTarget "FontAwesome.swift-FontAwesome.swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A399F19866317C08E5F1B44C52CF071E /* Debug */,
-				E19472494B8F5EE92257CD1F4B132ABE /* Release */,
+				ABC61449C9E9331FE563DE1090E69ACB /* Debug */,
+				7C7335D2F9F994A9F0241F375A95A83B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BA7C9E76E83576B59E6FA39F896EC07 /* Build configuration list for PBXNativeTarget "Nuke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94168FF127BD8273DE403594DF6E2902 /* Debug */,
+				EF5FC78EC197C0A51DDBCB650960696B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1174,8 +1358,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94CA9DF48CE575FECE47DDD8786D50E7 /* Debug */,
-				072CF24DD597B28B1EC6485A97C6DC75 /* Release */,
+				4BC7450F9457737EE3E637BA155B56F7 /* Debug */,
+				8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1185,15 +1369,6 @@
 			buildConfigurations = (
 				A3F3FCD3F556F8AC7292BC4B65659ED6 /* Debug */,
 				74FD33EC304B520AD97A98D295416B3A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5CE0B2C0860EC7D1C8F58013E0FBD0CC /* Build configuration list for PBXNativeTarget "FontAwesome.swift-FontAwesome.swift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				694F60AED25D9820500B232105C4ABF0 /* Debug */,
-				EF817A53C6EEA0AB4FCA5444BAC8DCA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
