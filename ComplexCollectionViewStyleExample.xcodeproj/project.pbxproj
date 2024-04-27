@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -358,7 +358,6 @@
 		DED5ADC1236B09780092108B /* ComplexCollectionViewStyleExample */ = {
 			isa = PBXGroup;
 			children = (
-				DEF73128237259AF006B54CE /* Enum */,
 				DED5ADD0236B09830092108B /* Info.plist */,
 				DED5ADC2236B09780092108B /* AppDelegate.swift */,
 				DED5ADC4236B09780092108B /* SceneDelegate.swift */,
@@ -391,13 +390,6 @@
 				DED5ADE6236B09830092108B /* Info.plist */,
 			);
 			path = ComplexCollectionViewStyleExampleUITests;
-			sourceTree = "<group>";
-		};
-		DEF73128237259AF006B54CE /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -715,7 +707,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -770,7 +762,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

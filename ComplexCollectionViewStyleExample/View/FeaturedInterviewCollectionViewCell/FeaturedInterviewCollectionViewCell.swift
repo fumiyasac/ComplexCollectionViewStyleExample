@@ -8,7 +8,6 @@
 
 import UIKit
 import Nuke
-import FontAwesome_swift
 import ActiveLabel
 
 // MEMO: FontAwesome_swift / ActiveLabelについては以前からもよく活用しているデザイン系のライブラリになります。
@@ -62,8 +61,7 @@ final class FeaturedInterviewCollectionViewCell: UICollectionViewCell {
     // MARK: - Private Function
 
     private func setupFeaturedInterviewCollectionViewCell() {
-
-        profileIconImageView.image = UIImage.fontAwesomeIcon(name: .grinStars, style: .solid, textColor: UIColor.gray, size: profileIconSize)
+        profileIconImageView.image = UIImage(systemName: "person.circle.fill")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
         hashTagsLabel.textColor = UIColor(code: "#ff9900")
     }
 }

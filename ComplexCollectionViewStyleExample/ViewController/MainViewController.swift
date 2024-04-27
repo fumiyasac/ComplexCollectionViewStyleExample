@@ -333,16 +333,17 @@ final class MainViewController: UIViewController {
 
     private func createFeaturedBannersLayout() -> NSCollectionLayoutSection {
 
+        let absoluteHeight = UIScreen.main.bounds.width * (3 / 8)
+
         // 1. Itemのサイズ設定
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(absoluteHeight))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .zero
 
         // 2. Groupのサイズ設定
         // MEMO: 1列に表示するカラム数を1として設定し、itemのサイズがgroupのサイズで決定する形にしている
-        let groupHeight = UIScreen.main.bounds.width * (3 / 8)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(groupHeight))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(absoluteHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: item, count: 1)
         group.contentInsets = .zero
 
         // 3. Sectionのサイズ設定
@@ -385,7 +386,7 @@ final class MainViewController: UIViewController {
         // 2. Groupのサイズ設定
         // MEMO: 1列に表示するカラム数を1として設定し、itemのサイズがgroupのサイズで決定する形にしている
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(160), heightDimension: .absolute(40))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: item, count: 1)
 
         // 3. Sectionのサイズ設定
         let section = NSCollectionLayoutSection(group: group)
@@ -412,7 +413,7 @@ final class MainViewController: UIViewController {
         let oneThirdItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.5)))
         oneThirdItem.contentInsets = NSDirectionalEdgeInsets(top: 0.5, leading: 0.5, bottom: 0.5, trailing: 0.5)
         // MEMO: 1列に表示するカラム数を2として設定し、Group内のアイテムの幅を1/3の正方形とするためにGroup内の幅を.fractionalWidth(0.33)に決める
-        let oneThirdItemSet = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalHeight(1.0)), subitem: oneThirdItem, count: 2)
+        let oneThirdItemSet = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalHeight(1.0)), repeatingSubitem: oneThirdItem, count: 2)
 
         // 2. Groupのサイズ設定
         // MEMO: leadingItem(左側へ表示するアイテム1つ)とtrailingGroup(右側へ表示するアイテム2個のグループ1個)を合わせる
@@ -433,15 +434,16 @@ final class MainViewController: UIViewController {
 
         // MEMO: 該当のセルを基準にした高さを設定する
         let absoluteHeight = UIScreen.main.bounds.width * 0.5 + 90.0
+        let itemCount = 2
 
         // 1. Itemのサイズ設定
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/CGFloat(itemCount)), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0.5, leading: 0.5, bottom: 0.5, trailing: 0.5)
 
         // 2. Groupのサイズ設定
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(absoluteHeight))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: itemCount)
 
         // 3. Sectionのサイズ設定
         let section = NSCollectionLayoutSection(group: group)
