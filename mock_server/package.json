@@ -12,6 +12,6 @@
   "author": "fumiyasac(Fumiya Sakai)",
   "license": "ISC",
   "devDependencies": {
-    "json-server": "^0.14.2"
+    "json-server": "^1.0.0-alpha.23"
   }
 }
